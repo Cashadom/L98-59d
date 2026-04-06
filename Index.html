@@ -3,1615 +3,898 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L98-59d — The Exoplanet That Changes Everything | Scientific Intelligence Platform</title>
-<meta name="description" content="L98-59d is the most studied super-Earth of 2026. A magma ocean, a sulfur-rich atmosphere detected by JWST, and a story no one has told for business yet. Discover the L98-59d Intelligence Platform.">
-<meta name="keywords" content="L98-59d, exoplanet, JWST, super-Earth, scientific narrative, space science, astrobiology, sulfur atmosphere, magma ocean, exoplanet intelligence">
-<meta property="og:title" content="L98-59d — The Exoplanet Rewriting Science in 2026">
-<meta property="og:description" content="34.6 light-years away. A permanent magma ocean. A sulfur atmosphere confirmed by JWST. The most compelling planetary discovery of our era — and no one has built a platform around it. Until now.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="L98-59d — The Exoplanet Intelligence Platform">
-<meta name="twitter:description" content="JWST confirmed it. Nature Astronomy published it. We translate it into actionable science for the people building tomorrow.">
-<link rel="canonical" href="https://l98-59d.com/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
-
+<title>PROJECT 19859D — CLASSIFIED ARCHITECTURAL BRIEF</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #06060a;
-  --surface: #0d0d14;
-  --surface2: #13131e;
-  --border: rgba(255,255,255,0.07);
-  --border-bright: rgba(255,255,255,0.15);
-  --accent: #e8593c;
-  --accent2: #3b8bd4;
-  --gold: #c8993a;
-  --text: #e8e6df;
-  --muted: #6b6a70;
-  --dim: #3a3940;
-  --serif: 'Instrument Serif', Georgia, serif;
-  --mono: 'DM Mono', monospace;
-  --sans: 'Geist', -apple-system, sans-serif;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* ─── NOISE OVERLAY ─── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-/* ─── STAR FIELD ─── */
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.star {
-  position: absolute;
-  border-radius: 50%;
-  background: white;
-  animation: twinkle var(--d, 3s) ease-in-out infinite var(--delay, 0s);
-}
-@keyframes twinkle {
-  0%, 100% { opacity: var(--min, 0.1); transform: scale(1); }
-  50% { opacity: var(--max, 0.8); transform: scale(1.2); }
-}
-
-/* ─── NAVIGATION ─── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 2.5rem;
-  background: rgba(6,6,10,0.6);
-  backdrop-filter: blur(20px);
-  border-bottom: 0.5px solid var(--border);
-}
-
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-
-.nav-cta {
-  font-size: 12px;
-  font-family: var(--mono);
-  color: var(--accent) !important;
-  border: 0.5px solid rgba(232,89,60,0.4);
-  padding: 6px 16px;
-  border-radius: 3px;
-  transition: background 0.2s, color 0.2s !important;
-}
-.nav-cta:hover {
-  background: var(--accent) !important;
-  color: white !important;
-}
-
-/* ─── MAIN LAYOUT ─── */
-main { position: relative; z-index: 1; }
-
-section { padding: 7rem 0; }
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
-
-/* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 8rem 0 6rem;
-}
-
-.hero-glow {
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,89,60,0.12) 0%, transparent 70%);
-  top: 50%;
-  right: -10%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.hero-glow-2 {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(59,139,212,0.08) 0%, transparent 70%);
-  bottom: 10%;
-  left: 5%;
-  pointer-events: none;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.2s;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse-dot 1.8s ease-in-out infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-h1 {
-  font-family: var(--serif);
-  font-size: clamp(3rem, 7vw, 6.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.4s;
-}
-
-h1 em {
-  font-style: italic;
-  color: var(--accent);
-}
-
-.hero-sub {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 560px;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.6s;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 1s ease forwards 0.8s;
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: 14px 32px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  border-radius: 3px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(232,89,60,0.35);
-}
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 14px 24px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  border: 0.5px solid var(--border-bright);
-  border-radius: 3px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.btn-ghost:hover { color: var(--text); border-color: var(--text); }
-
-/* ─── PLANET STATS ─── */
-.planet-ring {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(42vw, 500px);
-  aspect-ratio: 1;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards 1s;
-}
-
-.planet-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 38%,
-    #a03020 0%,
-    #6b1f12 25%,
-    #3a0f0a 55%,
-    #1a0806 80%,
-    #0a0402 100%
-  );
-  position: relative;
-  box-shadow:
-    0 0 60px rgba(232,89,60,0.2),
-    0 0 120px rgba(232,89,60,0.08),
-    inset -20px -20px 60px rgba(0,0,0,0.6);
-  animation: float 8s ease-in-out infinite;
-}
-
-.planet-circle::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 30% 30%,
-    rgba(255,180,80,0.15) 0%,
-    transparent 50%
-  );
-}
-
-.orbit-ring {
-  position: absolute;
-  inset: -20%;
-  border-radius: 50%;
-  border: 0.5px solid rgba(232,89,60,0.15);
-  animation: orbit-spin 20s linear infinite;
-}
-
-.orbit-ring-2 {
-  position: absolute;
-  inset: -40%;
-  border-radius: 50%;
-  border: 0.5px solid rgba(59,139,212,0.1);
-  animation: orbit-spin 35s linear infinite reverse;
-}
-
-@keyframes orbit-spin { to { transform: rotate(360deg); } }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ─── DATA TICKER ─── */
-.ticker {
-  border-top: 0.5px solid var(--border);
-  border-bottom: 0.5px solid var(--border);
-  padding: 1rem 0;
-  overflow: hidden;
-  background: var(--surface);
-}
-
-.ticker-inner {
-  display: flex;
-  gap: 0;
-  animation: ticker-scroll 30s linear infinite;
-  white-space: nowrap;
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0 3rem;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-}
-
-.ticker-item span { color: var(--accent); }
-.ticker-sep { color: var(--dim); }
-
-@keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ─── SECTION: DISCOVERY ─── */
-.discovery { background: var(--surface); }
-
-.section-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 0.5px;
-  background: var(--accent);
-}
-
-h2 {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.5rem;
-}
-
-h2 em { font-style: italic; color: var(--accent); }
-
-.discovery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.discovery-facts {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.fact-row {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-  padding-bottom: 1.5rem;
-  border-bottom: 0.5px solid var(--border);
-}
-
-.fact-row:last-child { border-bottom: none; }
-
-.fact-num {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  min-width: 28px;
-  padding-top: 3px;
-}
-
-.fact-content {}
-.fact-title {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.fact-body {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.discovery-visual {
-  position: relative;
-}
-
-.spectrum-card {
-  background: var(--surface2);
-  border: 0.5px solid var(--border);
-  border-radius: 8px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.spectrum-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-}
-
-.spectrum-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-}
-
-.spectrum-chart {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 1.5rem;
-}
-
-.spectrum-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.spec-mol {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
-  min-width: 36px;
-}
-
-.spec-bar-track {
-  flex: 1;
-  height: 4px;
-  background: var(--dim);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.spec-bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  animation: bar-grow 1.5s ease forwards;
-}
-
-@keyframes bar-grow {
-  from { width: 0; }
-}
-
-.spec-val {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  min-width: 40px;
-  text-align: right;
-}
-
-.spectrum-source {
-  font-size: 11px;
-  color: var(--dim);
-  font-family: var(--mono);
-}
-.spectrum-source a { color: var(--accent2); text-decoration: none; }
-
-/* ─── STATS ROW ─── */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 0.5px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 4rem;
-}
-
-.stat-cell {
-  background: var(--surface);
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-.stat-value {
-  font-family: var(--serif);
-  font-size: 2.5rem;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-/* ─── ATMOSPHERE SECTION ─── */
-.atmosphere {}
-
-.atmo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-.atmo-text p {
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.9;
-  margin-bottom: 1.5rem;
-}
-
-.highlight-quote {
-  border-left: 2px solid var(--accent);
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
-  background: rgba(232,89,60,0.05);
-  border-radius: 0 6px 6px 0;
-}
-
-.highlight-quote p {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.15rem;
-  color: var(--text) !important;
-  margin: 0 !important;
-  line-height: 1.6;
-}
-
-.highlight-quote cite {
-  display: block;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  margin-top: 8px;
-  font-style: normal;
-}
-
-.atmo-visual {}
-
-.layer-diagram {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.layer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-radius: 6px;
-  border: 0.5px solid var(--border);
-  transition: border-color 0.2s;
-  cursor: default;
-}
-.layer:hover { border-color: var(--border-bright); }
-
-.layer-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-
-.layer-info { flex: 1; }
-.layer-name {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-.layer-detail { font-size: 11px; color: var(--muted); font-family: var(--mono); }
-
-.layer-badge {
-  font-family: var(--mono);
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 3px;
-  letter-spacing: 0.06em;
-}
-
-.layer-1 { background: rgba(200,40,20,0.06); }
-.layer-2 { background: rgba(232,89,60,0.05); }
-.layer-3 { background: rgba(200,140,40,0.05); }
-.layer-4 { background: rgba(59,100,60,0.06); }
-.layer-5 { background: rgba(30,60,100,0.08); }
-
-/* ─── PLATFORM SECTION ─── */
-.platform { background: var(--surface); }
-
-.platform-intro {
-  max-width: 600px;
-  margin-bottom: 4rem;
-}
-
-.platform-intro p {
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-top: 1rem;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 0.5px solid var(--border);
-}
-
-.platform-card {
-  background: var(--surface2);
-  padding: 2.5rem 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.3s;
-}
-.platform-card:hover { background: #18181f; }
-
-.platform-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.platform-card:hover::before { opacity: 1; }
-
-.card-num {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--dim);
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-}
-
-.card-title {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  color: var(--text);
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-.card-body {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.ctag {
-  font-family: var(--mono);
-  font-size: 10px;
-  padding: 4px 10px;
-  border-radius: 2px;
-  letter-spacing: 0.06em;
-  border: 0.5px solid;
-}
-
-.ctag-red { color: var(--accent); border-color: rgba(232,89,60,0.3); }
-.ctag-blue { color: var(--accent2); border-color: rgba(59,139,212,0.3); }
-.ctag-gold { color: var(--gold); border-color: rgba(200,153,58,0.3); }
-
-/* ─── WHY NOW ─── */
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-.why-items {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
-}
-
-.why-item {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.why-marker {
-  width: 2px;
-  background: var(--border);
-  flex-shrink: 0;
-  position: relative;
-  min-height: 60px;
-}
-
-.why-marker::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: -4px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  background: var(--bg);
-}
-
-.why-content {}
-.why-title {
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.why-body {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.why-stat-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  border: 0.5px solid var(--border);
-}
-
-.wstat {
-  background: var(--surface);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.wstat-label {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.wstat-val {
-  font-family: var(--mono);
-  font-size: 14px;
-  color: var(--text);
-  text-align: right;
-}
-
-.wstat-val .wv-num { color: var(--accent); font-size: 1.1rem; }
-
-/* ─── PUBLICATIONS ─── */
-.publications { background: var(--surface); }
-
-.pub-intro {
-  max-width: 500px;
-  margin-bottom: 3rem;
-}
-
-.pub-intro p { color: var(--muted); margin-top: 1rem; font-size: 0.95rem; line-height: 1.8; }
-
-.pub-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--border);
-  border: 0.5px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.pub-row {
-  background: var(--surface2);
-  padding: 1.5rem 2rem;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 1.5rem;
-  align-items: center;
-  transition: background 0.2s;
-}
-.pub-row:hover { background: #16161f; }
-
-.pub-year {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--dim);
-  min-width: 36px;
-}
-
-.pub-title-col {}
-.pub-title { font-size: 14px; color: var(--text); margin-bottom: 3px; }
-.pub-journal {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-}
-
-.pub-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 2px;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-.pub-sigma {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent);
-}
-
-/* ─── CTA ─── */
-.cta-section {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding: 10rem 0;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%,
-    rgba(232,89,60,0.08) 0%,
-    transparent 70%
-  );
-}
-
-.cta-section h2 {
-  max-width: 700px;
-  margin: 1.5rem auto 1rem;
-}
-
-.cta-sub {
-  color: var(--muted);
-  font-size: 1rem;
-  max-width: 500px;
-  margin: 0 auto 3rem;
-  line-height: 1.8;
-}
-
-.cta-form {
-  display: flex;
-  gap: 12px;
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-.cta-input {
-  flex: 1;
-  background: var(--surface2);
-  border: 0.5px solid var(--border-bright);
-  color: var(--text);
-  padding: 14px 18px;
-  font-size: 14px;
-  font-family: var(--sans);
-  border-radius: 3px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.cta-input:focus { border-color: var(--accent); }
-.cta-input::placeholder { color: var(--muted); }
-
-/* ─── FOOTER ─── */
-footer {
-  padding: 3rem 0;
-  border-top: 0.5px solid var(--border);
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.footer-logo {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.footer-logo span { color: var(--accent); }
-
-.footer-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.footer-links a {
-  font-size: 12px;
-  color: var(--dim);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--muted); }
-
-.footer-right {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--dim);
-  text-align: right;
-  line-height: 1.6;
-}
-
-/* ─── SCHEMA.ORG structured data visual element ─── */
-.schema-hint { display: none; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
-  .hero { flex-direction: column; padding: 8rem 0 4rem; min-height: auto; }
-  .planet-ring { position: relative; right: auto; top: auto; transform: none; width: min(80vw, 360px); margin: 3rem auto 0; }
-  .discovery-grid, .atmo-grid, .why-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .stats-row { grid-template-columns: repeat(2, 1fr); }
-  .pub-row { grid-template-columns: auto 1fr; }
-  .pub-tag, .pub-sigma { display: none; }
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
-  .footer-right { text-align: center; }
-  .cta-form { flex-direction: column; }
-}
-</style>
-
-<!-- Schema.org structured data for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "L98-59d Intelligence Platform",
-  "url": "https://l98-59d.com",
-  "description": "The first scientific intelligence platform dedicated to exoplanet L98-59d — the super-Earth with a confirmed sulfur-rich atmosphere and permanent magma ocean, as discovered by JWST in 2024.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "L98-59d",
-    "description": "Transforming frontier planetary science into accessible, actionable intelligence for researchers, educators, and innovators."
-  },
-  "about": {
-    "@type": "Exoplanet",
-    "name": "L98-59d",
-    "alternateName": "L 98-59 d",
-    "description": "A 1.6 Earth-radius super-Earth orbiting the M-dwarf star L 98-59, located 34.6 light-years from Earth. JWST detected hints of a sulfur-rich secondary atmosphere in 2024, confirmed by Nature Astronomy in 2026.",
-    "sameAs": [
-      "https://science.nasa.gov/exoplanet-catalog/l-98-59-d/",
-      "https://fr.wikipedia.org/wiki/L_98-59"
-    ]
+  :root {
+    --black: #050507;
+    --deep: #090b10;
+    --panel: #0d1018;
+    --border: rgba(255,255,255,0.06);
+    --accent: #c8a96e;
+    --accent2: #5de6c8;
+    --accent3: #e05c4b;
+    --dim: rgba(255,255,255,0.35);
+    --text: rgba(255,255,255,0.82);
+    --mono: 'Share Tech Mono', monospace;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'DM Sans', sans-serif;
   }
-}
-</script>
-</head>
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  /* SCANLINES */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 6vw 8vh;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 70% 40%, rgba(200,169,110,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(93,230,200,0.04) 0%, transparent 60%),
+      linear-gradient(160deg, #050507 0%, #0a0d15 50%, #050507 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 60% 30%, black 0%, transparent 70%);
+  }
+
+  .hero-corner {
+    position: absolute;
+    top: 0; left: 0;
+    width: 300px; height: 300px;
+    border-right: 1px solid rgba(200,169,110,0.15);
+    border-bottom: 1px solid rgba(200,169,110,0.15);
+  }
+
+  .hero-corner::before {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px;
+    right: -1px; bottom: -1px;
+    border-right: 1px solid rgba(200,169,110,0.07);
+    border-bottom: 1px solid rgba(200,169,110,0.07);
+  }
+
+  .hero-top-right {
+    position: absolute;
+    top: 40px; right: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 0.15em;
+  }
+
+  .classified-badge {
+    border: 1px solid var(--accent3);
+    color: var(--accent3);
+    padding: 4px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    animation: pulse-red 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-red {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(72px, 14vw, 180px);
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+    color: #fff;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+
+  .hero-title span {
+    color: var(--accent);
+    display: inline-block;
+  }
+
+  .hero-sub {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    color: var(--dim);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    max-width: 480px;
+    text-transform: uppercase;
+  }
+
+  .hero-stat-group {
+    display: flex;
+    gap: 32px;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 1px solid var(--accent);
+    padding-left: 14px;
+  }
+
+  .hero-stat-val {
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--accent);
+  }
+
+  .hero-stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    right: 6vw;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    animation: fadeUp 1.5s ease 1.2s forwards;
+    opacity: 0;
+  }
+
+  .scroll-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent));
+    animation: expand 2s ease 1.5s infinite;
+  }
+
+  @keyframes expand {
+    0%, 100% { transform: scaleX(1); opacity: 0.4; }
+    50% { transform: scaleX(1.4); opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,5,7,0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6vw;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-right {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--accent3);
+  }
+
+  /* MAIN LAYOUT */
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 6vw;
+  }
+
+  /* PHOTO BLOCKS */
+  .photo-block {
+    position: relative;
+    width: 100%;
+    margin: 80px 0;
+    overflow: hidden;
+  }
+
+  .photo-frame {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-frame-wide { aspect-ratio: 21/9; }
+  .photo-frame-sq { aspect-ratio: 4/3; }
+
+  .photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Aerial view simulation */
+  .photo-aerial {
+    background:
+      radial-gradient(circle at 50% 50%, rgba(200,169,110,0.08) 0%, transparent 60%),
+      linear-gradient(135deg, #0d1018 0%, #080b12 50%, #0d1018 100%);
+  }
+
+  .photo-aerial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Structural view simulation */
+  .photo-structure {
+    background: linear-gradient(160deg, #060810 0%, #0e1220 50%, #060810 100%);
+  }
+
+  .photo-structure::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(93,230,200,0.02) 60px, rgba(93,230,200,0.02) 61px),
+      repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200,169,110,0.02) 60px, rgba(200,169,110,0.02) 61px);
+  }
+
+  /* Human scale simulation */
+  .photo-human {
+    background: linear-gradient(to bottom, #080a10 0%, #0d1320 60%, #060810 100%);
+  }
+
+  .photo-human::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 40% at 50% 70%, rgba(93,230,200,0.05) 0%, transparent 70%);
+  }
+
+  .photo-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 16px 24px;
+    background: linear-gradient(to top, rgba(5,5,7,0.95), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .photo-caption-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+  }
+
+  .photo-caption-desc {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--dim);
+    letter-spacing: 0.15em;
+  }
+
+  .photo-corner-tl, .photo-corner-br {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+  }
+
+  .photo-corner-tl {
+    top: 12px; left: 12px;
+    border-top: 1px solid var(--accent);
+    border-left: 1px solid var(--accent);
+  }
+
+  .photo-corner-br {
+    bottom: 48px; right: 12px;
+    border-bottom: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 0 60px;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .section-number {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    padding-top: 8px;
+    white-space: nowrap;
+  }
+
+  .section-title-block {}
+
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(40px, 6vw, 80px);
+    letter-spacing: 0.04em;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    font-size: 14px;
+    color: var(--dim);
+    max-width: 640px;
+    letter-spacing: 0.03em;
+  }
+
+  /* CONTENT GRID */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+
+  .content-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content-wide {
+    grid-column: span 2;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+
+  .panel:hover {
+    border-color: rgba(200,169,110,0.2);
+  }
+
+  .panel-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .panel-title {
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .panel-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--dim);
+  }
+
+  .panel-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* DATA BLOCK */
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+
+  .data-row:last-child { border-bottom: none; }
+
+  .data-key {
+    color: var(--dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .data-val {
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .data-val-white { color: var(--text); }
+
+  /* BAR CHART */
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .bar-item { display: flex; flex-direction: column; gap: 6px; }
+
+  .bar-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  .bar-track {
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    animation: barGrow 1.5s cubic-bezier(0.4,0,0.2,1) forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  @keyframes barGrow {
+    to { transform: scaleX(1); }
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 60px 0;
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* METRIC CARDS */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    margin: 60px 0;
+  }
+
+  .metric-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .metric-card:hover::before { opacity: 1; }
+
+  .metric-num {
+    font-family: var(--mono);
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .metric-unit {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent2);
+    margin-left: 4px;
+  }
+
+  .metric-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 40px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-year {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    padding-top: 4px;
+    text-align: right;
+  }
+
+  .timeline-content {}
+
+  .timeline-phase {
+    font-family: var(--display);
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .timeline-desc {
+    font-size: 12px;
+    color: var(--dim);
+    line-height: 1.7;
+  }
+
+  /* TAG CLOUD */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .tag {
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .tag-accent { border-color: rgba(200,169,110,0.3); color: var(--accent); }
+  .tag-teal { border-color: rgba(93,230,200,0.3); color: var(--accent2); }
+
+  /* FULL WIDTH BANNER */
+  .banner {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 32px 40px;
+    margin: 40px 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text);
+    position: relative;
+  }
+
+  .banner::before {
+    content: '//';
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 120px;
+    border-top: 1px solid var(--border);
+    padding: 60px 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-col {}
+
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    color: var(--dim);
+    line-height: 1.8;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 24px 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.15em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .content-grid, .content-grid-3 { grid-template-columns: 1fr; }
+    .content-wide { grid-column: span 1; }
+    .metrics-strip { grid-template-columns: repeat(3, 1fr); }
+    .hero-sub { flex-direction: column; gap: 24px; }
+    .hero-stat-group { flex-wrap: wrap; }
+    footer { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+
+  /* ANIMATED DOTS */
+  .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 2s ease infinite;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.1; }
+  }
+
+  /* HIGHLIGHT LINE */
+  .highlight {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .highlight-teal { color: var(--accent2); }
+
+  /* GLITCH on title hover */
+  .hero-title:hover span {
+    animation: glitch 0.3s ease;
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0); }
+  }
+</style>
+</head>
 <body>
 
-<!-- Stars background -->
-<div class="stars" id="stars" aria-hidden="true"></div>
-
-<!-- Navigation -->
-<nav role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav-logo" aria-label="L98-59d home">L98-59D.COM</a>
-  <ul class="nav-links" role="list">
-    <li><a href="#discovery">Discovery</a></li>
-    <li><a href="#atmosphere">Atmosphere</a></li>
-    <li><a href="#platform">Platform</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#contact" class="nav-cta">Early Access</a></li>
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">19859D // CONSORTIUM</div>
+  <ul class="nav-links">
+    <li><a href="#context">CONTEXT</a></li>
+    <li><a href="#architecture">ARCH</a></li>
+    <li><a href="#urban">URBAN</a></li>
+    <li><a href="#energy">ENERGY</a></li>
+    <li><a href="#water">WATER</a></li>
+    <li><a href="#mobility">MOBILITY</a></li>
+    <li><a href="#tech">TECH</a></li>
+    <li><a href="#social">SOCIAL</a></li>
+    <li><a href="#metrics">METRICS</a></li>
   </ul>
+  <div class="nav-right">CLASSIFICATION: RESTRICTED</div>
 </nav>
 
-<main>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-corner"></div>
 
-<!-- ─── HERO ─── -->
-<section class="hero" aria-labelledby="hero-heading">
-  <div class="container">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-glow-2" aria-hidden="true"></div>
-
-    <div style="max-width: 680px; position: relative; z-index: 1;">
-      <div class="hero-eyebrow" aria-label="Discovery status">
-        JWST CONFIRMED · NATURE ASTRONOMY 2026 · 34.6 LY
-      </div>
-
-      <h1 id="hero-heading">
-        The exoplanet<br>
-        <em>rewriting</em><br>
-        planetary science.
-      </h1>
-
-      <p class="hero-sub">
-        L98-59d is a 1.6 Earth-radius super-Earth with a permanent magma ocean and a sulfur-rich atmosphere — the first confirmed secondary atmosphere on a rocky world beyond our solar system. We built the intelligence platform it deserves.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#platform" class="btn-primary">Explore the Platform</a>
-        <a href="#discovery" class="btn-ghost">
-          Read the Science
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <!-- Planet visualization -->
-    <div class="planet-ring" aria-hidden="true" role="img" aria-label="Artistic representation of exoplanet L98-59d">
-      <div class="orbit-ring-2"></div>
-      <div class="orbit-ring"></div>
-      <div class="planet-circle"></div>
-    </div>
+  <div class="hero-top-right">
+    <div class="classified-badge">⬛ CLASSIFIED</div>
+    <div>DOCUMENT REF: 19859D-V4.2</div>
+    <div>ISSUED: 2026.04.06</div>
+    <div>CONSORTIUM ALPHA ACCESS ONLY</div>
   </div>
-</section>
 
-<!-- ─── DATA TICKER ─── -->
-<div class="ticker" aria-label="Key planetary data" role="region">
-  <div class="ticker-inner">
-    <!-- Duplicate for seamless loop -->
-    <div class="ticker-item">RADIUS <span>1.58 R⊕</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">MASS <span>2.31 M⊕</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">ORBITAL PERIOD <span>7.45 DAYS</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">STAR TYPE <span>M-DWARF</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">DETECTION <span>TESS + HARPS</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">ATMOSPHERE SIGNAL <span>5.6σ</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">KEY MOLECULE <span>SO₂</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">DISTANCE <span>34.6 LY</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <!-- duplicate -->
-    <div class="ticker-item">RADIUS <span>1.58 R⊕</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">MASS <span>2.31 M⊕</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">ORBITAL PERIOD <span>7.45 DAYS</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">STAR TYPE <span>M-DWARF</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">DETECTION <span>TESS + HARPS</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">ATMOSPHERE SIGNAL <span>5.6σ</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">KEY MOLECULE <span>SO₂</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-    <div class="ticker-item">DISTANCE <span>34.6 LY</span></div>
-    <div class="ticker-item ticker-sep">·</div>
-  </div>
-</div>
+  <div class="hero-label">PROJECT CODENAME ◆ CONFIDENTIAL BRIEFING DOCUMENT</div>
 
-<!-- ─── DISCOVERY ─── -->
-<section class="discovery" id="discovery" aria-labelledby="discovery-heading">
-  <div class="container">
-    <div class="discovery-grid">
-      <div>
-        <div class="section-label">The Discovery</div>
-        <h2 id="discovery-heading">A world unlike <em>anything</em> we expected.</h2>
+  <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
 
-        <div class="discovery-facts" role="list">
-          <article class="fact-row" role="listitem">
-            <div class="fact-num">01</div>
-            <div class="fact-content">
-              <div class="fact-title">Permanent magma ocean</div>
-              <div class="fact-body">Unlike any known rocky body, L98-59d maintains a global magma ocean over geological timescales — continuously feeding sulfur compounds into its atmosphere via volcanic outgassing.</div>
-            </div>
-          </article>
-          <article class="fact-row" role="listitem">
-            <div class="fact-num">02</div>
-            <div class="fact-content">
-              <div class="fact-title">Secondary atmosphere confirmed</div>
-              <div class="fact-body">JWST's NIRSpec G395H mode detected a strong absorption feature between 3.3–4.8 microns, deviating from a flat line by 2.6 to 5.6σ — ruling out stellar contamination as the source.</div>
-            </div>
-          </article>
-          <article class="fact-row" role="listitem">
-            <div class="fact-num">03</div>
-            <div class="fact-content">
-              <div class="fact-title">Neither a gas dwarf nor a water world</div>
-              <div class="fact-body">L98-59d breaks both dominant formation models. Its chemically reducing mantle and early sulfur/hydrogen content (>1.8% by mass) point to an entirely new planetary archetype.</div>
-            </div>
-          </article>
-          <article class="fact-row" role="listitem">
-            <div class="fact-num">04</div>
-            <div class="fact-content">
-              <div class="fact-title">Closest analogous super-Earth to date</div>
-              <div class="fact-body">At 34.6 light-years, L98-59d is one of the nearest confirmed super-Earths with detectable atmospheric chemistry — making it the prime candidate for follow-up observations.</div>
-            </div>
-          </article>
-        </div>
+  <div class="hero-sub">
+    <div class="hero-desc">
+      Autonomous Urban Habitat System<br>
+      Rub' al Khali Deployment Zone — Phase I<br>
+      Consortium Architecture + Systems Division
+    </div>
+    <div class="hero-stat-group">
+      <div class="hero-stat">
+        <span class="hero-stat-val">12,000</span>
+        <span class="hero-stat-label">Residents — Phase I</span>
       </div>
-
-      <div class="discovery-visual">
-        <div class="spectrum-card" role="figure" aria-labelledby="spectrum-label">
-          <div class="spectrum-label" id="spectrum-label">JWST NIRSpec G395H — Atmospheric Retrieval</div>
-
-          <div class="spectrum-chart" aria-label="Atmospheric composition chart">
-            <div class="spectrum-row">
-              <div class="spec-mol">SO₂</div>
-              <div class="spec-bar-track"><div class="spec-bar-fill" style="width: 88%; background: var(--accent);"></div></div>
-              <div class="spec-val">Primary</div>
-            </div>
-            <div class="spectrum-row">
-              <div class="spec-mol">H₂</div>
-              <div class="spec-bar-track"><div class="spec-bar-fill" style="width: 62%; background: #6b5fa0;"></div></div>
-              <div class="spec-val">Background</div>
-            </div>
-            <div class="spectrum-row">
-              <div class="spec-mol">S₂</div>
-              <div class="spec-bar-track"><div class="spec-bar-fill" style="width: 38%; background: var(--gold);"></div></div>
-              <div class="spec-val">Candidate</div>
-            </div>
-            <div class="spectrum-row">
-              <div class="spec-mol">H₂O</div>
-              <div class="spec-bar-track"><div class="spec-bar-fill" style="width: 18%; background: var(--accent2);"></div></div>
-              <div class="spec-val">Trace</div>
-            </div>
-          </div>
-
-          <p class="spectrum-source">
-            Source: Gressier et al. 2024, <em>ApJ Letters</em> · <a href="https://arxiv.org/abs/2408.15855" target="_blank" rel="noopener noreferrer">arXiv:2408.15855</a>
-          </p>
-        </div>
-
-        <div class="stats-row" role="region" aria-label="Key planetary statistics">
-          <div class="stat-cell">
-            <div class="stat-value">1.58</div>
-            <div class="stat-label">Earth radii<br>super-Earth class</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-value">5.6σ</div>
-            <div class="stat-label">Atmospheric<br>detection confidence</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-value">7.5d</div>
-            <div class="stat-label">Orbital period<br>around L 98-59</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-value">34.6</div>
-            <div class="stat-label">Light-years<br>from Earth</div>
-          </div>
-        </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">340km²</span>
+        <span class="hero-stat-label">Deployment Zone</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">0.0</span>
+        <span class="hero-stat-label">External Grid</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-val">2031</span>
+        <span class="hero-stat-label">Phase I Target</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ─── ATMOSPHERE ─── -->
-<section class="atmosphere" id="atmosphere" aria-labelledby="atmo-heading">
-  <div class="container">
-    <div class="atmo-grid">
-      <div class="atmo-text">
-        <div class="section-label">Atmospheric Science</div>
-        <h2 id="atmo-heading">A world of <em>sulfur</em> and living rock.</h2>
-
-        <p>L98-59d's atmosphere is not a relic — it is actively produced. A permanent magma ocean on the planet's surface continuously outgasses sulfur compounds, which then undergo photochemical reactions in the upper atmosphere to produce sulfur dioxide (SO₂) as the dominant absorber.</p>
-
-        <div class="highlight-quote">
-          <p>"While cooling and escape shrank this planet, a permanent magma ocean supplies sulfur to its atmosphere, in which SO₂ is produced by photochemistry."</p>
-          <cite>— Nature Astronomy, March 2026 · Volatile-rich evolution of molten super-Earth L 98-59 d</cite>
-        </div>
-
-        <p>This mechanism — a geologically active interior driving an evolving secondary atmosphere — was not predicted by existing planetary formation models. It positions L98-59d as a new reference point for understanding how small rocky planets retain and cycle volatiles over billions of years.</p>
-      </div>
-
-      <div class="atmo-visual">
-        <div class="layer-diagram" role="list" aria-label="Atmospheric and interior layers of L98-59d">
-
-          <div class="layer layer-1" role="listitem">
-            <div class="layer-icon" style="background: rgba(200,40,20,0.15); color: var(--accent);" aria-hidden="true">☀️</div>
-            <div class="layer-info">
-              <div class="layer-name">Upper atmosphere — photochemistry</div>
-              <div class="layer-detail">UV + SO₂ → photolytic reactions · S₂, SO₃ production</div>
-            </div>
-            <span class="layer-badge" style="background: rgba(232,89,60,0.1); color: var(--accent);">ACTIVE</span>
-          </div>
-
-          <div class="layer layer-2" role="listitem">
-            <div class="layer-icon" style="background: rgba(180,70,40,0.12); color: #d07050;" aria-hidden="true">🌫</div>
-            <div class="layer-info">
-              <div class="layer-name">Mid atmosphere — SO₂ absorption layer</div>
-              <div class="layer-detail">3.3–4.8 μm absorption · JWST signal origin</div>
-            </div>
-            <span class="layer-badge" style="background: rgba(200,100,40,0.1); color: #d07050;">DETECTED</span>
-          </div>
-
-          <div class="layer layer-3" role="listitem">
-            <div class="layer-icon" style="background: rgba(160,120,40,0.12); color: var(--gold);" aria-hidden="true">💨</div>
-            <div class="layer-info">
-              <div class="layer-name">Lower atmosphere — H₂ background</div>
-              <div class="layer-detail">Reducing conditions · chemically reactive baseline</div>
-            </div>
-            <span class="layer-badge" style="background: rgba(200,160,40,0.1); color: var(--gold);">INFERRED</span>
-          </div>
-
-          <div class="layer layer-4" role="listitem">
-            <div class="layer-icon" style="background: rgba(80,120,80,0.12); color: #70a870;" aria-hidden="true">🪨</div>
-            <div class="layer-info">
-              <div class="layer-name">Crust — mantle interface</div>
-              <div class="layer-detail">Volatile exchange · sulfur cycling from interior</div>
-            </div>
-            <span class="layer-badge" style="background: rgba(60,100,60,0.1); color: #70a870;">MODELLED</span>
-          </div>
-
-          <div class="layer layer-5" role="listitem">
-            <div class="layer-icon" style="background: rgba(40,80,140,0.12); color: var(--accent2);" aria-hidden="true">🔥</div>
-            <div class="layer-info">
-              <div class="layer-name">Interior — permanent magma ocean</div>
-              <div class="layer-detail">Long-term volatile retention · geologically active over Gyr</div>
-            </div>
-            <span class="layer-badge" style="background: rgba(40,80,140,0.1); color: var(--accent2);">CONFIRMED</span>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── PLATFORM ─── -->
-<section class="platform" id="platform" aria-labelledby="platform-heading">
-  <div class="container">
-    <div class="platform-intro">
-      <div class="section-label">The Platform</div>
-      <h2 id="platform-heading">Science this important deserves <em>infrastructure</em>.</h2>
-      <p>L98-59d is the most-cited exoplanet of 2025–2026. We built the first dedicated platform to make its science accessible, structured, and actionable — for researchers, educators, communicators, and innovators.</p>
-    </div>
-
-    <div class="cards-grid" role="list">
-
-      <article class="platform-card" role="listitem">
-        <div class="card-num">01 — Data</div>
-        <div class="card-title">Live Science Feed</div>
-        <div class="card-body">Aggregated, parsed, and structured data from JWST, TESS, HARPS, and the peer-reviewed literature. Updated as new observations are published. Built for humans, queryable by machines.</div>
-        <div class="card-tags">
-          <span class="ctag ctag-red">JWST</span>
-          <span class="ctag ctag-blue">TESS</span>
-          <span class="ctag ctag-gold">API</span>
-        </div>
-      </article>
-
-      <article class="platform-card" role="listitem">
-        <div class="card-num">02 — Education</div>
-        <div class="card-title">Interactive Explorer</div>
-        <div class="card-body">An immersive, pedagogically rigorous experience designed for university courses, museum installations, and self-directed learners. From orbital mechanics to atmospheric chemistry — made visual.</div>
-        <div class="card-tags">
-          <span class="ctag ctag-blue">EDU</span>
-          <span class="ctag ctag-red">Interactive</span>
-          <span class="ctag ctag-gold">B2B</span>
-        </div>
-      </article>
-
-      <article class="platform-card" role="listitem">
-        <div class="card-num">03 — Intelligence</div>
-        <div class="card-title">Narrative Briefs</div>
-        <div class="card-body">Expert-curated deep dives translating frontier exoplanet research into clear, contextualized reports for science communicators, policy teams, media professionals, and research-adjacent organizations.</div>
-        <div class="card-tags">
-          <span class="ctag ctag-gold">Reports</span>
-          <span class="ctag ctag-red">B2B</span>
-          <span class="ctag ctag-blue">Premium</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── WHY NOW ─── -->
-<section id="why-now" aria-labelledby="why-heading">
-  <div class="container">
-    <div class="why-grid">
-      <div>
-        <div class="section-label">Why L98-59d, Why Now</div>
-        <h2 id="why-heading">A <em>convergence</em> of signal, timing, and access.</h2>
-
-        <div class="why-items">
-          <div class="why-item">
-            <div class="why-marker" aria-hidden="true"></div>
-            <div class="why-content">
-              <div class="why-title">The most powerful space telescope ever built just confirmed it</div>
-              <div class="why-body">JWST's NIRSpec G395H detected L98-59d's atmosphere in a single transit observation. This is a first in the history of exoplanet science for a planet of this size.</div>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-marker" aria-hidden="true"></div>
-            <div class="why-content">
-              <div class="why-title">Nature Astronomy published the confirmation in 2026</div>
-              <div class="why-body">The volatile-rich evolution model — a brand new planetary archetype — was peer-reviewed and published in one of the most prestigious scientific journals in the world.</div>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-marker" aria-hidden="true"></div>
-            <div class="why-content">
-              <div class="why-title">No dedicated platform exists yet</div>
-              <div class="why-body">Despite being the most studied super-Earth of its generation, L98-59d has no hub, no structured data layer, no education product. That gap is the opportunity.</div>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-marker" aria-hidden="true"></div>
-            <div class="why-content">
-              <div class="why-title">Follow-up observations are already scheduled</div>
-              <div class="why-body">Multiple JWST cycles and ground-based campaigns targeting L98-59d are in progress. The scientific output will compound over the next 3–5 years.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="why-stat-block" role="region" aria-label="Market and scientific context">
-          <div class="wstat">
-            <div class="wstat-label">Global space economy (2024)</div>
-            <div class="wstat-val"><span class="wv-num">$546B</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">Private sector share</div>
-            <div class="wstat-val"><span class="wv-num">80%</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">JWST detection confidence (L98-59d)</div>
-            <div class="wstat-val"><span class="wv-num">5.6σ</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">Peer-reviewed publications on L 98-59 (2019–2026)</div>
-            <div class="wstat-val"><span class="wv-num">40+</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">Science edtech market (2026)</div>
-            <div class="wstat-val"><span class="wv-num">$4.2B</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">Bpifrance France 2030 space funding (2020–24)</div>
-            <div class="wstat-val"><span class="wv-num">€400M</span></div>
-          </div>
-          <div class="wstat">
-            <div class="wstat-label">L98-59d distance from Earth</div>
-            <div class="wstat-val"><span class="wv-num">34.6 ly</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── KEY PUBLICATIONS ─── -->
-<section class="publications" id="research" aria-labelledby="research-heading">
-  <div class="container">
-    <div class="pub-intro">
-      <div class="section-label">Key Research</div>
-      <h2 id="research-heading">Built on <em>verified</em> science.</h2>
-      <p>Every dataset, insight, and visualization on this platform traces back to peer-reviewed, open-access research. Here is the core literature underpinning everything we do.</p>
-    </div>
-
-    <div class="pub-list" role="list">
-
-      <article class="pub-row" role="listitem">
-        <div class="pub-year">2026</div>
-        <div class="pub-title-col">
-          <div class="pub-title">Volatile-rich evolution of molten super-Earth L 98-59 d</div>
-          <div class="pub-journal">NATURE ASTRONOMY · Lichtenberg et al.</div>
-        </div>
-        <span class="pub-tag" style="background: rgba(232,89,60,0.1); color: var(--accent); font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 2px;">NEW</span>
-        <div class="pub-sigma"></div>
-      </article>
-
-      <article class="pub-row" role="listitem">
-        <div class="pub-year">2024</div>
-        <div class="pub-title-col">
-          <div class="pub-title">Hints of a sulfur-rich atmosphere from JWST NIRSpec G395H</div>
-          <div class="pub-journal">APJ LETTERS · Gressier et al. · arXiv:2408.15855</div>
-        </div>
-        <span class="pub-tag" style="background: rgba(59,139,212,0.1); color: var(--accent2); font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 2px;">CORE</span>
-        <div class="pub-sigma">5.6σ</div>
-      </article>
-
-      <article class="pub-row" role="listitem">
-        <div class="pub-year">2024</div>
-        <div class="pub-title-col">
-          <div class="pub-title">Atmospheric retrievals suggesting secondary atmosphere and sulfur species on L98-59d</div>
-          <div class="pub-journal">APJ LETTERS · Banerjee et al.</div>
-        </div>
-        <span class="pub-tag" style="background: rgba(200,153,58,0.1); color: var(--gold); font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 2px;">PARALLEL</span>
-        <div class="pub-sigma"></div>
-      </article>
-
-      <article class="pub-row" role="listitem">
-        <div class="pub-year">2021</div>
-        <div class="pub-title-col">
-          <div class="pub-title">Warm terrestrial planet with half the mass of Venus transiting a nearby M-dwarf</div>
-          <div class="pub-journal">A&A · Demangeon et al. · L98-59b characterization</div>
-        </div>
-        <span class="pub-tag" style="background: rgba(107,106,112,0.15); color: var(--muted); font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 2px;">FOUNDATIONAL</span>
-        <div class="pub-sigma"></div>
-      </article>
-
-      <article class="pub-row" role="listitem">
-        <div class="pub-year">2019</div>
-        <div class="pub-title-col">
-          <div class="pub-title">L 98-59 system initial discovery — three terrestrial exoplanets</div>
-          <div class="pub-journal">AJ · Kostov et al. · TESS discovery paper</div>
-        </div>
-        <span class="pub-tag" style="background: rgba(107,106,112,0.15); color: var(--muted); font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 2px;">ORIGIN</span>
-        <div class="pub-sigma"></div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA ─── -->
-<section class="cta-section" id="contact" aria-labelledby="cta-heading">
-  <div class="container">
-    <div style="position: relative; z-index: 1;">
-      <div class="section-label" style="justify-content: center;">Early Access</div>
-      <h2 id="cta-heading" style="margin: 1.5rem auto 1rem;">Be first to explore <em>L98-59d</em>.</h2>
-      <p class="cta-sub">The platform launches to early partners in 2026. Join the list to get access to the data API, the first Intelligence Briefs, and founding partner pricing.</p>
-
-      <form class="cta-form" action="#" method="post" aria-label="Early access signup">
-        <label for="email-input" class="sr-only">Email address</label>
-        <input
-          type="email"
-          id="email-input"
-          name="email"
-          class="cta-input"
-          placeholder="your@email.com"
-          required
-          autocomplete="email"
-          aria-label="Your email address"
-        >
-        <button type="submit" class="btn-primary" style="white-space: nowrap;">Request Access</button>
-      </form>
-
-      <p style="font-family: var(--mono); font-size: 10px; color: var(--dim); margin-top: 1rem; letter-spacing: 0.06em;">No spam. No fluff. Just frontier science — structured.</p>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ─── FOOTER ─── -->
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span>L98-59D</span>.COM — Scientific Intelligence Platform
-      </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#discovery">Discovery</a>
-        <a href="#atmosphere">Atmosphere</a>
-        <a href="#platform">Platform</a>
-        <a href="#research">Research</a>
-        <a href="https://arxiv.org/abs/2408.15855" target="_blank" rel="noopener noreferrer">arXiv Paper</a>
-      </nav>
-      <div class="footer-right">
-        <div>All scientific data sourced from peer-reviewed literature.</div>
-        <div>NASA · ESA · JWST · TESS · HARPS</div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Visually hidden utility -->
-<style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }</style>
-
-<script>
-// Generate star field
-(function() {
-  const container = document.getElementById('stars');
-  const count = 160;
-  for (let i = 0; i < count; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
-    const size = Math.random() * 1.8 + 0.4;
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const dur = (Math.random() * 4 + 2).toFixed(1);
-    const delay = (Math.random() * 5).toFixed(1);
-    const minO = (Math.random() * 0.08 + 0.04).toFixed(2);
-    const maxO = (Math.random() * 0.5 + 0.3).toFixed(2);
-    star.style.cssText = `
-      width: ${size}px;
-      height: ${size}px;
-      left: ${x}%;
-      top: ${y}%;
-      --d: ${dur}s;
-      --delay: -${delay}s;
-      --min: ${minO};
-      --max: ${maxO};
-    `;
-    container.appendChild(star);
-  }
-})();
-
-// Smooth email form feedback
-document.querySelector('.cta-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button');
-  const input = this.querySelector('input');
-  if (input.value) {
-    btn.textContent = 'You\'re on the list ✓';
-    btn.style.background = '#1D9E75';
-    input.value = '';
-    input.disabled = true;
-    btn.disabled = true;
-  }
-});
-
-// Intersection observer for subtle reveal animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(el => {
-    if (el.isIntersecting) {
-      el.target.style.opacity = '1';
-      el.target.style.transform = 'translateY(0)';
-      observer.unobserve(el.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.fact-row, .layer, .pub-row, .platform-card, .why-item, .wstat').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
-</script>
-
-</body>
-</html>
+  </di
