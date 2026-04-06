@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROJECT 19859D — CLASSIFIED ARCHITECTURAL BRIEF</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<title>PROJECT 19859D — Autonomous Urban District</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #050507;
@@ -13,9 +13,8 @@
     --border: rgba(255,255,255,0.06);
     --accent: #c8a96e;
     --accent2: #5de6c8;
-    --accent3: #e05c4b;
-    --dim: rgba(255,255,255,0.35);
     --text: rgba(255,255,255,0.82);
+    --dim: rgba(255,255,255,0.35);
     --mono: 'Share Tech Mono', monospace;
     --display: 'Bebas Neue', sans-serif;
     --body: 'DM Sans', sans-serif;
@@ -30,206 +29,8 @@
     color: var(--text);
     font-family: var(--body);
     font-weight: 300;
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
-
-  /* NOISE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.5;
-  }
-
-  /* SCANLINES */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
-    pointer-events: none;
-    z-index: 9998;
-  }
-
-  /* HERO */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 6vw 8vh;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 70% 40%, rgba(200,169,110,0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(93,230,200,0.04) 0%, transparent 60%),
-      linear-gradient(160deg, #050507 0%, #0a0d15 50%, #050507 100%);
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at 60% 30%, black 0%, transparent 70%);
-  }
-
-  .hero-corner {
-    position: absolute;
-    top: 0; left: 0;
-    width: 300px; height: 300px;
-    border-right: 1px solid rgba(200,169,110,0.15);
-    border-bottom: 1px solid rgba(200,169,110,0.15);
-  }
-
-  .hero-corner::before {
-    content: '';
-    position: absolute;
-    top: 20px; left: 20px;
-    right: -1px; bottom: -1px;
-    border-right: 1px solid rgba(200,169,110,0.07);
-    border-bottom: 1px solid rgba(200,169,110,0.07);
-  }
-
-  .hero-top-right {
-    position: absolute;
-    top: 40px; right: 6vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--dim);
-    letter-spacing: 0.15em;
-  }
-
-  .classified-badge {
-    border: 1px solid var(--accent3);
-    color: var(--accent3);
-    padding: 4px 12px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    animation: pulse-red 3s ease-in-out infinite;
-  }
-
-  @keyframes pulse-red {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-
-  .hero-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.3s forwards;
-  }
-
-  .hero-title {
-    font-family: var(--display);
-    font-size: clamp(72px, 14vw, 180px);
-    letter-spacing: 0.02em;
-    line-height: 0.9;
-    color: #fff;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.5s forwards;
-  }
-
-  .hero-title span {
-    color: var(--accent);
-    display: inline-block;
-  }
-
-  .hero-sub {
-    margin-top: 32px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.8s forwards;
-  }
-
-  .hero-desc {
-    font-size: 13px;
-    color: var(--dim);
-    letter-spacing: 0.08em;
     line-height: 1.6;
-    max-width: 480px;
-    text-transform: uppercase;
-  }
-
-  .hero-stat-group {
-    display: flex;
-    gap: 32px;
-  }
-
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    border-left: 1px solid var(--accent);
-    padding-left: 14px;
-  }
-
-  .hero-stat-val {
-    font-family: var(--mono);
-    font-size: 22px;
-    color: var(--accent);
-  }
-
-  .hero-stat-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--dim);
-    text-transform: uppercase;
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    right: 6vw;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--dim);
-    animation: fadeUp 1.5s ease 1.2s forwards;
-    opacity: 0;
-  }
-
-  .scroll-line {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent));
-    animation: expand 2s ease 1.5s infinite;
-  }
-
-  @keyframes expand {
-    0%, 100% { transform: scaleX(1); opacity: 0.4; }
-    50% { transform: scaleX(1.4); opacity: 1; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    overflow-x: hidden;
   }
 
   /* NAV */
@@ -237,20 +38,20 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5,5,7,0.9);
+    background: rgba(5,5,7,0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 6vw;
-    height: 56px;
+    height: 64px;
   }
 
   .nav-logo {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.3em;
+    font-size: 13px;
+    letter-spacing: 0.2em;
     color: var(--accent);
   }
 
@@ -262,8 +63,8 @@
 
   .nav-links a {
     font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.15em;
     color: var(--dim);
     text-decoration: none;
     text-transform: uppercase;
@@ -272,146 +73,102 @@
 
   .nav-links a:hover { color: var(--accent); }
 
-  .nav-right {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.15em;
-    color: var(--accent3);
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 6vw 10vh;
+    border-bottom: 1px solid var(--border);
   }
 
-  /* MAIN LAYOUT */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(93,230,200,0.04) 0%, transparent 60%),
+      linear-gradient(160deg, #050507 0%, #0a0d15 50%, #050507 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(64px, 12vw, 160px);
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+    color: #fff;
+  }
+
+  .hero-title span {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .hero-stat-group {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    border-left: 1px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .hero-stat-val {
+    font-family: var(--mono);
+    font-size: 24px;
+    color: var(--accent);
+  }
+
+  .hero-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  /* MAIN */
   main {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 6vw;
   }
 
-  /* PHOTO BLOCKS */
-  .photo-block {
-    position: relative;
-    width: 100%;
-    margin: 80px 0;
-    overflow: hidden;
-  }
-
-  .photo-frame {
-    width: 100%;
-    aspect-ratio: 16/7;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .photo-frame-wide { aspect-ratio: 21/9; }
-  .photo-frame-sq { aspect-ratio: 4/3; }
-
-  .photo-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  /* Aerial view simulation */
-  .photo-aerial {
-    background:
-      radial-gradient(circle at 50% 50%, rgba(200,169,110,0.08) 0%, transparent 60%),
-      linear-gradient(135deg, #0d1018 0%, #080b12 50%, #0d1018 100%);
-  }
-
-  .photo-aerial::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,169,110,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Structural view simulation */
-  .photo-structure {
-    background: linear-gradient(160deg, #060810 0%, #0e1220 50%, #060810 100%);
-  }
-
-  .photo-structure::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(93,230,200,0.02) 60px, rgba(93,230,200,0.02) 61px),
-      repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(200,169,110,0.02) 60px, rgba(200,169,110,0.02) 61px);
-  }
-
-  /* Human scale simulation */
-  .photo-human {
-    background: linear-gradient(to bottom, #080a10 0%, #0d1320 60%, #060810 100%);
-  }
-
-  .photo-human::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 50% 40% at 50% 70%, rgba(93,230,200,0.05) 0%, transparent 70%);
-  }
-
-  .photo-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .photo-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 16px 24px;
-    background: linear-gradient(to top, rgba(5,5,7,0.95), transparent);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .photo-caption-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-  }
-
-  .photo-caption-desc {
-    font-family: var(--mono);
-    font-size: 9px;
-    color: var(--dim);
-    letter-spacing: 0.15em;
-  }
-
-  .photo-corner-tl, .photo-corner-br {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-  }
-
-  .photo-corner-tl {
-    top: 12px; left: 12px;
-    border-top: 1px solid var(--accent);
-    border-left: 1px solid var(--accent);
-  }
-
-  .photo-corner-br {
-    bottom: 48px; right: 12px;
-    border-bottom: 1px solid var(--accent);
-    border-right: 1px solid var(--accent);
-  }
-
-  /* SECTIONS */
   section {
     padding: 100px 0 60px;
     border-top: 1px solid var(--border);
@@ -427,18 +184,16 @@
 
   .section-number {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.3em;
     color: var(--accent);
     padding-top: 8px;
     white-space: nowrap;
   }
 
-  .section-title-block {}
-
   .section-title {
     font-family: var(--display);
-    font-size: clamp(40px, 6vw, 80px);
+    font-size: clamp(36px, 5vw, 72px);
     letter-spacing: 0.04em;
     color: #fff;
     line-height: 1;
@@ -446,43 +201,36 @@
   }
 
   .section-intro {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--dim);
-    max-width: 640px;
-    letter-spacing: 0.03em;
+    max-width: 680px;
+    line-height: 1.6;
   }
 
-  /* CONTENT GRID */
-  .content-grid {
+  /* GRIDS */
+  .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
     margin-bottom: 40px;
   }
 
-  .content-grid-3 {
+  .grid-3 {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .content-wide {
-    grid-column: span 2;
+    gap: 2px;
+    margin-bottom: 40px;
   }
 
   .panel {
     background: var(--panel);
     border: 1px solid var(--border);
     padding: 40px;
-    position: relative;
-    transition: border-color 0.3s;
-  }
-
-  .panel:hover {
-    border-color: rgba(200,169,110,0.2);
   }
 
   .panel-label {
     font-family: var(--mono);
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.3em;
     color: var(--accent);
     margin-bottom: 16px;
@@ -491,181 +239,132 @@
 
   .panel-title {
     font-family: var(--display);
-    font-size: 28px;
+    font-size: 26px;
     letter-spacing: 0.06em;
     color: #fff;
     margin-bottom: 20px;
   }
 
   .panel-text {
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.7;
     color: var(--dim);
   }
 
-  .panel-text strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  /* DATA BLOCK */
+  /* DATA ROWS */
   .data-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border);
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .data-row:last-child { border-bottom: none; }
 
   .data-key {
     color: var(--dim);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .data-val {
     color: var(--accent);
-    letter-spacing: 0.1em;
   }
 
-  .data-val-white { color: var(--text); }
-
-  /* BAR CHART */
-  .bar-group {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 24px;
+  /* PHOTO BLOCKS */
+  .photo-block {
+    margin: 80px 0;
   }
 
-  .bar-item { display: flex; flex-direction: column; gap: 6px; }
+  .photo-frame {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
 
-  .bar-meta {
+  .photo-frame-wide { aspect-ratio: 21/9; }
+  .photo-frame-sq { aspect-ratio: 4/3; }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-caption {
+    padding: 16px 24px;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.15em;
+    font-size: 10px;
     color: var(--dim);
-    text-transform: uppercase;
   }
 
-  .bar-track {
-    height: 2px;
-    background: rgba(255,255,255,0.06);
-    position: relative;
-    overflow: hidden;
+  .photo-caption-label {
+    color: var(--accent);
+    letter-spacing: 0.2em;
   }
 
-  .bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    animation: barGrow 1.5s cubic-bezier(0.4,0,0.2,1) forwards;
-    transform-origin: left;
-    transform: scaleX(0);
-  }
-
-  @keyframes barGrow {
-    to { transform: scaleX(1); }
-  }
-
-  /* DIVIDER */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin: 60px 0;
-    color: var(--dim);
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.3em;
-  }
-
-  .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* METRIC CARDS */
+  /* METRICS STRIP */
   .metrics-strip {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 2px;
+    gap: 1px;
+    background: var(--border);
     margin: 60px 0;
   }
 
   .metric-card {
     background: var(--panel);
-    border: 1px solid var(--border);
-    padding: 28px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    position: relative;
-    overflow: hidden;
+    padding: 32px 20px;
+    text-align: center;
   }
-
-  .metric-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .metric-card:hover::before { opacity: 1; }
 
   .metric-num {
     font-family: var(--mono);
-    font-size: 28px;
+    font-size: 32px;
     color: var(--accent);
-    letter-spacing: -0.02em;
-    line-height: 1;
   }
 
   .metric-unit {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--accent2);
-    margin-left: 4px;
   }
 
   .metric-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.15em;
     color: var(--dim);
     text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  /* BANNER */
+  .banner {
+    background: var(--panel);
+    border-left: 3px solid var(--accent);
+    padding: 32px 40px;
+    margin: 48px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
   }
 
   /* TIMELINE */
   .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 100px;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--accent), transparent);
+    margin: 48px 0;
   }
 
   .timeline-item {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 120px 1fr;
     gap: 40px;
     padding: 32px 0;
     border-bottom: 1px solid var(--border);
@@ -673,105 +372,48 @@
 
   .timeline-year {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 14px;
     color: var(--accent);
-    letter-spacing: 0.15em;
-    padding-top: 4px;
-    text-align: right;
+    font-weight: 500;
   }
-
-  .timeline-content {}
 
   .timeline-phase {
     font-family: var(--display);
     font-size: 20px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     color: #fff;
     margin-bottom: 8px;
   }
 
   .timeline-desc {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--dim);
-    line-height: 1.7;
-  }
-
-  /* TAG CLOUD */
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .tag {
-    border: 1px solid var(--border);
-    padding: 4px 12px;
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--dim);
-    text-transform: uppercase;
-    transition: all 0.2s;
-  }
-
-  .tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .tag-accent { border-color: rgba(200,169,110,0.3); color: var(--accent); }
-  .tag-teal { border-color: rgba(93,230,200,0.3); color: var(--accent2); }
-
-  /* FULL WIDTH BANNER */
-  .banner {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    padding: 32px 40px;
-    margin: 40px 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--text);
-    position: relative;
-  }
-
-  .banner::before {
-    content: '//';
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    position: absolute;
-    top: 14px;
-    right: 20px;
-    letter-spacing: 0.1em;
+    line-height: 1.6;
   }
 
   /* FOOTER */
   footer {
-    margin-top: 120px;
+    margin-top: 100px;
     border-top: 1px solid var(--border);
     padding: 60px 6vw;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
   }
 
-  .footer-col {}
-
   .footer-label {
     font-family: var(--mono);
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.3em;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     text-transform: uppercase;
   }
 
   .footer-text {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--dim);
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .footer-bottom {
@@ -779,122 +421,241 @@
     padding: 24px 6vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     font-family: var(--mono);
-    font-size: 9px;
+    font-size: 10px;
     color: rgba(255,255,255,0.2);
-    letter-spacing: 0.15em;
   }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .content-grid, .content-grid-3 { grid-template-columns: 1fr; }
-    .content-wide { grid-column: span 1; }
-    .metrics-strip { grid-template-columns: repeat(3, 1fr); }
-    .hero-sub { flex-direction: column; gap: 24px; }
-    .hero-stat-group { flex-wrap: wrap; }
-    footer { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-  }
-
-  /* ANIMATED DOTS */
-  .dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease infinite;
-    vertical-align: middle;
-    margin: 0 4px;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.1; }
-  }
-
-  /* HIGHLIGHT LINE */
-  .highlight {
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  .highlight-teal { color: var(--accent2); }
-
-  /* GLITCH on title hover */
-  .hero-title:hover span {
-    animation: glitch 0.3s ease;
-  }
-
-  @keyframes glitch {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 1px); }
-    40% { transform: translate(2px, -1px); }
-    60% { transform: translate(-1px, 2px); }
-    80% { transform: translate(1px, -2px); }
-    100% { transform: translate(0); }
+    .grid-2, .grid-3 {
+      grid-template-columns: 1fr;
+    }
+    .metrics-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    footer {
+      grid-template-columns: 1fr;
+    }
+    .nav-links {
+      display: none;
+    }
+    .section-header {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
-  <div class="nav-logo">19859D // CONSORTIUM</div>
+  <div class="nav-logo">PROJECT 19859D // URBAN CONSORTIUM</div>
   <ul class="nav-links">
     <li><a href="#context">CONTEXT</a></li>
-    <li><a href="#architecture">ARCH</a></li>
+    <li><a href="#architecture">ARCHITECTURE</a></li>
     <li><a href="#urban">URBAN</a></li>
     <li><a href="#energy">ENERGY</a></li>
     <li><a href="#water">WATER</a></li>
     <li><a href="#mobility">MOBILITY</a></li>
     <li><a href="#tech">TECH</a></li>
-    <li><a href="#social">SOCIAL</a></li>
     <li><a href="#metrics">METRICS</a></li>
   </ul>
-  <div class="nav-right">CLASSIFICATION: RESTRICTED</div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-corner"></div>
-
-  <div class="hero-top-right">
-    <div class="classified-badge">⬛ CLASSIFIED</div>
-    <div>DOCUMENT REF: 19859D-V4.2</div>
-    <div>ISSUED: 2026.04.06</div>
-    <div>CONSORTIUM ALPHA ACCESS ONLY</div>
-  </div>
-
-  <div class="hero-label">PROJECT CODENAME ◆ CONFIDENTIAL BRIEFING DOCUMENT</div>
-
+  <div class="hero-label">◆ DEPLOYABLE AUTONOMOUS URBAN DISTRICT ◆</div>
   <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
-
   <div class="hero-sub">
     <div class="hero-desc">
-      Autonomous Urban Habitat System<br>
-      Rub' al Khali Deployment Zone — Phase I<br>
-      Consortium Architecture + Systems Division
+      A fully self-sufficient urban habitat designed for permanent occupation under extreme arid conditions. Integrated passive cooling, closed-loop resources, AI-managed infrastructure.
     </div>
     <div class="hero-stat-group">
-      <div class="hero-stat">
-        <span class="hero-stat-val">12,000</span>
-        <span class="hero-stat-label">Residents — Phase I</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-val">340km²</span>
-        <span class="hero-stat-label">Deployment Zone</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-val">0.0</span>
-        <span class="hero-stat-label">External Grid</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-val">2031</span>
-        <span class="hero-stat-label">Phase I Target</span>
-      </div>
+      <div class="hero-stat"><span class="hero-stat-val">12,000</span><div class="hero-stat-label">RESIDENTS — PHASE I</div></div>
+      <div class="hero-stat"><span class="hero-stat-val">680ha</span><div class="hero-stat-label">URBAN FOOTPRINT</div></div>
+      <div class="hero-stat"><span class="hero-stat-val">96%</span><div class="hero-stat-label">RENEWABLE ENERGY</div></div>
+      <div class="hero-stat"><span class="hero-stat-val">2031</span><div class="hero-stat-label">PHASE I TARGET</div></div>
     </div>
-  </di
+  </div>
+</div>
+
+<main>
+
+<!-- PHOTO 1 — AERIAL MASTERPLAN -->
+<div class="photo-block">
+  <div class="photo-frame photo-frame-wide">
+    <img src="photo1.png" alt="Aerial masterplan view">
+  </div>
+  <div class="photo-caption">
+    <span class="photo-caption-label">MASTERPLAN 19859D — AERIAL VIEW</span>
+    <span>photo1.png</span>
+  </div>
+</div>
+
+<!-- CONTEXT -->
+<section id="context">
+  <div class="section-header">
+    <div class="section-number">00 — URBAN CONTEXT</div>
+    <div>
+      <h2 class="section-title">AUTONOMOUS<br>URBAN NUCLEUS</h2>
+      <p class="section-intro">Project 19859D is a fully self-sufficient urban habitat designed for permanent occupation under extreme arid conditions. This document constitutes the formal architectural and systems brief.</p>
+    </div>
+  </div>
+
+  <div class="banner">
+    PROJECT 19859D represents the first deployment of a full-spectrum autonomous urban system in a hyper-arid environment with zero reliance on external infrastructure. The project integrates advanced passive cooling architecture, closed-loop resource systems, AI-managed infrastructure, and a progressive social governance model designed for 12,000 residents at Phase I, scaling to 48,000 by 2045.
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="panel-label">SITE DESIGNATION</div>
+      <div class="panel-title">RUB' AL KHALI<br>DEPLOYMENT ZONE</div>
+      <div class="panel-text">Located in the eastern sector of the Rub' al Khali (Empty Quarter), Arabian Peninsula — <strong>22.8°N, 54.3°E</strong>. Elevation: 312m above sea level on a stable ancient sabkha platform with minimal seismic activity (Zone I).</div>
+    </div>
+    <div class="panel">
+      <div class="panel-label">ENVIRONMENTAL PARAMETERS</div>
+      <div class="panel-title">EXTREME CONDITIONS</div>
+      <div class="data-row"><span class="data-key">Peak summer temperature</span><span class="data-val">+54°C surface, +48°C ambient</span></div>
+      <div class="data-row"><span class="data-key">Annual precipitation</span><span class="data-val">&lt; 35mm</span></div>
+      <div class="data-row"><span class="data-key">Solar irradiance (GHI)</span><span class="data-val">2,450 kWh/m²/yr</span></div>
+      <div class="data-row"><span class="data-key">Relative humidity (avg)</span><span class="data-val">12–28%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="section-header">
+    <div class="section-number">03 — ARCHITECTURAL SYSTEM</div>
+    <div>
+      <h2 class="section-title">STRUCTURE & MATERIALS</h2>
+      <p class="section-intro">Every material choice is driven by thermodynamic performance, structural logic, and long-term maintainability under extreme conditions.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="panel"><div class="panel-label">PRIMARY STRUCTURE</div><div class="panel-title">MODULAR HEXAFRAME</div><div class="panel-text">Prefabricated hexagonal steel-composite frame system based on 6m × 6m × 5.2m unit cells. BFRP columns — 40% lighter than steel, thermal conductivity 0.04 W/m·K.</div></div>
+    <div class="panel"><div class="panel-label">THERMAL ENVELOPE</div><div class="panel-title">ADAPTIVE SKIN</div><div class="panel-text">Triple-layer ETFE cushions with electrochromic membrane. Aerogel insulation: 0.015 W/m·K. PCM panels absorb 220 kJ/kg of peak thermal load.</div></div>
+    <div class="panel"><div class="panel-label">PASSIVE COOLING</div><div class="panel-title">WIND & THERMAL LOGIC</div><div class="panel-text">City oriented at 32° from true north. Wind catchers generate 4–8 Pa pressure differentials. Thermal chimneys integrated within structural walls.</div></div>
+  </div>
+</section>
+
+<!-- PHOTO 2 — BALCONY VIEW -->
+<div class="photo-block">
+  <div class="photo-frame photo-frame-wide">
+    <img src="photo2.png" alt="Balcony view">
+  </div>
+  <div class="photo-caption">
+    <span class="photo-caption-label">BALCONY VIEW — STREET LEVEL</span>
+    <span>photo2.png</span>
+  </div>
+</div>
+
+<!-- URBAN PLANNING -->
+<section id="urban">
+  <div class="section-header">
+    <div class="section-number">04 — URBAN PLANNING</div>
+    <div>
+      <h2 class="section-title">CITY LAYOUT</h2>
+      <p class="section-intro">Radial-nodal model — a central hub surrounded by six distinct functional sectors, each with its own microclimate management strategy.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel"><div class="panel-label">ZONING STRATEGY</div><div class="panel-title">RADIAL NODAL</div><div class="panel-text">Central civic nucleus (Zone 0) surrounded by six sectors: Residential clusters R1–R3 (3,800 units), Research & Production Zone, and Agricultural ring — 18km of controlled-atmosphere growing structures.</div></div>
+    <div class="panel"><div class="panel-label">HUMAN SCALE</div><div class="panel-title">WALKABILITY</div><div class="panel-text">Max walking distance to transit: 320m. No resident more than 600m from open green space. Urban density: 180 residents/hectare. 34% of floor area visually connected to planted surface.</div></div>
+  </div>
+</section>
+
+<!-- ENERGY -->
+<section id="energy">
+  <div class="section-header">
+    <div class="section-number">05 — ENERGY SYSTEM</div>
+    <div>
+      <h2 class="section-title">ZERO-GRID ENERGY</h2>
+      <p class="section-intro">Total energy independence is a hard constraint. The system is sized for 150% of projected peak load.</p>
+    </div>
+  </div>
+
+  <div class="metrics-strip">
+    <div class="metric-card"><div class="metric-num">847<span class="metric-unit">MW</span></div><div class="metric-label">PEAK PV CAPACITY</div></div>
+    <div class="metric-card"><div class="metric-num">140<span class="metric-unit">MW</span></div><div class="metric-label">CSP OUTPUT</div></div>
+    <div class="metric-card"><div class="metric-num">2.4<span class="metric-unit">GWh</span></div><div class="metric-label">BESS STORAGE</div></div>
+    <div class="metric-card"><div class="metric-num">18<span class="metric-unit">h</span></div><div class="metric-label">AUTONOMY</div></div>
+    <div class="metric-card"><div class="metric-num">96<span class="metric-unit">%</span></div><div class="metric-label">RENEWABLE</div></div>
+    <div class="metric-card"><div class="metric-num">38<span class="metric-unit">kWh</span></div><div class="metric-label">PER CAPITA/DAY</div></div>
+  </div>
+</section>
+
+<!-- WATER & FOOD -->
+<section id="water">
+  <div class="section-header">
+    <div class="section-number">06 — WATER & FOOD</div>
+    <div>
+      <h2 class="section-title">CLOSED-LOOP RESOURCES</h2>
+      <p class="section-intro">94% internal water recycling. 65% food self-sufficiency target by 2035.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel"><div class="panel-label">WATER SOURCING</div><div class="panel-title">TRIPLE-SOURCE SYSTEM</div><div class="panel-text">Deep aquifer (12,000 m³/day) + Atmospheric water generation (140,000 L/day) + Condensate recovery (8,200 L/day). Zero liquid discharge by 2033.</div></div>
+    <div class="panel"><div class="panel-label">FOOD SYSTEMS</div><div class="panel-title">CONTROLLED AGRICULTURE</div><div class="panel-text">36 vertical farming towers (64,800 m²) + Aquaponics (38 tonnes/year fish) + Insect protein facility.</div></div>
+  </div>
+</section>
+
+<!-- PHOTO 3 — APARTMENT VIEW -->
+<div class="photo-block">
+  <div class="photo-frame photo-frame-sq">
+    <img src="photo3.png" alt="Apartment interior view">
+  </div>
+  <div class="photo-caption">
+    <span class="photo-caption-label">APARTMENT VIEW — INTERIOR LIVING SPACE</span>
+    <span>photo3.png</span>
+  </div>
+</div>
+
+<!-- MOBILITY -->
+<section id="mobility">
+  <div class="section-header">
+    <div class="section-number">07 — MOBILITY</div>
+    <div>
+      <h2 class="section-title">ZERO-EMISSION TRANSIT</h2>
+      <p class="section-intro">Personal vehicle ownership structurally excluded. All internal mobility is autonomous, electric, and AI-integrated.</p>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="panel"><div class="panel-label">PRIMARY</div><div class="panel-title">AUTONOMOUS LOOP TRANSIT</div><div class="panel-text">6-line AEBRT system, 48 vehicles, 90-second peak headways. Average wait: 2.8 minutes.</div></div>
+    <div class="panel"><div class="panel-label">LOCAL</div><div class="panel-title">MICRO-MOBILITY PODS</div><div class="panel-text">2,400 autonomous 2-person pods, demand-responsive. Average deployment: 4.2 minutes.</div></div>
+    <div class="panel"><div class="panel-label">LOGISTICS</div><div class="panel-title">UNDERGROUND FREIGHT</div><div class="panel-text">22km of autonomous freight tunnels at -8m depth. Zero surface freight traffic.</div></div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section id="tech">
+  <div class="section-header">
+    <div class="section-number">08 — TECHNOLOGY LAYER</div>
+    <div>
+      <h2 class="section-title">NEXUS OPERATING SYSTEM</h2>
+      <p class="section-intro">Distributed AI platform managing all physical systems in real time — the city's nervous system.</p>
+    </div>
+  </div>
+
+  <div class="banner">
+    NEXUS operates across 14 primary subsystems — energy dispatch, water management, mobility routing, predictive maintenance, environmental monitoring, and citizen services. 4.2 billion sensor data points per day across 380,000 IoT nodes. All data remains within the city's sovereign data perimeter.
+  </div>
+</section>
+
+<!-- METRICS & TIMELINE -->
+<section id="metrics">
+  <div class="section-header">
+    <div class="section-number">11 — KEY METRICS</div>
+    <div>
+      <h2 class="section-title">PROJECT DATA</h2>
+      <p class="section-intro">All figures represent Phase I 
