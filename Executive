@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT 19859D — Deployable Autonomous Urban District</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-dark: #0A0C10;
+    --bg-panel: #11141C;
+    --bg-card: #151A24;
+    --border: #2A2F3A;
+    --border-light: #3A3F4A;
+    --accent-gold: #D4A853;
+    --accent-teal: #4CD9C6;
+    --accent-red: #E85D4A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B5C0;
+    --text-muted: #6B7080;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Typography */
+  h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .section-intro {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+
+  /* Navigation */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,12,16,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 16px 0;
+  }
+
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-gold);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--accent-gold);
+    background: transparent;
+    padding: 8px 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--accent-gold);
+    color: var(--bg-dark);
+  }
+
+  .btn-primary {
+    background: var(--accent-gold);
+    border: none;
+    padding: 12px 28px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bg-dark);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-teal);
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero-title span {
+    color: var(--accent-gold);
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    margin: 48px 0 32px;
+  }
+
+  .stat {
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 16px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: var(--font-mono);
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-number {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-teal);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  /* Grids */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 32px;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--accent-gold);
+  }
+
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .card-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Metrics strip */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  .metric {
+    background: var(--bg-panel);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .metric-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-family: var(--font-mono);
+  }
+
+  .metric-unit {
+    font-size: 14px;
+    color: var(--accent-teal);
+  }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  /* Data rows */
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .data-row:last-child {
+    border-bottom: none;
+  }
+
+  .data-key {
+    color: var(--text-muted);
+  }
+
+  .data-val {
+    color: var(--accent-gold);
+    font-family: var(--font-mono);
+  }
+
+  /* Banner */
+  .banner {
+    background: var(--bg-panel);
+    border-left: 4px solid var(--accent-gold);
+    padding: 32px 40px;
+    margin: 48px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Timeline */
+  .timeline {
+    margin: 48px 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-year {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-gold);
+  }
+
+  .timeline-phase {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .timeline-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .tag {
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  .tag-accent {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--bg-panel);
+    padding: 64px 0 32px;
+    margin-top: 64px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .footer-text {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .container {
+      padding: 0 20px;
+    }
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
+    .metrics-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="logo">PROJECT 19859D // CONSORTIUM</div>
+    <div class="nav-links">
+      <a href="#overview">OVERVIEW</a>
+      <a href="#architecture">ARCH</a>
+      <a href="#urban">URBAN</a>
+      <a href="#energy">ENERGY</a>
+      <a href="#water">WATER</a>
+      <a href="#mobility">MOBILITY</a>
+      <a href="#tech">TECH</a>
+      <a href="#metrics">METRICS</a>
+    </div>
+    <a href="#" class="btn-outline">EARLY ACCESS</a>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-badge">◆ DEPLOYABLE AUTONOMOUS URBAN DISTRICT ◆</div>
+      <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-number">12,000</div><div class="stat-label">RESIDENTS — PHASE I</div></div>
+        <div class="stat"><div class="stat-number">340km²</div><div class="stat-label">DEPLOYMENT ZONE</div></div>
+        <div class="stat"><div class="stat-number">0.0</div><div class="stat-label">EXTERNAL GRID</div></div>
+        <div class="stat"><div class="stat-number">2031</div><div class="stat-label">PHASE I TARGET</div></div>
+      </div>
+      <div class="banner" style="margin-top: 32px;">
+        <strong>Territorial Mastery.</strong> Mastering a territory means anticipating its metabolism, not just occupying its surface. Project 19859D is a sovereignty tool for local authorities — a deployable urban system that transforms land into asset, constraint into resource, and density into livability.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <div class="section-header">
+        <div class="section-number">00 — EXECUTIVE SUMMARY</div>
+        <h2>AUTONOMOUS<br>URBAN NUCLEUS</h2>
+        <p class="section-intro">Project 19859D is a fully self-sufficient urban habitat designed for permanent occupation under extreme arid conditions. This document constitutes the formal architectural and systems brief submitted to the Consortium's technical review board.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">SITE DESIGNATION</div>
+          <div class="card-title">RUB' AL KHALI<br>DEPLOYMENT ZONE</div>
+          <div class="card-text">Located in the eastern sector of the Rub' al Khali (Empty Quarter), Arabian Peninsula — <strong>22.8°N, 54.3°E</strong>. Elevation: 312m above sea level on a stable ancient sabkha platform with minimal seismic activity (Zone I).</div>
+          <div class="tags">
+            <span class="tag tag-accent">22.8°N</span>
+            <span class="tag tag-accent">Sabkha Base</span>
+            <span class="tag">312m ASL</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">ENVIRONMENTAL PARAMETERS</div>
+          <div class="card-title">EXTREME CONDITIONS</div>
+          <div class="data-row"><span class="data-key">Peak summer temperature</span><span class="data-val">+54°C surface, +48°C ambient</span></div>
+          <div class="data-row"><span class="data-key">Annual precipitation</span><span class="data-val">&lt; 35mm</span></div>
+          <div class="data-row"><span class="data-key">Solar irradiance (GHI)</span><span class="data-val">2,450 kWh/m²/yr</span></div>
+          <div class="data-row"><span class="data-key">Relative humidity (avg)</span><span class="data-val">12–28%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture">
+      <div class="section-header">
+        <div class="section-number">03 — ARCHITECTURAL SYSTEM</div>
+        <h2>STRUCTURE & MATERIALS</h2>
+        <p class="section-intro">Every material choice is driven by thermodynamic performance, structural logic, and long-term maintainability under extreme conditions.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-label">PRIMARY STRUCTURE</div><div class="card-title">MODULAR HEXAFRAME</div><div class="card-text">Prefabricated hexagonal steel-composite frame system based on 6m × 6m × 5.2m unit cells. Columns: basalt fiber reinforced polymer (BFRP) — 40% lighter than steel.</div></div>
+        <div class="card"><div class="card-label">THERMAL ENVELOPE</div><div class="card-title">ADAPTIVE SKIN SYSTEM</div><div class="card-text">Triple-layer ETFE cushions with electrochromic membrane. Aerogel-filled composite panels: thermal conductivity 0.015 W/m·K. PCM panels absorb 220 kJ/kg of peak thermal load.</div></div>
+        <div class="card"><div class="card-label">PASSIVE COOLING</div><div class="card-title">WIND & THERMAL LOGIC</div><div class="card-text">City oriented at 32° from true north. Wind catchers channel Shamal winds generating 4–8 Pa pressure differentials. Thermal chimneys integrated within structural walls.</div></div>
+      </div>
+    </section>
+
+    <!-- URBAN PLANNING -->
+    <section id="urban">
+      <div class="section-header">
+        <div class="section-number">04 — URBAN PLANNING STRATEGY</div>
+        <h2>CITY LAYOUT</h2>
+        <p class="section-intro">Radial-nodal model — a central hub surrounded by six distinct functional sectors, each with its own microclimate management strategy.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><div class="card-label">ZONING STRATEGY</div><div class="card-title">RADIAL NODAL ORGANIZATION</div><div class="card-text">Central civic nucleus (Zone 0) surrounded by six sectors: Residential clusters R1–R3 (3,800 units), Research & Production Zone, and Agricultural ring — 18km of controlled-atmosphere growing structures.</div></div>
+        <div class="card"><div class="card-label">HUMAN SCALE</div><div class="card-title">WALKABILITY & WELL-BEING</div><div class="card-text">Max walking distance to transit node: 320m. No resident more than 600m from open green space. Urban density: 180 residents/hectare. 34% of floor area visually connected to planted surface.</div></div>
+      </div>
+    </section>
+
+    <!-- ENERGY -->
+    <section id="energy">
+      <div class="section-header">
+        <div class="section-number">05 — INFRASTRUCTURE & ENERGY</div>
+        <h2>ZERO-GRID ENERGY SYSTEM</h2>
+        <p class="section-intro">Total energy independence is a hard constraint. The system is sized for 150% of projected peak load with full redundancy across three generation modes.</p>
+      </div>
+      <div class="metrics-strip">
+        <div class="metric"><div class="metric-value">847<span class="metric-unit">MW</span></div><div class="metric-label">PEAK PV CAPACITY</div></div>
+        <div class="metric"><div class="metric-value">140<span class="metric-unit">MW</span></div><div class="metric-label">CSP OUTPUT</div></div>
+        <div class="metric"><div class="metric-value">2.4<span class="metric-unit">GWh</span></div><div class="metric-label">BESS STORAGE</div></div>
+        <div class="metric"><div class="metric-value">18<span class="metric-unit">h</span></div><div class="metric-label">AUTONOMY</div></div>
+        <div class="metric"><div class="metric-value">96<span class="metric-unit">%</span></div><div class="metric-label">RENEWABLE FRACTION</div></div>
+        <div class="metric"><div class="metric-value">38<span class="metric-unit">kWh</span></div><div class="metric-label">PER CAPITA/DAY</div></div>
+      </div>
+    </section>
+
+    <!-- WATER & FOOD -->
+    <section id="water">
+      <div class="section-header">
+        <div class="section-number">06 — WATER & FOOD SYSTEMS</div>
+        <h2>CLOSED-LOOP RESOURCE CYCLE</h2>
+        <p class="section-intro">94% internal water recycling with three independent sourcing modes. 65% food self-sufficiency target by 2035.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card"><div class="card-label">WATER SOURCING</div><div class="card-title">TRIPLE-SOURCE SYSTEM</div><div class="card-text">Deep aquifer extraction (12,000 m³/day) + Atmospheric water generation (140,000 L/day) + Condensate recovery (8,200 L/day). Zero liquid discharge achieved by 2033.</div></div>
+        <div class="card"><div class="card-label">FOOD SYSTEMS</div><div class="card-title">CONTROLLED AGRICULTURE RING</div><div class="card-text">36 vertical farming towers (64,800 m²) + Aquaponics circuit (38 tonnes/year fish) + Insect protein facility. 65% caloric needs met on-site by 2035.</div></div>
+      </div>
+    </section>
+
+    <!-- MOBILITY -->
+    <section id="mobility">
+      <div class="section-header">
+        <div class="section-number">07 — MOBILITY</div>
+        <h2>ZERO-EMISSION TRANSIT</h2>
+        <p class="section-intro">Personal vehicle ownership structurally excluded. All internal mobility is autonomous, electric, and AI-integrated.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-label">TIER 1 — PRIMARY</div><div class="card-title">AUTONOMOUS LOOP TRANSIT</div><div class="card-text">6-line AEBRT system, 48 vehicles, 90-second peak headways. Average wait time: 2.8 minutes.</div></div>
+        <div class="card"><div class="card-label">TIER 2 — LOCAL</div><div class="card-title">MICRO-MOBILITY PODS</div><div class="card-text">2,400 autonomous 2-person pods, demand-responsive. Average deployment: 4.2 minutes.</div></div>
+        <div class="card"><div class="card-label">TIER 3 — LOGISTICS</div><div class="card-title">UNDERGROUND FREIGHT</div><div class="card-text">22km of autonomous freight tunnels at -8m depth. Zero surface freight traffic.</div></div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="tech">
+      <div class="section-header">
+        <div class="section-number">08 — TECHNOLOGY LAYER</div>
+        <h2>NEXUS OPERATING SYSTEM</h2>
+        <p class="section-intro">A distributed AI platform managing all physical systems in real time — the city's nervous system.</p>
+      </div>
+      <div class="banner">
+        NEXUS operates across 14 primary subsystems — energy dispatch, water management, mobility routing, food system monitoring, predictive maintenance, environmental monitoring, emergency response coordination, and citizen services interface. 4.2 billion sensor data points per day across 380,000 IoT nodes. All data remains within the city's sovereign data perimeter.
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section id="metrics">
+      <div class="section-header">
+        <div class="section-number">11 — KEY METRICS</div>
+        <h2>PROJECT DATA</h2>
+        <p class="section-intro">All figures represent Phase I design targets, validated against comparable deployed projects and engineering models.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-label">POPULATION & LAND</div>
+          <div class="data-row"><span class="data-key">Phase I Population</span><span class="data-val">12,000 residents</span></div>
+          <div class="data-row"><span class="data-key">Phase II Target (2038)</span><span class="data-val">28,000 residents</span></div>
+          <div class="data-row"><span class="data-key">Urban footprint</span><span class="data-val">680 hectares</span></div>
+          <div class="data-row"><span class="data-key">Gross floor area</span><span class="data-val">2.4 million m²</span></div>
+        </div>
+        <div class="card">
+          <div class="card-label">CARBON & ECOLOGY</div>
+          <div class="data-row"><span class="data-key">Carbon footprint</span><span class="data-val">-1.4 tCO₂e/resident/yr</span></div>
+          <div class="data-row"
