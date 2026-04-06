@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROJECT 19859D — Autonomous Urban District</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>PROJECT 19859D — 15‑Minute Residential District</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   :root {
     --black: #050507;
     --deep: #090b10;
@@ -13,39 +19,45 @@
     --border: rgba(255,255,255,0.06);
     --accent: #c8a96e;
     --accent2: #5de6c8;
-    --text: rgba(255,255,255,0.82);
-    --dim: rgba(255,255,255,0.35);
+    --text: rgba(255,255,255,0.85);
+    --dim: rgba(255,255,255,0.4);
     --mono: 'Share Tech Mono', monospace;
     --display: 'Bebas Neue', sans-serif;
     --body: 'DM Sans', sans-serif;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
 
   body {
     background: var(--black);
     color: var(--text);
     font-family: var(--body);
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.5;
     overflow-x: hidden;
   }
 
-  /* NAV */
+  /* subtle noise */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* navigation */
   nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5,5,7,0.95);
-    backdrop-filter: blur(20px);
+    background: rgba(5,5,7,0.92);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 6vw;
-    height: 64px;
+    height: 68px;
   }
 
   .nav-logo {
@@ -57,7 +69,7 @@
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 36px;
     list-style: none;
   }
 
@@ -71,9 +83,28 @@
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover {
+    color: var(--accent);
+  }
 
-  /* HERO */
+  .btn-outline {
+    border: 1px solid var(--accent);
+    background: transparent;
+    padding: 8px 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: var(--accent);
+    color: var(--black);
+  }
+
+  /* hero */
   .hero {
     position: relative;
     min-height: 85vh;
@@ -88,9 +119,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 50% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(93,230,200,0.04) 0%, transparent 60%),
-      linear-gradient(160deg, #050507 0%, #0a0d15 50%, #050507 100%);
+      radial-gradient(ellipse 70% 50% at 60% 30%, rgba(200,169,110,0.06) 0%, transparent 60%),
+      linear-gradient(145deg, #050507 0%, #0a0d15 60%, #050507 100%);
   }
 
   .hero-grid {
@@ -99,23 +129,25 @@
     background-image:
       linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
       linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+    background-size: 50px 50px;
   }
 
   .hero-label {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.3em;
-    color: var(--accent);
+    color: var(--accent2);
     margin-bottom: 24px;
+    position: relative;
   }
 
   .hero-title {
     font-family: var(--display);
-    font-size: clamp(64px, 12vw, 160px);
+    font-size: clamp(56px, 10vw, 130px);
     letter-spacing: 0.02em;
     line-height: 0.9;
     color: #fff;
+    position: relative;
   }
 
   .hero-title span {
@@ -123,103 +155,94 @@
   }
 
   .hero-sub {
+    max-width: 560px;
     margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
+    position: relative;
   }
 
   .hero-desc {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--dim);
-    letter-spacing: 0.05em;
-    line-height: 1.6;
-    max-width: 500px;
+    line-height: 1.5;
+    margin-bottom: 32px;
   }
 
-  .hero-stat-group {
+  .hero-stats {
     display: flex;
-    gap: 40px;
+    gap: 48px;
     flex-wrap: wrap;
   }
 
-  .hero-stat {
+  .stat {
     border-left: 1px solid var(--accent);
     padding-left: 16px;
   }
 
-  .hero-stat-val {
+  .stat-number {
     font-family: var(--mono);
-    font-size: 24px;
+    font-size: 26px;
     color: var(--accent);
   }
 
-  .hero-stat-label {
+  .stat-label {
     font-size: 10px;
     letter-spacing: 0.15em;
     color: var(--dim);
     text-transform: uppercase;
   }
 
-  /* MAIN */
+  /* main */
   main {
-    max-width: 1400px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 6vw;
   }
 
   section {
     padding: 100px 0 60px;
-    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .section-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 40px;
-    align-items: start;
-    margin-bottom: 64px;
+    margin-bottom: 56px;
   }
 
   .section-number {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.3em;
-    color: var(--accent);
-    padding-top: 8px;
-    white-space: nowrap;
+    color: var(--accent2);
+    margin-bottom: 16px;
   }
 
   .section-title {
     font-family: var(--display);
-    font-size: clamp(36px, 5vw, 72px);
-    letter-spacing: 0.04em;
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: 0.02em;
     color: #fff;
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 20px;
   }
 
   .section-intro {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--dim);
     max-width: 680px;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
-  /* GRIDS */
+  /* grids */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
-    margin-bottom: 40px;
+    margin: 40px 0;
   }
 
   .grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2px;
-    margin-bottom: 40px;
   }
 
   .panel {
@@ -230,7 +253,7 @@
 
   .panel-label {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 0.3em;
     color: var(--accent);
     margin-bottom: 16px;
@@ -239,163 +262,117 @@
 
   .panel-title {
     font-family: var(--display);
-    font-size: 26px;
-    letter-spacing: 0.06em;
+    font-size: 24px;
+    letter-spacing: 0.04em;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .panel-text {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--dim);
   }
 
-  /* DATA ROWS */
-  .data-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  .data-row:last-child { border-bottom: none; }
-
-  .data-key {
-    color: var(--dim);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .data-val {
-    color: var(--accent);
-  }
-
-  /* PHOTO BLOCKS */
-  .photo-block {
+  /* image blocks */
+  .image-block {
     margin: 80px 0;
   }
 
-  .photo-frame {
+  .image-frame {
     width: 100%;
     background: var(--panel);
     border: 1px solid var(--border);
     overflow: hidden;
-    position: relative;
   }
 
-  .photo-frame-wide { aspect-ratio: 21/9; }
-  .photo-frame-sq { aspect-ratio: 4/3; }
-
-  .photo-frame img {
+  .image-frame img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
 
-  .photo-caption {
+  .image-caption {
     padding: 16px 24px;
     background: var(--panel);
     border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
     font-family: var(--mono);
     font-size: 10px;
     color: var(--dim);
-  }
-
-  .photo-caption-label {
-    color: var(--accent);
-    letter-spacing: 0.2em;
-  }
-
-  /* METRICS STRIP */
-  .metrics-strip {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1px;
-    background: var(--border);
-    margin: 60px 0;
-  }
-
-  .metric-card {
-    background: var(--panel);
-    padding: 32px 20px;
+    letter-spacing: 0.1em;
     text-align: center;
   }
 
-  .metric-num {
-    font-family: var(--mono);
-    font-size: 32px;
-    color: var(--accent);
-  }
-
-  .metric-unit {
-    font-size: 12px;
-    color: var(--accent2);
-  }
-
-  .metric-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: var(--dim);
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
-
-  /* BANNER */
+  /* banner */
   .banner {
     background: var(--panel);
     border-left: 3px solid var(--accent);
     padding: 32px 40px;
     margin: 48px 0;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
-    color: var(--text);
   }
 
-  /* TIMELINE */
-  .timeline {
-    margin: 48px 0;
+  /* cta form */
+  .form-section {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 60px;
+    margin: 60px 0;
+    text-align: center;
   }
 
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 40px;
-    padding: 32px 0;
-    border-bottom: 1px solid var(--border);
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
   }
 
-  .timeline-year {
-    font-family: var(--mono);
+  .form-group input, .form-group select {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+    padding: 14px 20px;
+    font-family: var(--body);
     font-size: 14px;
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  .timeline-phase {
-    font-family: var(--display);
-    font-size: 20px;
-    letter-spacing: 0.05em;
     color: #fff;
-    margin-bottom: 8px;
+    min-width: 200px;
   }
 
-  .timeline-desc {
-    font-size: 13px;
+  .form-group input::placeholder {
     color: var(--dim);
-    line-height: 1.6;
   }
 
-  /* FOOTER */
-  footer {
-    margin-top: 100px;
+  .btn-primary {
+    background: var(--accent);
+    border: none;
+    padding: 14px 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  /* executive link */
+  .executive-link {
+    text-align: center;
+    padding: 60px 0;
     border-top: 1px solid var(--border);
-    padding: 60px 6vw;
+    margin-top: 40px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    padding: 60px 6vw 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -407,13 +384,12 @@
     letter-spacing: 0.3em;
     color: var(--accent);
     margin-bottom: 20px;
-    text-transform: uppercase;
   }
 
   .footer-text {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--dim);
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   .footer-bottom {
@@ -422,31 +398,26 @@
     display: flex;
     justify-content: space-between;
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(255,255,255,0.2);
   }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
     .grid-2, .grid-3 {
-      grid-template-columns: 1fr;
-    }
-    .metrics-strip {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .timeline-item {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    footer {
       grid-template-columns: 1fr;
     }
     .nav-links {
       display: none;
     }
-    .section-header {
+    .form-group {
+      flex-direction: column;
+      align-items: center;
+    }
+    footer {
       grid-template-columns: 1fr;
-      gap: 16px;
+    }
+    .form-section {
+      padding: 40px 24px;
     }
   }
 </style>
@@ -454,208 +425,225 @@
 <body>
 
 <nav>
-  <div class="nav-logo">PROJECT 19859D // URBAN CONSORTIUM</div>
+  <div class="nav-logo">PROJECT 19859D</div>
   <ul class="nav-links">
-    <li><a href="#context">CONTEXT</a></li>
+    <li><a href="#district">THE DISTRICT</a></li>
+    <li><a href="#living">LIVING</a></li>
     <li><a href="#architecture">ARCHITECTURE</a></li>
-    <li><a href="#urban">URBAN</a></li>
-    <li><a href="#energy">ENERGY</a></li>
-    <li><a href="#water">WATER</a></li>
-    <li><a href="#mobility">MOBILITY</a></li>
-    <li><a href="#tech">TECH</a></li>
-    <li><a href="#metrics">METRICS</a></li>
+    <li><a href="#urban">URBAN MODEL</a></li>
   </ul>
+  <a href="#register" class="btn-outline">REGISTER</a>
 </nav>
 
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-label">◆ DEPLOYABLE AUTONOMOUS URBAN DISTRICT ◆</div>
+  <div class="hero-label">◆ A 15‑MINUTE RESIDENTIAL DISTRICT ◆</div>
   <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
   <div class="hero-sub">
     <div class="hero-desc">
-      A fully self-sufficient urban habitat designed for permanent occupation under extreme arid conditions. Integrated passive cooling, closed-loop resources, AI-managed infrastructure.
+      A next‑generation neighborhood where housing, work, daily services, leisure, and mobility are integrated into one coherent urban system.
     </div>
-    <div class="hero-stat-group">
-      <div class="hero-stat"><span class="hero-stat-val">12,000</span><div class="hero-stat-label">RESIDENTS — PHASE I</div></div>
-      <div class="hero-stat"><span class="hero-stat-val">680ha</span><div class="hero-stat-label">URBAN FOOTPRINT</div></div>
-      <div class="hero-stat"><span class="hero-stat-val">96%</span><div class="hero-stat-label">RENEWABLE ENERGY</div></div>
-      <div class="hero-stat"><span class="hero-stat-val">2031</span><div class="hero-stat-label">PHASE I TARGET</div></div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-number">15 min</span><div class="stat-label">TO WORK & SERVICES</div></div>
+      <div class="stat"><span class="stat-number">7 floors</span><div class="stat-label">MAX HEIGHT</div></div>
+      <div class="stat"><span class="stat-number">mixed-use</span><div class="stat-label">DISTRICT</div></div>
     </div>
   </div>
 </div>
 
 <main>
 
-<!-- PHOTO 1 — AERIAL MASTERPLAN -->
-<div class="photo-block">
-  <div class="photo-frame photo-frame-wide">
-    <img src="photo1.png" alt="Aerial masterplan view">
+  <!-- IMAGE 1 — MASTERPLAN -->
+  <div class="image-block">
+    <div class="image-frame">
+      <img src="photo1.png" alt="Masterplan perspective">
+    </div>
+    <div class="image-caption">Masterplan perspective — district organization</div>
   </div>
-  <div class="photo-caption">
-    <span class="photo-caption-label">MASTERPLAN 19859D — AERIAL VIEW</span>
-    <span>photo1.png</span>
+
+  <!-- SECTION : A BETTER DAILY RADIUS -->
+  <section id="district">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div>
+        <h2 class="section-title">A better daily radius</h2>
+        <p class="section-intro">Project 19859D is designed around a simple principle: everyday life should not require constant friction.</p>
+      </div>
+    </div>
+    <div class="banner">
+      Within a short walk or ride, residents can reach workspaces, childcare, cafés, groceries, fitness, healthcare, and public space. The district is organized to reduce wasted time, shorten distances, and improve the quality of ordinary days. This is not density for density’s sake. It is a calmer, more useful form of urban life.
+    </div>
+  </section>
+
+  <!-- SECTION : WHAT RESIDENTS GET -->
+  <section id="living">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div>
+        <h2 class="section-title">What residents get</h2>
+        <p class="section-intro">19859D combines private residential quality with district‑scale convenience.</p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-label">APARTMENTS</div>
+        <div class="panel-title">Spacious & generous</div>
+        <div class="panel-text">Generous balconies and terraces extend living space outdoors. Warm industrial interiors with visible material honesty.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">SERVICES</div>
+        <div class="panel-title">Integrated daily life</div>
+        <div class="panel-text">Local retail and daily services integrated into the ground plane. Walkable public spaces designed for calm movement and social life.</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-label">MOBILITY</div>
+        <div class="panel-title">Walking first</div>
+        <div class="panel-text">Low‑emission mobility designed around walking first. Everything essential is within 15 minutes.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">COMMUNITY</div>
+        <div class="panel-title">Privacy & access</div>
+        <div class="panel-text">A neighborhood structure that supports both privacy and access. Long‑term livability over spectacle.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE 2 — BALCONY VIEW -->
+  <div class="image-block">
+    <div class="image-frame">
+      <img src="photo2.png" alt="Residential balcony view">
+    </div>
+    <div class="image-caption">Upper‑level residential view — terrace and urban landscape</div>
   </div>
+
+  <!-- SECTION : ARCHITECTURE -->
+  <section id="architecture">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div>
+        <h2 class="section-title">Concrete, geometry, and lasting value</h2>
+        <p class="section-intro">The architecture of 19859D is structuralist in spirit: geometric, legible, durable, and intentionally built.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <div class="panel-label">STRUCTURE</div>
+        <div class="panel-title">Mid‑rise clarity</div>
+        <div class="panel-text">Maximum height of seven floors. Clear structural logic, deep floor plates, strong horizontal lines.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">MATERIALS</div>
+        <div class="panel-title">Honest & warm</div>
+        <div class="panel-text">Exposed concrete, metal detailing, large‑format glazing, and warm interior finishes. Industrial in clarity, warm in atmosphere.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">BALCONIES</div>
+        <div class="panel-title">Outdoor extension</div>
+        <div class="panel-text">Generous balcony edges extend domestic life outward. Private outdoor space for every apartment.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION : URBAN MODEL -->
+  <section id="urban">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div>
+        <h2 class="section-title">A district, not a standalone building</h2>
+        <p class="section-intro">19859D is conceived as a repeatable district‑scale model.</p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-label">MIXED‑USE</div>
+        <div class="panel-title">Integrated program</div>
+        <div class="panel-text">Residential buildings, everyday commerce, work environments, local mobility infrastructure, public realm, landscape, and civic amenities.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">ADAPTABLE</div>
+        <div class="panel-title">Multiple cities</div>
+        <div class="panel-text">Because of this, the project can be adapted to different metropolitan contexts. A framework for a better kind of urban expansion.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE 3 — INTERIOR -->
+  <div class="image-block">
+    <div class="image-frame">
+      <img src="photo3.png" alt="Apartment interior">
+    </div>
+    <div class="image-caption">Interior living space — warm materiality and generous light</div>
+  </div>
+
+  <!-- SECTION : WHY NOW -->
+  <section>
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div>
+        <h2 class="section-title">Why this matters now</h2>
+        <p class="section-intro">Cities are facing the same pressures almost everywhere: housing shortage, rising car dependency, fragmented neighborhoods, and declining quality of daily life.</p>
+      </div>
+    </div>
+    <div class="banner">
+      19859D responds with a clear proposition: build less sprawl, less isolation, and less dependency on long commutes. Build mid‑density neighborhoods that people actually want to live in. The project is designed for residents first, but it also creates value for cities, developers, and long‑term investors.
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <div id="register" class="form-section">
+    <h3 style="font-family: var(--display); font-size: 28px; color: #fff; margin-bottom: 16px;">Receive the Executive Brief</h3>
+    <p style="color: var(--dim); max-width: 500px; margin: 0 auto;">Register your interest to receive the full project brief, early release updates, and development information.</p>
+    <div class="form-group">
+      <input type="text" placeholder="Full name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="City">
+      <select>
+        <option>Budget range</option>
+        <option>€300k – €500k</option>
+        <option>€500k – €800k</option>
+        <option>€800k – €1.2M</option>
+        <option>€1.2M+</option>
+      </select>
+      <select>
+        <option>Profile</option>
+        <option>Buyer</option>
+        <option>Investor</option>
+        <option>Partner</option>
+        <option>Curious resident</option>
+      </select>
+      <button class="btn-primary">Request the brief →</button>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE BRIEF LINK -->
+  <div class="executive-link">
+    <p style="color: var(--dim); margin-bottom: 16px;">For institutions, developers, and qualified investors</p>
+    <a href="executive.html" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">View Executive Brief →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-col">
+    <div class="footer-label">PROJECT 19859D</div>
+    <div class="footer-text">A next‑generation residential district built around a 15‑minute urban model. Housing, work, leisure, and services within walking distance.</div>
+  </div>
+  <div class="footer-col">
+    <div class="footer-label">CONSORTIUM</div>
+    <div class="footer-text">Lead Architecture: Studio 19859<br>Structural: ARUP International<br>Systems: Buro Happold<br>Urban Planning: MVRDV Consortium</div>
+  </div>
+  <div class="footer-col">
+    <div class="footer-label">CONTACT</div>
+    <div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel available for qualified partners</div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 PROJECT 19859D CONSORTIUM</span>
+  <span>VERSION 4.2 — PUBLIC BRIEF</span>
 </div>
 
-<!-- CONTEXT -->
-<section id="context">
-  <div class="section-header">
-    <div class="section-number">00 — URBAN CONTEXT</div>
-    <div>
-      <h2 class="section-title">AUTONOMOUS<br>URBAN NUCLEUS</h2>
-      <p class="section-intro">Project 19859D is a fully self-sufficient urban habitat designed for permanent occupation under extreme arid conditions. This document constitutes the formal architectural and systems brief.</p>
-    </div>
-  </div>
-
-  <div class="banner">
-    PROJECT 19859D represents the first deployment of a full-spectrum autonomous urban system in a hyper-arid environment with zero reliance on external infrastructure. The project integrates advanced passive cooling architecture, closed-loop resource systems, AI-managed infrastructure, and a progressive social governance model designed for 12,000 residents at Phase I, scaling to 48,000 by 2045.
-  </div>
-
-  <div class="grid-2">
-    <div class="panel">
-      <div class="panel-label">SITE DESIGNATION</div>
-      <div class="panel-title">RUB' AL KHALI<br>DEPLOYMENT ZONE</div>
-      <div class="panel-text">Located in the eastern sector of the Rub' al Khali (Empty Quarter), Arabian Peninsula — <strong>22.8°N, 54.3°E</strong>. Elevation: 312m above sea level on a stable ancient sabkha platform with minimal seismic activity (Zone I).</div>
-    </div>
-    <div class="panel">
-      <div class="panel-label">ENVIRONMENTAL PARAMETERS</div>
-      <div class="panel-title">EXTREME CONDITIONS</div>
-      <div class="data-row"><span class="data-key">Peak summer temperature</span><span class="data-val">+54°C surface, +48°C ambient</span></div>
-      <div class="data-row"><span class="data-key">Annual precipitation</span><span class="data-val">&lt; 35mm</span></div>
-      <div class="data-row"><span class="data-key">Solar irradiance (GHI)</span><span class="data-val">2,450 kWh/m²/yr</span></div>
-      <div class="data-row"><span class="data-key">Relative humidity (avg)</span><span class="data-val">12–28%</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ARCHITECTURE -->
-<section id="architecture">
-  <div class="section-header">
-    <div class="section-number">03 — ARCHITECTURAL SYSTEM</div>
-    <div>
-      <h2 class="section-title">STRUCTURE & MATERIALS</h2>
-      <p class="section-intro">Every material choice is driven by thermodynamic performance, structural logic, and long-term maintainability under extreme conditions.</p>
-    </div>
-  </div>
-
-  <div class="grid-3">
-    <div class="panel"><div class="panel-label">PRIMARY STRUCTURE</div><div class="panel-title">MODULAR HEXAFRAME</div><div class="panel-text">Prefabricated hexagonal steel-composite frame system based on 6m × 6m × 5.2m unit cells. BFRP columns — 40% lighter than steel, thermal conductivity 0.04 W/m·K.</div></div>
-    <div class="panel"><div class="panel-label">THERMAL ENVELOPE</div><div class="panel-title">ADAPTIVE SKIN</div><div class="panel-text">Triple-layer ETFE cushions with electrochromic membrane. Aerogel insulation: 0.015 W/m·K. PCM panels absorb 220 kJ/kg of peak thermal load.</div></div>
-    <div class="panel"><div class="panel-label">PASSIVE COOLING</div><div class="panel-title">WIND & THERMAL LOGIC</div><div class="panel-text">City oriented at 32° from true north. Wind catchers generate 4–8 Pa pressure differentials. Thermal chimneys integrated within structural walls.</div></div>
-  </div>
-</section>
-
-<!-- PHOTO 2 — BALCONY VIEW -->
-<div class="photo-block">
-  <div class="photo-frame photo-frame-wide">
-    <img src="photo2.png" alt="Balcony view">
-  </div>
-  <div class="photo-caption">
-    <span class="photo-caption-label">BALCONY VIEW — STREET LEVEL</span>
-    <span>photo2.png</span>
-  </div>
-</div>
-
-<!-- URBAN PLANNING -->
-<section id="urban">
-  <div class="section-header">
-    <div class="section-number">04 — URBAN PLANNING</div>
-    <div>
-      <h2 class="section-title">CITY LAYOUT</h2>
-      <p class="section-intro">Radial-nodal model — a central hub surrounded by six distinct functional sectors, each with its own microclimate management strategy.</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="panel"><div class="panel-label">ZONING STRATEGY</div><div class="panel-title">RADIAL NODAL</div><div class="panel-text">Central civic nucleus (Zone 0) surrounded by six sectors: Residential clusters R1–R3 (3,800 units), Research & Production Zone, and Agricultural ring — 18km of controlled-atmosphere growing structures.</div></div>
-    <div class="panel"><div class="panel-label">HUMAN SCALE</div><div class="panel-title">WALKABILITY</div><div class="panel-text">Max walking distance to transit: 320m. No resident more than 600m from open green space. Urban density: 180 residents/hectare. 34% of floor area visually connected to planted surface.</div></div>
-  </div>
-</section>
-
-<!-- ENERGY -->
-<section id="energy">
-  <div class="section-header">
-    <div class="section-number">05 — ENERGY SYSTEM</div>
-    <div>
-      <h2 class="section-title">ZERO-GRID ENERGY</h2>
-      <p class="section-intro">Total energy independence is a hard constraint. The system is sized for 150% of projected peak load.</p>
-    </div>
-  </div>
-
-  <div class="metrics-strip">
-    <div class="metric-card"><div class="metric-num">847<span class="metric-unit">MW</span></div><div class="metric-label">PEAK PV CAPACITY</div></div>
-    <div class="metric-card"><div class="metric-num">140<span class="metric-unit">MW</span></div><div class="metric-label">CSP OUTPUT</div></div>
-    <div class="metric-card"><div class="metric-num">2.4<span class="metric-unit">GWh</span></div><div class="metric-label">BESS STORAGE</div></div>
-    <div class="metric-card"><div class="metric-num">18<span class="metric-unit">h</span></div><div class="metric-label">AUTONOMY</div></div>
-    <div class="metric-card"><div class="metric-num">96<span class="metric-unit">%</span></div><div class="metric-label">RENEWABLE</div></div>
-    <div class="metric-card"><div class="metric-num">38<span class="metric-unit">kWh</span></div><div class="metric-label">PER CAPITA/DAY</div></div>
-  </div>
-</section>
-
-<!-- WATER & FOOD -->
-<section id="water">
-  <div class="section-header">
-    <div class="section-number">06 — WATER & FOOD</div>
-    <div>
-      <h2 class="section-title">CLOSED-LOOP RESOURCES</h2>
-      <p class="section-intro">94% internal water recycling. 65% food self-sufficiency target by 2035.</p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="panel"><div class="panel-label">WATER SOURCING</div><div class="panel-title">TRIPLE-SOURCE SYSTEM</div><div class="panel-text">Deep aquifer (12,000 m³/day) + Atmospheric water generation (140,000 L/day) + Condensate recovery (8,200 L/day). Zero liquid discharge by 2033.</div></div>
-    <div class="panel"><div class="panel-label">FOOD SYSTEMS</div><div class="panel-title">CONTROLLED AGRICULTURE</div><div class="panel-text">36 vertical farming towers (64,800 m²) + Aquaponics (38 tonnes/year fish) + Insect protein facility.</div></div>
-  </div>
-</section>
-
-<!-- PHOTO 3 — APARTMENT VIEW -->
-<div class="photo-block">
-  <div class="photo-frame photo-frame-sq">
-    <img src="photo3.png" alt="Apartment interior view">
-  </div>
-  <div class="photo-caption">
-    <span class="photo-caption-label">APARTMENT VIEW — INTERIOR LIVING SPACE</span>
-    <span>photo3.png</span>
-  </div>
-</div>
-
-<!-- MOBILITY -->
-<section id="mobility">
-  <div class="section-header">
-    <div class="section-number">07 — MOBILITY</div>
-    <div>
-      <h2 class="section-title">ZERO-EMISSION TRANSIT</h2>
-      <p class="section-intro">Personal vehicle ownership structurally excluded. All internal mobility is autonomous, electric, and AI-integrated.</p>
-    </div>
-  </div>
-
-  <div class="grid-3">
-    <div class="panel"><div class="panel-label">PRIMARY</div><div class="panel-title">AUTONOMOUS LOOP TRANSIT</div><div class="panel-text">6-line AEBRT system, 48 vehicles, 90-second peak headways. Average wait: 2.8 minutes.</div></div>
-    <div class="panel"><div class="panel-label">LOCAL</div><div class="panel-title">MICRO-MOBILITY PODS</div><div class="panel-text">2,400 autonomous 2-person pods, demand-responsive. Average deployment: 4.2 minutes.</div></div>
-    <div class="panel"><div class="panel-label">LOGISTICS</div><div class="panel-title">UNDERGROUND FREIGHT</div><div class="panel-text">22km of autonomous freight tunnels at -8m depth. Zero surface freight traffic.</div></div>
-  </div>
-</section>
-
-<!-- TECHNOLOGY -->
-<section id="tech">
-  <div class="section-header">
-    <div class="section-number">08 — TECHNOLOGY LAYER</div>
-    <div>
-      <h2 class="section-title">NEXUS OPERATING SYSTEM</h2>
-      <p class="section-intro">Distributed AI platform managing all physical systems in real time — the city's nervous system.</p>
-    </div>
-  </div>
-
-  <div class="banner">
-    NEXUS operates across 14 primary subsystems — energy dispatch, water management, mobility routing, predictive maintenance, environmental monitoring, and citizen services. 4.2 billion sensor data points per day across 380,000 IoT nodes. All data remains within the city's sovereign data perimeter.
-  </div>
-</section>
-
-<!-- METRICS & TIMELINE -->
-<section id="metrics">
-  <div class="section-header">
-    <div class="section-number">11 — KEY METRICS</div>
-    <div>
-      <h2 class="section-title">PROJECT DATA</h2>
-      <p class="section-intro">All figures represent Phase I 
+</body>
+  </html>
