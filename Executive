@@ -483,12 +483,12 @@
 <main>
   <div class="container">
     <!-- HERO -->
-    <div class="hero">
+    <div class="hero" id="overview">
       <div class="hero-badge">◆ CONFIDENTIAL — INVESTOR & PARTNER BRIEF ◆</div>
       <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-number">12k</div><div class="stat-label">PHASE I RESIDENTS</div></div>
-        <div class="stat"><div class="stat-number">680ha</div><div class="stat-label">URBAN FOOTPRINT</div></div>
+        <div class="stat"><div class="stat-number">12,000</div><div class="stat-label">PHASE I RESIDENTS</div></div>
+        <div class="stat"><div class="stat-number">680 ha</div><div class="stat-label">URBAN FOOTPRINT</div></div>
         <div class="stat"><div class="stat-number">96%</div><div class="stat-label">RENEWABLE ENERGY</div></div>
         <div class="stat"><div class="stat-number">€2.4B</div><div class="stat-label">PHASE I CAPEX</div></div>
       </div>
@@ -528,6 +528,18 @@
           <div class="card-text">Comparable to healthy European urban density (Vienna, Copenhagen). Enough for vitality, not enough for congestion.</div>
         </div>
       </div>
+      <div class="grid-2" style="margin-top: 2px;">
+        <div class="card">
+          <div class="card-label">UNIT MIX</div>
+          <div class="card-title">Diverse typologies</div>
+          <div class="card-text">1-bed (35%), 2-bed (40%), 3-bed (20%), 4-bed (5%). All units include private balcony or terrace. Minimum ceiling height: 2.8m.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">AMENITIES</div>
+          <div class="card-title">District‑scale services</div>
+          <div class="card-text">Shared workspaces, fitness centers, childcare facilities, community gardens, medical clinic, and cultural spaces integrated across the district.</div>
+        </div>
+      </div>
     </section>
 
     <!-- TECHNICAL SPECIFICATIONS -->
@@ -553,11 +565,17 @@
           <div class="card-label">PRIMARY GENERATION</div>
           <div class="card-title">Bifacial PV + CSP</div>
           <div class="card-text">847 MWp bifacial monocrystalline silicon (28.4% efficiency) + 140 MWe concentrated solar power with 14h molten salt storage. Round-trip efficiency: 93%.</div>
+          <div class="data-row"><span class="data-key">PV module type</span><span class="data-val">Bifacial monocrystalline</span></div>
+          <div class="data-row"><span class="data-key">Tracking system</span><span class="data-val">Single-axis N-tracking</span></div>
+          <div class="data-row"><span class="data-key">CSP storage temp</span><span class="data-val">560°C molten salt</span></div>
         </div>
         <div class="card">
           <div class="card-label">STORAGE & GRID</div>
           <div class="card-title">LFP BESS + AI dispatch</div>
           <div class="card-text">2.4 GWh LFP battery system, 4,000-cycle lifespan. AI-managed dispatch with 24h solar forecast (±3% accuracy).</div>
+          <div class="data-row"><span class="data-key">Battery chemistry</span><span class="data-val">LFP (cobalt-free)</span></div>
+          <div class="data-row"><span class="data-key">Thermal stability</span><span class="data-val">Up to 60°C ambient</span></div>
+          <div class="data-row"><span class="data-key">Forecast accuracy</span><span class="data-val">±3% at 24h</span></div>
         </div>
       </div>
 
@@ -567,11 +585,17 @@
           <div class="card-label">SOURCING</div>
           <div class="card-title">Triple-source</div>
           <div class="card-text">Deep aquifer (12,000 m³/day) + Atmospheric water generation (140,000 L/day) + Condensate recovery (8,200 L/day).</div>
+          <div class="data-row"><span class="data-key">Aquifer depth</span><span class="data-val">480m</span></div>
+          <div class="data-row"><span class="data-key">RO energy cost</span><span class="data-val">3.2 kWh/m³</span></div>
+          <div class="data-row"><span class="data-key">AWG units</span><span class="data-val">1,400 (MOF-801 based)</span></div>
         </div>
         <div class="card">
           <div class="card-label">RECYCLING</div>
           <div class="card-title">94% internal reuse</div>
           <div class="card-text">Grey water recycling for irrigation, cooling, and sanitation. Zero liquid discharge achieved by year 3 of operation.</div>
+          <div class="data-row"><span class="data-key">Daily demand</span><span class="data-val">7,200 m³/day</span></div>
+          <div class="data-row"><span class="data-key">Per capita consumption</span><span class="data-val">85 L/person/day</span></div>
+          <div class="data-row"><span class="data-key">Grey water reuse</span><span class="data-val">100%</span></div>
         </div>
       </div>
 
@@ -581,11 +605,16 @@
           <div class="card-label">VERTICAL FARMING</div>
           <div class="card-title">36 towers, 64,800 m²</div>
           <div class="card-text">Aeroponic systems. 94% less water than field agriculture. 420 tonnes/year fresh produce.</div>
+          <div class="data-row"><span class="data-key">Crop types</span><span class="data-val">Leafy greens, herbs, tomatoes, peppers, strawberries</span></div>
+          <div class="data-row"><span class="data-key">Annual yield</span><span class="data-val">420 tonnes</span></div>
         </div>
         <div class="card">
           <div class="card-label">AQUAPONICS & PROTEIN</div>
           <div class="card-title">Closed-loop nutrition</div>
           <div class="card-text">38 tonnes/year tilapia + Black Soldier Fly larvae facility. 65% caloric self-sufficiency by 2035.</div>
+          <div class="data-row"><span class="data-key">Fish production</span><span class="data-val">38 tonnes/year</span></div>
+          <div class="data-row"><span class="data-key">BSF feed output</span><span class="data-val">12 tonnes/month</span></div>
+          <div class="data-row"><span class="data-key">Organic fertilizer</span><span class="data-val">8 tonnes/month</span></div>
         </div>
       </div>
 
@@ -595,224 +624,15 @@
           <div class="card-label">TIER 1 — TRANSIT</div>
           <div class="card-title">Autonomous BRT</div>
           <div class="card-text">6 lines, 48 vehicles, 90s peak headways. Average wait: 2.8 minutes.</div>
+          <div class="data-row"><span class="data-key">Capacity per vehicle</span><span class="data-val">80 passengers</span></div>
+          <div class="data-row"><span class="data-key">Off-peak headway</span><span class="data-val">4 minutes</span></div>
         </div>
         <div class="card">
           <div class="card-label">TIER 2 — LOCAL</div>
           <div class="card-title">Micro-mobility pods</div>
           <div class="card-text">2,400 autonomous 2-person pods. Demand-responsive. Avg deployment: 4.2 min.</div>
+          <div class="data-row"><span class="data-key">Charging nodes</span><span class="data-val">840 integrated into canopies</span></div>
+          <div class="data-row"><span class="data-key">Model</span><span class="data-val">Shared, no personal ownership</span></div>
         </div>
         <div class="card">
-          <div class="card-label">TIER 3 — FREIGHT</div>
-          <div class="card-title">Underground logistics</div>
-          <div class="card-text">22km of 3.4m tunnels at -8m. Zero surface freight traffic.</div>
-        </div>
-      </div>
-
-      <h3 style="margin: 48px 0 24px; font-family: var(--font-mono); color: var(--accent-teal);">STRUCTURAL SYSTEM</h3>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-label">FRAME</div>
-          <div class="card-title">Modular hexaframe</div>
-          <div class="card-text">6m × 6m × 5.2m unit cells. Prefabricated steel-composite. BFRP columns: 40% lighter than steel.</div>
-        </div>
-        <div class="card">
-          <div class="card-label">ENVELOPE</div>
-          <div class="card-title">Adaptive ETFE + aerogel</div>
-          <div class="card-text">Triple-layer ETFE with electrochromic membrane. Aerogel insulation: 0.015 W/m·K. PCM panels: 220 kJ/kg.</div>
-        </div>
-        <div class="card">
-          <div class="card-label">PASSIVE COOLING</div>
-          <div class="card-title">Wind catchers + chimneys</div>
-          <div class="card-text">32° orientation. 4–8 Pa pressure differentials. Thermal chimneys integrated into structure.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ECONOMIC MODEL -->
-    <section id="economic">
-      <div class="section-header">
-        <div class="section-number">03 — ECONOMIC MODEL</div>
-        <h2>Investment & Revenue</h2>
-        <p class="section-intro">A bankable, diversified revenue model designed for institutional investors and long-term asset managers.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-label">CAPEX (PHASE I)</div>
-          <div class="card-title">€2.4 billion</div>
-          <div class="card-text">Includes land preparation, infrastructure, buildings, energy systems, water systems, mobility, and AI layer. €200k per resident.</div>
-          <div class="data-row"><span class="data-key">Construction</span><span class="data-val">€1.4B</span></div>
-          <div class="data-row"><span class="data-key">Energy infrastructure</span><span class="data-val">€520M</span></div>
-          <div class="data-row"><span class="data-key">Water & food systems</span><span class="data-val">€210M</span></div>
-          <div class="data-row"><span class="data-key">Mobility & logistics</span><span class="data-val">€180M</span></div>
-          <div class="data-row"><span class="data-key">NEXUS AI & tech</span><span class="data-val">€90M</span></div>
-        </div>
-        <div class="card">
-          <div class="card-label">REVENUE STREAMS</div>
-          <div class="card-title">Diversified & resilient</div>
-          <div class="card-text">Residential sales/leases (55%), commercial leasing (20%), R&D zone (15%), energy sales (5%), municipal services (5%).</div>
-          <div class="data-row"><span class="data-key">Projected IRR</span><span class="data-val">12–15%</span></div>
-          <div class="data-row"><span class="data-key">Payback period</span><span class="data-val">9–11 years</span></div>
-          <div class="data-row"><span class="data-key">Stabilized yield</span><span class="data-val">6.5–7.5%</span></div>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 2px;">
-        <div class="card">
-          <div class="card-label">OPEX EFFICIENCY</div>
-          <div class="card-title">30–40% below conventional</div>
-          <div class="card-text">Energy self-generation eliminates utility costs. Predictive maintenance reduces labor by 38%. Water recycling cuts supply costs by 85%.</div>
-        </div>
-        <div class="card">
-          <div class="card-label">ASSET VALUE DRIVERS</div>
-          <div class="card-title">Resilience + certification</div>
-          <div class="card-text">Target certifications: BREEAM Outstanding, LEED Platinum, E+C-. Climate-resilient asset with lower obsolescence risk.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section id="timeline">
-      <div class="section-header">
-        <div class="section-number">04 — DEPLOYMENT TIMELINE</div>
-        <h2>Phased Delivery</h2>
-        <p class="section-intro">Three-phase deployment model from site preparation to full operational autonomy.</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">2026–27</div>
-          <div><div class="timeline-phase">PHASE 0 — SITE & INFRASTRUCTURE</div><div class="timeline-desc">Geological surveys, platform stabilization, underground logistics tunnel (8km), deep aquifer drilling (12 wells), PV foundation installation. Workforce: 4,200.</div></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2027–29</div>
-          <div><div class="timeline-phase">PHASE 1 — ENERGY & WATER SYSTEMS</div><div class="timeline-desc">PV array Phase 1 (420 MWp) online, BESS commissioning, CSP tower erection, RO plant operational, AWG array deployed. NEXUS testing begins.</div></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2029–31</div>
-          <div><div class="timeline-phase">PHASE 2 — URBAN CONSTRUCTION</div><div class="timeline-desc">Residential clusters R1–R3 (3,800 units), civic nucleus, transit system, vertical farming towers. First 4,000 residents for operational testing.</div></div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2031</div>
-          <div><div class="timeline-phase">PHASE 3 — FULL OCCUPATION</div><div class="timeline-desc">12,000 residents, full autonomous operation, closed-loop systems online. External audit. Phase II design review (target: 28,000 by 2038).</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GOVERNANCE MODEL -->
-    <section id="governance">
-      <div class="section-header">
-        <div class="section-number">05 — GOVERNANCE & SOCIAL MODEL</div>
-        <h2>Operational Framework</h2>
-        <p class="section-intro">A progressive governance model designed for stability, participation, and long-term resident alignment.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-label">GOVERNANCE STRUCTURE</div>
-          <div class="card-title">Liquid democracy</div>
-          <div class="card-text">Daily operations managed by elected Sector Councils (12 members per zone, 2-year terms). Strategic decisions require 67% supermajority via digital referendum. No permanent administrative class. All senior roles term-limited to 4 years, non-renewable.</div>
-        </div>
-        <div class="card">
-          <div class="card-label">RESIDENT ENDOWMENT</div>
-          <div class="card-title">Universal City Endowment</div>
-          <div class="card-text">Housing (80–120m² tiered by household size), basic food allocation, healthcare, education, and transit — included in residency. Funded by R&D zone productivity revenue.</div>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 2px;">
-        <div class="card">
-          <div class="card-label">POPULATION PROFILE</div>
-          <div class="card-title">12,000 residents, 62 nationalities</div>
-          <div class="card-text">28% research/science, 24% technical operations, 18% services, 14% arts/culture, 10% entrepreneurship, 6% governance. 40% under 35.</div>
-        </div>
-        <div class="card">
-          <div class="card-label">DATA SOVEREIGNTY</div>
-          <div class="card-title">NEXUS privacy architecture</div>
-          <div class="card-text">All personal data processed locally on resident devices (edge AI). NEXUS receives only anonymized, aggregated data. No facial recognition. Independent Resident Data Council.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENVIRONMENTAL METRICS -->
-    <section id="environmental">
-      <div class="section-header">
-        <div class="section-number">06 — ENVIRONMENTAL & CARBON</div>
-        <h2>Sustainability Performance</h2>
-        <p class="section-intro">Verified metrics against international standards.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-label">CARBON</div>
-          <div class="data-row"><span class="data-key">Operational carbon</span><span class="data-val">Net negative -1.4 tCO₂e/resident/yr</span></div>
-          <div class="data-row"><span class="data-key">Embodied carbon</span><span class="data-val">180 kgCO₂e/m²</span></div>
-          <div class="data-row"><span class="data-key">Construction waste</span><span class="data-val">&lt; 3% to landfill</span></div>
-        </div>
-        <div class="card">
-          <div class="card-label">ECOLOGY & WATER</div>
-          <div class="data-row"><span class="data-key">Green cover</span><span class="data-val">34% of urban area</span></div>
-          <div class="data-row"><span class="data-key">Biodiversity target</span><span class="data-val">Net positive +12%</span></div>
-          <div class="data-row"><span class="data-key">Water recycling</span><span class="data-val">94% internal</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATION PATHWAY -->
-    <section>
-      <div class="section-header">
-        <div class="section-number">07 — CERTIFICATION TARGETS</div>
-        <h2>Label & Compliance</h2>
-        <p class="section-intro">The project is designed to achieve multiple international certifications.</p>
-      </div>
-      <div class="tags" style="justify-content: center; margin: 32px 0;">
-        <span class="tag tag-accent" style="font-size: 14px; padding: 8px 20px;">BREEAM Communities — Excellent</span>
-        <span class="tag tag-accent" style="font-size: 14px; padding: 8px 20px;">LEED Platinum</span>
-        <span class="tag tag-accent" style="font-size: 14px; padding: 8px 20px;">E+C- (Energy Positive)</span>
-        <span class="tag tag-accent" style="font-size: 14px; padding: 8px 20px;">HQE Aménagement</span>
-        <span class="tag tag-accent" style="font-size: 14px; padding: 8px 20px;">ISO 37101</span>
-      </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <div id="contact" class="form-section">
-      <h3 style="font-size: 32px; margin-bottom: 16px;">Request Full Executive Access</h3>
-      <p style="color: var(--text-secondary); max-width: 550px; margin: 0 auto;">Qualified investors, municipalities, developers, and institutions may request the complete confidential brief, financial model, and site-specific adaptation study.</p>
-      <div class="form-group">
-        <input type="text" placeholder="Full name">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Organization">
-        <select>
-          <option>I am a...</option>
-          <option>Municipality / Public authority</option>
-          <option>Institutional investor</option>
-          <option>Developer</option>
-          <option>Architecture / Engineering firm</option>
-          <option>Qualified buyer</option>
-        </select>
-        <button class="btn-primary">Submit request →</button>
-      </div>
-      <p style="color: var(--text-muted); font-size: 12px; margin-top: 24px;">All requests are reviewed manually. You will receive a secure link within 48 hours.</p>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-label">PROJECT 19859D</div>
-        <div class="footer-text">Executive Technical Brief — Version 4.2<br>April 2026<br>Confidential — Not for distribution</div>
-      </div>
-      <div>
-        <div class="footer-label">CONSORTIUM</div>
-        <div class="footer-text">Lead Architecture: Studio 19859<br>Structural: ARUP International<br>Systems: Buro Happold<br>Urban Planning: MVRDV Consortium<br>AI Systems: Autonomous City Lab</div>
-      </div>
-      <div>
-        <div class="footer-label">CONTACT</div>
-        <div class="footer-text">Project Director's Office<br>executive@project19859d.consortium<br>Encrypted channel available for qualified partners</div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 PROJECT 19859D CONSORTIUM — ALL RIGHTS RESERVED</span>
-      <span>CLASSIFICATION: CONFIDENTIAL — EXECUTIVE BRIEF</span>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+          <div class="card-label">TIER 3 — FRE
