@@ -35,7 +35,6 @@
     overflow-x: hidden;
   }
 
-  /* subtle noise */
   body::before {
     content: '';
     position: fixed;
@@ -45,7 +44,6 @@
     z-index: 9999;
   }
 
-  /* navigation */
   nav {
     position: sticky;
     top: 0;
@@ -104,7 +102,6 @@
     color: var(--black);
   }
 
-  /* hero */
   .hero {
     position: relative;
     min-height: 85vh;
@@ -191,7 +188,6 @@
     text-transform: uppercase;
   }
 
-  /* main */
   main {
     max-width: 1280px;
     margin: 0 auto;
@@ -231,7 +227,6 @@
     line-height: 1.5;
   }
 
-  /* grids */
   .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -242,6 +237,12 @@
   .grid-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2px;
   }
 
@@ -274,7 +275,6 @@
     color: var(--dim);
   }
 
-  /* image blocks */
   .image-block {
     margin: 80px 0;
   }
@@ -303,7 +303,6 @@
     text-align: center;
   }
 
-  /* banner */
   .banner {
     background: var(--panel);
     border-left: 3px solid var(--accent);
@@ -313,7 +312,36 @@
     line-height: 1.6;
   }
 
-  /* cta form */
+  .kpi-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 48px 0;
+    padding: 32px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+  }
+
+  .kpi-item {
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .kpi-number {
+    font-family: var(--mono);
+    font-size: 28px;
+    color: var(--accent2);
+  }
+
+  .kpi-label {
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+    margin-top: 8px;
+  }
+
   .form-section {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -340,10 +368,6 @@
     min-width: 200px;
   }
 
-  .form-group input::placeholder {
-    color: var(--dim);
-  }
-
   .btn-primary {
     background: var(--accent);
     border: none;
@@ -360,7 +384,6 @@
     opacity: 0.85;
   }
 
-  /* executive link */
   .executive-link {
     text-align: center;
     padding: 60px 0;
@@ -368,7 +391,6 @@
     margin-top: 40px;
   }
 
-  /* footer */
   footer {
     margin-top: 80px;
     border-top: 1px solid var(--border);
@@ -403,7 +425,7 @@
   }
 
   @media (max-width: 900px) {
-    .grid-2, .grid-3 {
+    .grid-2, .grid-3, .grid-4 {
       grid-template-columns: 1fr;
     }
     .nav-links {
@@ -416,8 +438,9 @@
     footer {
       grid-template-columns: 1fr;
     }
-    .form-section {
-      padding: 40px 24px;
+    .kpi-strip {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
@@ -427,7 +450,8 @@
 <nav>
   <div class="nav-logo">PROJECT 19859D</div>
   <ul class="nav-links">
-    <li><a href="#district">THE DISTRICT</a></li>
+    <li><a href="#district">DISTRICT</a></li>
+    <li><a href="#performance">PERFORMANCE</a></li>
     <li><a href="#living">LIVING</a></li>
     <li><a href="#architecture">ARCHITECTURE</a></li>
     <li><a href="#urban">URBAN MODEL</a></li>
@@ -442,7 +466,7 @@
   <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
   <div class="hero-sub">
     <div class="hero-desc">
-      A next‑generation neighborhood where housing, work, daily services, leisure, and mobility are integrated into one coherent urban system.
+      A next‑generation neighborhood where housing, work, daily services, leisure, and mobility are integrated into one coherent urban system. Certified low-carbon, climate-resilient, and designed for long-term livability.
     </div>
     <div class="hero-stats">
       <div class="stat"><span class="stat-number">15 min</span><div class="stat-label">TO WORK & SERVICES</div></div>
@@ -476,10 +500,51 @@
     </div>
   </section>
 
+  <!-- NEW SECTION : SUSTAINABILITY PERFORMANCE (BENCHMARK UPGRADE) -->
+  <section id="performance">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div>
+        <h2 class="section-title">Measurable performance</h2>
+        <p class="section-intro">Project 19859D is designed to meet international certification standards and provide verifiable environmental and social outcomes.</p>
+      </div>
+    </div>
+    <div class="kpi-strip">
+      <div class="kpi-item"><div class="kpi-number">-1.4 tCO₂e</div><div class="kpi-label">per resident/year (operational)</div></div>
+      <div class="kpi-item"><div class="kpi-number">180 kgCO₂e/m²</div><div class="kpi-label">embodied carbon</div></div>
+      <div class="kpi-item"><div class="kpi-number">96%</div><div class="kpi-label">renewable energy fraction</div></div>
+      <div class="kpi-item"><div class="kpi-number">94%</div><div class="kpi-label">water recycling rate</div></div>
+      <div class="kpi-item"><div class="kpi-number">+12%</div><div class="kpi-label">biodiversity net gain</div></div>
+      <div class="kpi-item"><div class="kpi-number">34%</div><div class="kpi-label">green cover</div></div>
+    </div>
+    <div class="grid-4">
+      <div class="panel">
+        <div class="panel-label">CERTIFICATION TARGETS</div>
+        <div class="panel-title">LEED ND · HQE · E+C-</div>
+        <div class="panel-text">Designed to achieve LEED for Neighborhood Development, HQE Aménagement, and E+C- (energy positive carbon). Third-party verified.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">CLIMATE RESILIENCE</div>
+        <div class="panel-title">Heat · Water · Shade</div>
+        <div class="panel-text">32° orientation, wind catchers, thermal chimneys, 80% shaded pedestrian corridors, and permeable soils for stormwater management.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">SOCIAL INCLUSION</div>
+        <div class="panel-title">Mixed-income · All ages</div>
+        <div class="panel-text">40% of residents under 35. Mixed-income housing tiers. Universal access to education, health, and public amenities.</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">WHOLE-LIFE CARBON</div>
+        <div class="panel-title">Operational + Embodied</div>
+        <div class="panel-text">Low-carbon materials (geopolymer concrete, BFRP, aerogel). Designed for disassembly and circular material streams.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION : WHAT RESIDENTS GET -->
   <section id="living">
     <div class="section-header">
-      <div class="section-number">02</div>
+      <div class="section-number">03</div>
       <div>
         <h2 class="section-title">What residents get</h2>
         <p class="section-intro">19859D combines private residential quality with district‑scale convenience.</p>
@@ -489,24 +554,24 @@
       <div class="panel">
         <div class="panel-label">APARTMENTS</div>
         <div class="panel-title">Spacious & generous</div>
-        <div class="panel-text">Generous balconies and terraces extend living space outdoors. Warm industrial interiors with visible material honesty.</div>
+        <div class="panel-text">Generous balconies and terraces extend living space outdoors. Warm industrial interiors with visible material honesty. Units from 45m² to 140m².</div>
       </div>
       <div class="panel">
         <div class="panel-label">SERVICES</div>
         <div class="panel-title">Integrated daily life</div>
-        <div class="panel-text">Local retail and daily services integrated into the ground plane. Walkable public spaces designed for calm movement and social life.</div>
+        <div class="panel-text">Local retail, healthcare, childcare, fitness, and workspaces integrated into the ground plane. Walkable public spaces designed for calm movement.</div>
       </div>
     </div>
     <div class="grid-2">
       <div class="panel">
         <div class="panel-label">MOBILITY</div>
         <div class="panel-title">Walking first</div>
-        <div class="panel-text">Low‑emission mobility designed around walking first. Everything essential is within 15 minutes.</div>
+        <div class="panel-text">Low‑emission mobility designed around walking first. Everything essential is within 15 minutes. Shared autonomous pods and underground freight.</div>
       </div>
       <div class="panel">
         <div class="panel-label">COMMUNITY</div>
         <div class="panel-title">Privacy & access</div>
-        <div class="panel-text">A neighborhood structure that supports both privacy and access. Long‑term livability over spectacle.</div>
+        <div class="panel-text">A neighborhood structure that supports both privacy and access. Long‑term livability over spectacle. Universal City Endowment for all residents.</div>
       </div>
     </div>
   </section>
@@ -522,7 +587,7 @@
   <!-- SECTION : ARCHITECTURE -->
   <section id="architecture">
     <div class="section-header">
-      <div class="section-number">03</div>
+      <div class="section-number">04</div>
       <div>
         <h2 class="section-title">Concrete, geometry, and lasting value</h2>
         <p class="section-intro">The architecture of 19859D is structuralist in spirit: geometric, legible, durable, and intentionally built.</p>
@@ -532,17 +597,17 @@
       <div class="panel">
         <div class="panel-label">STRUCTURE</div>
         <div class="panel-title">Mid‑rise clarity</div>
-        <div class="panel-text">Maximum height of seven floors. Clear structural logic, deep floor plates, strong horizontal lines.</div>
+        <div class="panel-text">Maximum height of seven floors. Clear structural logic, deep floor plates, strong horizontal lines. Prefabricated hexaframe system.</div>
       </div>
       <div class="panel">
         <div class="panel-label">MATERIALS</div>
         <div class="panel-title">Honest & warm</div>
-        <div class="panel-text">Exposed concrete, metal detailing, large‑format glazing, and warm interior finishes. Industrial in clarity, warm in atmosphere.</div>
+        <div class="panel-text">Exposed low-carbon concrete, BFRP columns, large‑format glazing, and warm interior finishes. Industrial in clarity, warm in atmosphere.</div>
       </div>
       <div class="panel">
-        <div class="panel-label">BALCONIES</div>
-        <div class="panel-title">Outdoor extension</div>
-        <div class="panel-text">Generous balcony edges extend domestic life outward. Private outdoor space for every apartment.</div>
+        <div class="panel-label">PASSIVE DESIGN</div>
+        <div class="panel-title">Cooling · Ventilation</div>
+        <div class="panel-text">Wind catchers generate 4–8 Pa pressure differentials. Thermal chimneys. 32° orientation minimizes solar gain. PCM panels absorb peak loads.</div>
       </div>
     </div>
   </section>
@@ -550,22 +615,22 @@
   <!-- SECTION : URBAN MODEL -->
   <section id="urban">
     <div class="section-header">
-      <div class="section-number">04</div>
+      <div class="section-number">05</div>
       <div>
         <h2 class="section-title">A district, not a standalone building</h2>
-        <p class="section-intro">19859D is conceived as a repeatable district‑scale model.</p>
+        <p class="section-intro">19859D is conceived as a repeatable district‑scale model, adaptable to different climates and metropolitan contexts.</p>
       </div>
     </div>
     <div class="grid-2">
       <div class="panel">
         <div class="panel-label">MIXED‑USE</div>
         <div class="panel-title">Integrated program</div>
-        <div class="panel-text">Residential buildings, everyday commerce, work environments, local mobility infrastructure, public realm, landscape, and civic amenities.</div>
+        <div class="panel-text">Residential buildings (65%), everyday commerce (20%), R&D and work environments (10%), civic amenities (5%).</div>
       </div>
       <div class="panel">
         <div class="panel-label">ADAPTABLE</div>
-        <div class="panel-title">Multiple cities</div>
-        <div class="panel-text">Because of this, the project can be adapted to different metropolitan contexts. A framework for a better kind of urban expansion.</div>
+        <div class="panel-title">Multiple cities · Climates</div>
+        <div class="panel-text">Modular design allows adaptation to arid, temperate, and tropical climates. Scalable from 5,000 to 50,000 residents.</div>
       </div>
     </div>
   </section>
@@ -581,21 +646,21 @@
   <!-- SECTION : WHY NOW -->
   <section>
     <div class="section-header">
-      <div class="section-number">05</div>
+      <div class="section-number">06</div>
       <div>
         <h2 class="section-title">Why this matters now</h2>
-        <p class="section-intro">Cities are facing the same pressures almost everywhere: housing shortage, rising car dependency, fragmented neighborhoods, and declining quality of daily life.</p>
+        <p class="section-intro">Cities face the same pressures everywhere: housing shortage, car dependency, fragmented neighborhoods, and climate vulnerability.</p>
       </div>
     </div>
     <div class="banner">
-      19859D responds with a clear proposition: build less sprawl, less isolation, and less dependency on long commutes. Build mid‑density neighborhoods that people actually want to live in. The project is designed for residents first, but it also creates value for cities, developers, and long‑term investors.
+      19859D responds with a clear proposition: build less sprawl, less isolation, and less dependency on long commutes. Build mid‑density, low-carbon, climate-resilient neighborhoods that people actually want to live in. Designed for residents first, but creates value for cities, developers, and long‑term investors.
     </div>
   </section>
 
   <!-- FORM SECTION -->
   <div id="register" class="form-section">
     <h3 style="font-family: var(--display); font-size: 28px; color: #fff; margin-bottom: 16px;">Receive the Executive Brief</h3>
-    <p style="color: var(--dim); max-width: 500px; margin: 0 auto;">Register your interest to receive the full project brief, early release updates, and development information.</p>
+    <p style="color: var(--dim); max-width: 500px; margin: 0 auto;">Register your interest to receive the full project brief, sustainability metrics, certification pathway, and development information.</p>
     <div class="form-group">
       <input type="text" placeholder="Full name">
       <input type="email" placeholder="Email">
@@ -611,8 +676,9 @@
         <option>Profile</option>
         <option>Buyer</option>
         <option>Investor</option>
-        <option>Partner</option>
-        <option>Curious resident</option>
+        <option>Municipality</option>
+        <option>Developer / Partner</option>
+        <option>Architect / Engineer</option>
       </select>
       <button class="btn-primary">Request the brief →</button>
     </div>
@@ -620,7 +686,7 @@
 
   <!-- EXECUTIVE BRIEF LINK -->
   <div class="executive-link">
-    <p style="color: var(--dim); margin-bottom: 16px;">For institutions, developers, and qualified investors</p>
+    <p style="color: var(--dim); margin-bottom: 16px;">For institutions, municipalities, developers, and qualified investors</p>
     <a href="executive.html" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">View Executive Brief →</a>
   </div>
 
@@ -629,7 +695,7 @@
 <footer>
   <div class="footer-col">
     <div class="footer-label">PROJECT 19859D</div>
-    <div class="footer-text">A next‑generation residential district built around a 15‑minute urban model. Housing, work, leisure, and services within walking distance.</div>
+    <div class="footer-text">A next‑generation residential district built around a 15‑minute urban model. Low-carbon, climate-resilient, and certified.</div>
   </div>
   <div class="footer-col">
     <div class="footer-label">CONSORTIUM</div>
@@ -637,7 +703,7 @@
   </div>
   <div class="footer-col">
     <div class="footer-label">CONTACT</div>
-    <div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel available for qualified partners</div>
+    <div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel for qualified partners</div>
   </div>
 </footer>
 <div class="footer-bottom">
@@ -646,4 +712,4 @@
 </div>
 
 </body>
-  </html>
+</html>
