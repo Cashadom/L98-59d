@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROJECT 19859D — 15‑Minute Residential District</title>
+<title>PROJECT 19859D — Autonomous Urban District | 15-Minute City Model</title>
+<meta name="description" content="Project 19859D is a deployable, autonomous urban district — 680 ha, 12,000 residents, net-negative carbon, 96% renewable energy, 94% water recycling. ESG investment opportunity.">
+<meta name="keywords" content="autonomous urban district, net-zero neighborhood, 15-minute city model, ESG urban investment, low-carbon district, smart city without surveillance, deployable urban model">
+<meta name="author" content="Project 19859D Consortium">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6LKZS7Q');</script>
+<!-- End Google Tag Manager -->
+
 <style>
   * {
     margin: 0;
@@ -16,9 +28,12 @@
     --black: #050507;
     --deep: #090b10;
     --panel: #0d1018;
-    --border: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.08);
+    --border-light: rgba(255,255,255,0.04);
     --accent: #c8a96e;
+    --accent-gold: #c8a96e;
     --accent2: #5de6c8;
+    --accent-teal: #5de6c8;
     --text: rgba(255,255,255,0.85);
     --dim: rgba(255,255,255,0.4);
     --mono: 'Share Tech Mono', monospace;
@@ -48,26 +63,26 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5,5,7,0.92);
-    backdrop-filter: blur(16px);
+    background: rgba(5,5,7,0.95);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 6vw;
-    height: 68px;
+    height: 72px;
   }
 
   .nav-logo {
     font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.2em;
+    font-size: 12px;
+    letter-spacing: 0.25em;
     color: var(--accent);
   }
 
   .nav-links {
     display: flex;
-    gap: 36px;
+    gap: 32px;
     list-style: none;
   }
 
@@ -90,8 +105,9 @@
     background: transparent;
     padding: 8px 20px;
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
+    letter-spacing: 0.1em;
     color: var(--accent);
     text-decoration: none;
     transition: all 0.2s;
@@ -102,9 +118,48 @@
     color: var(--black);
   }
 
+  .btn-primary {
+    background: var(--accent);
+    border: none;
+    padding: 12px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent2);
+    color: var(--black);
+  }
+
+  .btn-owner {
+    border: 1px solid var(--accent2);
+    background: transparent;
+    padding: 8px 24px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--accent2);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-owner:hover {
+    background: var(--accent2);
+    color: var(--black);
+    border-color: var(--accent2);
+  }
+
   .hero {
     position: relative;
-    min-height: 85vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -116,23 +171,23 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 70% 50% at 60% 30%, rgba(200,169,110,0.06) 0%, transparent 60%),
-      linear-gradient(145deg, #050507 0%, #0a0d15 60%, #050507 100%);
+      radial-gradient(ellipse 60% 40% at 50% 25%, rgba(200,169,110,0.08) 0%, transparent 60%),
+      linear-gradient(135deg, #050507 0%, #0a0d15 50%, #050507 100%);
   }
 
   .hero-grid {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
   .hero-label {
     font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.3em;
+    font-size: 10px;
+    letter-spacing: 0.35em;
     color: var(--accent2);
     margin-bottom: 24px;
     position: relative;
@@ -140,9 +195,9 @@
 
   .hero-title {
     font-family: var(--display);
-    font-size: clamp(56px, 10vw, 130px);
+    font-size: clamp(56px, 12vw, 140px);
     letter-spacing: 0.02em;
-    line-height: 0.9;
+    line-height: 0.85;
     color: #fff;
     position: relative;
   }
@@ -168,24 +223,31 @@
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
   }
 
   .stat {
-    border-left: 1px solid var(--accent);
+    border-left: 2px solid var(--accent);
     padding-left: 16px;
   }
 
   .stat-number {
     font-family: var(--mono);
-    font-size: 26px;
+    font-size: 24px;
     color: var(--accent);
   }
 
   .stat-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 9px;
+    letter-spacing: 0.2em;
     color: var(--dim);
     text-transform: uppercase;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
   main {
@@ -248,8 +310,13 @@
 
   .panel {
     background: var(--panel);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-light);
     padding: 40px;
+    transition: border-color 0.2s;
+  }
+
+  .panel:hover {
+    border-color: var(--accent);
   }
 
   .panel-label {
@@ -263,7 +330,7 @@
 
   .panel-title {
     font-family: var(--display);
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 0.04em;
     color: #fff;
     margin-bottom: 16px;
@@ -290,6 +357,7 @@
     width: 100%;
     height: auto;
     display: block;
+    filter: grayscale(0.2) contrast(1.05);
   }
 
   .image-caption {
@@ -297,9 +365,9 @@
     background: var(--panel);
     border-top: 1px solid var(--border);
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 9px;
     color: var(--dim);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-align: center;
   }
 
@@ -308,8 +376,9 @@
     border-left: 3px solid var(--accent);
     padding: 32px 40px;
     margin: 48px 0;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
   }
 
   .kpi-strip {
@@ -336,7 +405,7 @@
   }
 
   .kpi-label {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--dim);
     letter-spacing: 0.1em;
     margin-top: 8px;
@@ -368,22 +437,6 @@
     min-width: 200px;
   }
 
-  .btn-primary {
-    background: var(--accent);
-    border: none;
-    padding: 14px 32px;
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--black);
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-
-  .btn-primary:hover {
-    opacity: 0.85;
-  }
-
   .executive-link {
     text-align: center;
     padding: 60px 0;
@@ -402,14 +455,14 @@
 
   .footer-label {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 0.3em;
     color: var(--accent);
     margin-bottom: 20px;
   }
 
   .footer-text {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--dim);
     line-height: 1.6;
   }
@@ -420,7 +473,7 @@
     display: flex;
     justify-content: space-between;
     font-family: var(--mono);
-    font-size: 9px;
+    font-size: 8px;
     color: rgba(255,255,255,0.2);
   }
 
@@ -447,6 +500,11 @@
 </head>
 <body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6LKZS7Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <nav>
   <div class="nav-logo">PROJECT 19859D</div>
   <ul class="nav-links">
@@ -456,22 +514,30 @@
     <li><a href="#architecture">ARCHITECTURE</a></li>
     <li><a href="#urban">URBAN MODEL</a></li>
   </ul>
-  <a href="#register" class="btn-outline">REGISTER</a>
+  <div style="display: flex; gap: 12px;">
+    <a href="#register" class="btn-outline">REGISTER</a>
+    <a href="#owner" class="btn-owner">BECOME A RESIDENT-OWNER</a>
+  </div>
 </nav>
 
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-label">◆ A 15‑MINUTE RESIDENTIAL DISTRICT ◆</div>
+  <div class="hero-label">◆ DEPLOYABLE · AUTONOMOUS · NET-NEGATIVE CARBON ◆</div>
   <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
   <div class="hero-sub">
     <div class="hero-desc">
-      A next‑generation neighborhood where housing, work, daily services, leisure, and mobility are integrated into one coherent urban system. Certified low-carbon, climate-resilient, and designed for long-term livability.
+      A next‑generation autonomous urban district where housing, work, daily services, leisure, and mobility integrate into one coherent low-carbon system. 680 hectares. 12,000 residents. Certified climate-resilient.
     </div>
     <div class="hero-stats">
       <div class="stat"><span class="stat-number">15 min</span><div class="stat-label">TO WORK & SERVICES</div></div>
       <div class="stat"><span class="stat-number">7 floors</span><div class="stat-label">MAX HEIGHT</div></div>
-      <div class="stat"><span class="stat-number">mixed-use</span><div class="stat-label">DISTRICT</div></div>
+      <div class="stat"><span class="stat-number">96%</span><div class="stat-label">RENEWABLE ENERGY</div></div>
+      <div class="stat"><span class="stat-number">-1.4 tCO₂e</span><div class="stat-label">PER RESIDENT/YEAR</div></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#owner" class="btn-primary">BECOME A RESIDENT-OWNER →</a>
+      <a href="executive.html" class="btn-outline">EXECUTIVE BRIEF</a>
     </div>
   </div>
 </div>
@@ -481,9 +547,9 @@
   <!-- IMAGE 1 — MASTERPLAN -->
   <div class="image-block">
     <div class="image-frame">
-      <img src="photo1.png" alt="Masterplan perspective">
+      <img src="photo1.png" alt="Masterplan perspective — autonomous urban district">
     </div>
-    <div class="image-caption">Masterplan perspective — district organization</div>
+    <div class="image-caption">MASTERPLAN PERSPECTIVE — DISTRICT ORGANIZATION / 680 HA</div>
   </div>
 
   <!-- SECTION : A BETTER DAILY RADIUS -->
@@ -498,9 +564,12 @@
     <div class="banner">
       Within a short walk or ride, residents can reach workspaces, childcare, cafés, groceries, fitness, healthcare, and public space. The district is organized to reduce wasted time, shorten distances, and improve the quality of ordinary days. This is not density for density’s sake. It is a calmer, more useful form of urban life.
     </div>
+    <div class="banner" style="border-left-color: var(--accent2);">
+      <strong>Time-efficiency system:</strong> −35% daily mobility time per resident → increased economic activity + improved quality of life.
+    </div>
   </section>
 
-  <!-- NEW SECTION : SUSTAINABILITY PERFORMANCE (BENCHMARK UPGRADE) -->
+  <!-- SECTION : PERFORMANCE -->
   <section id="performance">
     <div class="section-header">
       <div class="section-number">02</div>
@@ -510,10 +579,10 @@
       </div>
     </div>
     <div class="kpi-strip">
-      <div class="kpi-item"><div class="kpi-number">-1.4 tCO₂e</div><div class="kpi-label">per resident/year (operational)</div></div>
+      <div class="kpi-item"><div class="kpi-number">-1.4 tCO₂e</div><div class="kpi-label">operational / resident/yr</div></div>
       <div class="kpi-item"><div class="kpi-number">180 kgCO₂e/m²</div><div class="kpi-label">embodied carbon</div></div>
-      <div class="kpi-item"><div class="kpi-number">96%</div><div class="kpi-label">renewable energy fraction</div></div>
-      <div class="kpi-item"><div class="kpi-number">94%</div><div class="kpi-label">water recycling rate</div></div>
+      <div class="kpi-item"><div class="kpi-number">96%</div><div class="kpi-label">renewable energy</div></div>
+      <div class="kpi-item"><div class="kpi-number">94%</div><div class="kpi-label">water recycling</div></div>
       <div class="kpi-item"><div class="kpi-number">+12%</div><div class="kpi-label">biodiversity net gain</div></div>
       <div class="kpi-item"><div class="kpi-number">34%</div><div class="kpi-label">green cover</div></div>
     </div>
@@ -521,23 +590,26 @@
       <div class="panel">
         <div class="panel-label">CERTIFICATION TARGETS</div>
         <div class="panel-title">LEED ND · HQE · E+C-</div>
-        <div class="panel-text">Designed to achieve LEED for Neighborhood Development, HQE Aménagement, and E+C- (energy positive carbon). Third-party verified.</div>
+        <div class="panel-text">LEED for Neighborhood Development Platinum, HQE Aménagement, E+C- (energy positive carbon). Third-party verified.</div>
       </div>
       <div class="panel">
         <div class="panel-label">CLIMATE RESILIENCE</div>
         <div class="panel-title">Heat · Water · Shade</div>
-        <div class="panel-text">32° orientation, wind catchers, thermal chimneys, 80% shaded pedestrian corridors, and permeable soils for stormwater management.</div>
+        <div class="panel-text">32° orientation, wind catchers, thermal chimneys, 80% shaded pedestrian corridors, permeable soils.</div>
       </div>
       <div class="panel">
         <div class="panel-label">SOCIAL INCLUSION</div>
         <div class="panel-title">Mixed-income · All ages</div>
-        <div class="panel-text">40% of residents under 35. Mixed-income housing tiers. Universal access to education, health, and public amenities.</div>
+        <div class="panel-text">40% of residents under 35. Mixed-income housing. Universal access to education, health, amenities.</div>
       </div>
       <div class="panel">
-        <div class="panel-label">WHOLE-LIFE CARBON</div>
-        <div class="panel-title">Operational + Embodied</div>
-        <div class="panel-text">Low-carbon materials (geopolymer concrete, BFRP, aerogel). Designed for disassembly and circular material streams.</div>
+        <div class="panel-label">ECONOMIC MODEL</div>
+        <div class="panel-title">Value creation system</div>
+        <div class="panel-text">Hybrid model: residential yield, local commerce, land value appreciation. Designed for institutional investors and PPP.</div>
       </div>
+    </div>
+    <div class="banner">
+      <strong>Project 19859D is structured as a replicable investment-grade urban product</strong> — measurable ESG performance aligned with EU taxonomy and long-term asset resilience.
     </div>
   </section>
 
@@ -574,14 +646,17 @@
         <div class="panel-text">A neighborhood structure that supports both privacy and access. Long‑term livability over spectacle. Universal City Endowment for all residents.</div>
       </div>
     </div>
+    <div class="banner">
+      The district is designed for <strong>end-users first</strong>, while maintaining strong appeal for investors: high retention rate, stable occupancy, premium positioning in low-carbon housing markets.
+    </div>
   </section>
 
   <!-- IMAGE 2 — BALCONY VIEW -->
   <div class="image-block">
     <div class="image-frame">
-      <img src="photo2.png" alt="Residential balcony view">
+      <img src="photo2.png" alt="Residential balcony view — terrace and urban landscape">
     </div>
-    <div class="image-caption">Upper‑level residential view — terrace and urban landscape</div>
+    <div class="image-caption">UPPER-LEVEL RESIDENTIAL VIEW — TERRACE + URBAN LANDSCAPE</div>
   </div>
 
   <!-- SECTION : ARCHITECTURE -->
@@ -610,6 +685,9 @@
         <div class="panel-text">Wind catchers generate 4–8 Pa pressure differentials. Thermal chimneys. 32° orientation minimizes solar gain. PCM panels absorb peak loads.</div>
       </div>
     </div>
+    <div class="banner">
+      Construction system optimized for <strong>industrial scalability</strong>: prefabrication, reduced construction time (−28%), controlled costs with high architectural consistency.
+    </div>
   </section>
 
   <!-- SECTION : URBAN MODEL -->
@@ -633,14 +711,17 @@
         <div class="panel-text">Modular design allows adaptation to arid, temperate, and tropical climates. Scalable from 5,000 to 50,000 residents.</div>
       </div>
     </div>
+    <div class="banner">
+      <strong>19859D is not a project but a deployable urban model</strong>: standardized framework adaptable to multiple metropolitan regions, enabling rapid deployment and international scalability.
+    </div>
   </section>
 
   <!-- IMAGE 3 — INTERIOR -->
   <div class="image-block">
     <div class="image-frame">
-      <img src="photo3.png" alt="Apartment interior">
+      <img src="photo3.png" alt="Apartment interior — warm materiality">
     </div>
-    <div class="image-caption">Interior living space — warm materiality and generous light</div>
+    <div class="image-caption">INTERIOR LIVING SPACE — WARM MATERIALITY + GENEROUS LIGHT</div>
   </div>
 
   <!-- SECTION : WHY NOW -->
@@ -653,14 +734,19 @@
       </div>
     </div>
     <div class="banner">
-      19859D responds with a clear proposition: build less sprawl, less isolation, and less dependency on long commutes. Build mid‑density, low-carbon, climate-resilient neighborhoods that people actually want to live in. Designed for residents first, but creates value for cities, developers, and long‑term investors.
+      Global cities face structural challenges: housing shortages, climate pressure, and inefficient urban sprawl.<br><br>
+      <strong>19859D introduces a new urban asset class:</strong> mid-density, low-carbon, high-livability districts designed for both residents and long-term capital.<br><br>
+      → Less sprawl<br>
+      → Less dependency<br>
+      → More value per square meter<br><br>
+      This is not architecture. It is <strong>urban infrastructure for the next cycle of cities</strong>.
     </div>
   </section>
 
-  <!-- FORM SECTION -->
+  <!-- FORM SECTION + OWNER BUTTON -->
   <div id="register" class="form-section">
-    <h3 style="font-family: var(--display); font-size: 28px; color: #fff; margin-bottom: 16px;">Receive the Executive Brief</h3>
-    <p style="color: var(--dim); max-width: 500px; margin: 0 auto;">Register your interest to receive the full project brief, sustainability metrics, certification pathway, and development information.</p>
+    <h3 style="font-family: var(--display); font-size: 28px; color: #fff; margin-bottom: 16px;">Become a Resident-Owner</h3>
+    <p style="color: var(--dim); max-width: 500px; margin: 0 auto;">Register your interest to receive the full executive brief, sustainability metrics, certification pathway, and ownership opportunities.</p>
     <div class="form-group">
       <input type="text" placeholder="Full name">
       <input type="email" placeholder="Email">
@@ -674,20 +760,23 @@
       </select>
       <select>
         <option>Profile</option>
-        <option>Buyer</option>
-        <option>Investor</option>
+        <option>Buyer / Resident-Owner</option>
+        <option>Institutional Investor</option>
         <option>Municipality</option>
         <option>Developer / Partner</option>
         <option>Architect / Engineer</option>
       </select>
-      <button class="btn-primary">Request the brief →</button>
+      <button class="btn-primary">REQUEST OWNERSHIP BRIEF →</button>
     </div>
   </div>
 
   <!-- EXECUTIVE BRIEF LINK -->
-  <div class="executive-link">
+  <div id="owner" class="executive-link">
     <p style="color: var(--dim); margin-bottom: 16px;">For institutions, municipalities, developers, and qualified investors</p>
-    <a href="executive.html" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">View Executive Brief →</a>
+    <a href="executive.html" class="btn-outline" style="border-color: var(--accent2); color: var(--accent2);">VIEW EXECUTIVE BRIEF →</a>
+    <p style="margin-top: 24px;">
+      <a href="#" style="color: var(--accent); text-decoration: none; font-family: var(--mono); font-size: 11px;">BECOME A RESIDENT-OWNER — LIMITED PHASE I UNITS</a>
+    </p>
   </div>
 
 </main>
@@ -695,7 +784,7 @@
 <footer>
   <div class="footer-col">
     <div class="footer-label">PROJECT 19859D</div>
-    <div class="footer-text">A next‑generation residential district built around a 15‑minute urban model. Low-carbon, climate-resilient, and certified.</div>
+    <div class="footer-text">A deployable autonomous urban district built around a 15‑minute model. Low-carbon, climate-resilient, certified. Phase I: 12,000 residents — 680 ha.</div>
   </div>
   <div class="footer-col">
     <div class="footer-label">CONSORTIUM</div>
@@ -703,12 +792,12 @@
   </div>
   <div class="footer-col">
     <div class="footer-label">CONTACT</div>
-    <div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel for qualified partners</div>
+    <div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel for qualified partners<br>+33 6 95 36 83 83</div>
   </div>
 </footer>
 <div class="footer-bottom">
   <span>© 2026 PROJECT 19859D CONSORTIUM</span>
-  <span>VERSION 4.2 — PUBLIC BRIEF</span>
+  <span>VERSION 5.0 — INVESTMENT GRADE · ESG · DEPLOYABLE URBAN MODEL</span>
 </div>
 
 </body>
