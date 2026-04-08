@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project 19859D — Executive Brief | Autonomous Urban District | ESG Infrastructure Investment</title>
+<meta name="description" content="Project 19859D is a deployable autonomous urban district — 680 ha, 12,000 residents, net-negative carbon (-1.4 tCO₂e/resident/yr), 96% renewable energy, 12–15% projected IRR. Full technical, financial and governance specifications for institutional partners.">
+<meta name="keywords" content="autonomous urban district investment, ESG urban infrastructure, net-zero neighborhood, 15-minute city model, LEED Platinum district, low-carbon real estate, smart city without surveillance, deployable urban model, sustainable urban development, PPP urban project">
+<meta name="author" content="Project 19859D Consortium — Cyrille Ragonet">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Project 19859D — Executive Brief | Autonomous Urban District">
+<meta property="og:description" content="680 ha · 12,000 residents · 96% renewable · -1.4 tCO₂e/resident/yr · 12–15% IRR. Full executive specifications for institutional investors, municipalities and development partners.">
+<meta property="og:url" content="https://project19859d.com/executive">
+<meta property="og:image" content="banner.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Project 19859D — Executive Brief">
+<meta name="twitter:description" content="Deployable autonomous urban district. ESG investment grade. 680 ha · 12,000 residents · Phase I 2026–2031.">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K6LKZS7Q');</script>
+<!-- End Google Tag Manager -->
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #050507;
+    --deep: #090b10;
+    --panel: #0d1018;
+    --panel2: #111520;
+    --border: rgba(255,255,255,0.06);
+    --border-light: rgba(255,255,255,0.04);
+    --accent: #c8a96e;
+    --accent2: #5de6c8;
+    --text: rgba(255,255,255,0.85);
+    --dim: rgba(255,255,255,0.4);
+    --dim2: rgba(255,255,255,0.22);
+    --mono: 'Share Tech Mono', monospace;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --red: #e05a4a;
+    --amber: #d4a04a;
+    --green: #4ace8a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── BANNER IMAGE ── */
+  .banner-image {
+    width: 100%;
+    height: 320px;
+    background: var(--deep);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+  }
+  .banner-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .banner-image-placeholder span {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--dim2);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(5,5,7,0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6vw;
+    height: 68px;
+  }
+  .nav-logo { font-family: var(--mono); font-size: 11px; letter-spacing: 0.28em; color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em;
+    color: var(--dim); text-decoration: none; text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    border: 1px solid var(--accent); background: transparent;
+    padding: 8px 20px; font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.12em; color: var(--accent); text-decoration: none; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--black); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 6vw 10vh;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 20%, rgba(200,169,110,0.07) 0%, transparent 65%),
+                linear-gradient(160deg, #050507 0%, #0a0d16 55%, #050507 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-badge {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.4em;
+    color: var(--accent2); margin-bottom: 28px; position: relative;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(60px, 13vw, 148px);
+    letter-spacing: 0.025em; line-height: 0.85; color: #fff;
+    position: relative;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero-title span { color: var(--accent); }
+  .hero-sub {
+    margin-top: 44px; position: relative;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-tagline {
+    font-size: 15px; color: var(--dim); line-height: 1.55;
+    max-width: 600px; margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .stat { border-left: 2px solid var(--accent); padding-left: 16px; }
+  .stat-number { font-family: var(--mono); font-size: 22px; color: var(--accent); }
+  .stat-label { font-size: 8px; letter-spacing: 0.22em; color: var(--dim); text-transform: uppercase; margin-top: 4px; }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); border: none; padding: 13px 28px;
+    font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    color: var(--black); cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--accent2); }
+  .btn-outline {
+    border: 1px solid var(--border); background: transparent; padding: 13px 28px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    color: var(--dim); text-decoration: none; transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 6vw; }
+
+  section { padding: 100px 0 64px; border-bottom: 1px solid var(--border); }
+
+  .section-header { margin-bottom: 56px; }
+  .section-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.35em;
+    color: var(--accent2); margin-bottom: 16px; display: block;
+  }
+  .section-title {
+    font-family: var(--display); font-size: clamp(30px, 4.5vw, 52px);
+    letter-spacing: 0.03em; color: #fff; line-height: 1.05; margin-bottom: 18px;
+  }
+  .section-intro { font-size: 15px; color: var(--dim); max-width: 660px; line-height: 1.6; }
+
+  /* ── METRICS STRIP ── */
+  .metrics-strip {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 1px; background: var(--border); margin: 48px 0;
+  }
+  .metric {
+    background: var(--panel); padding: 32px 20px; text-align: center;
+    transition: background 0.2s;
+  }
+  .metric:hover { background: var(--panel2); }
+  .metric-val { font-family: var(--mono); font-size: 28px; color: var(--accent); line-height: 1; }
+  .metric-unit { font-family: var(--mono); font-size: 12px; color: var(--accent2); }
+  .metric-label { font-size: 9px; color: var(--dim2); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 10px; }
+
+  /* ── GRIDS ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--border-light);
+    padding: 36px; transition: border-color 0.25s, background 0.25s;
+  }
+  .card:hover { border-color: rgba(200,169,110,0.3); background: var(--panel2); }
+  .card-label {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em;
+    color: var(--accent); margin-bottom: 14px; text-transform: uppercase;
+  }
+  .card-title { font-family: var(--display); font-size: 22px; letter-spacing: 0.04em; color: #fff; margin-bottom: 14px; }
+  .card-body { font-size: 13px; line-height: 1.65; color: var(--dim); }
+
+  /* ── DATA TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; }
+  .data-table th {
+    background: var(--panel); border-bottom: 1px solid var(--border);
+    padding: 14px 20px; font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.2em; color: var(--accent); text-align: left; text-transform: uppercase;
+  }
+  .data-table td {
+    padding: 13px 20px; border-bottom: 1px solid var(--border-light);
+    font-size: 13px; color: var(--text); vertical-align: top;
+  }
+  .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+  .data-table tr:hover td { background: rgba(200,169,110,0.04); }
+  .data-table .val { font-family: var(--mono); color: var(--accent); font-size: 13px; white-space: nowrap; }
+  .data-table .ref { font-size: 11px; color: var(--dim2); font-style: italic; }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block; padding: 4px 12px; font-family: var(--mono);
+    font-size: 9px; letter-spacing: 0.15em; border: 1px solid;
+  }
+  .badge-ok    { color: var(--green); border-color: rgba(74,206,138,0.35); background: rgba(74,206,138,0.06); }
+  .badge-warn  { color: var(--amber); border-color: rgba(212,160,74,0.35); background: rgba(212,160,74,0.06); }
+  .badge-crit  { color: var(--red);   border-color: rgba(224,90,74,0.35);  background: rgba(224,90,74,0.06); }
+
+  /* ── SCORE BARS ── */
+  .score-row { display: flex; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+  .score-label { font-size: 13px; color: var(--text); min-width: 220px; }
+  .score-bar-wrap { flex: 1; height: 4px; background: rgba(255,255,255,0.06); position: relative; }
+  .score-bar { height: 100%; transition: width 1s ease; }
+  .score-num { font-family: var(--mono); font-size: 16px; color: var(--accent); min-width: 40px; text-align: right; }
+  .score-comment { font-size: 11px; color: var(--dim2); min-width: 240px; font-style: italic; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 48px 0; }
+  .tl-item {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--border-light);
+  }
+  .tl-year { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 700; padding-top: 4px; }
+  .tl-phase { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent2); margin-bottom: 8px; }
+  .tl-desc { font-size: 13px; color: var(--dim); line-height: 1.65; }
+  .tl-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tl-tag {
+    font-family: var(--mono); font-size: 8px; letter-spacing: 0.15em;
+    padding: 3px 10px; border: 1px solid var(--border); color: var(--dim2);
+  }
+
+  /* ── CALLOUT ── */
+  .callout {
+    border-left: 3px solid var(--accent); background: var(--panel);
+    padding: 28px 36px; margin: 40px 0; font-size: 14px; color: var(--text); line-height: 1.7;
+  }
+  .callout-teal { border-left-color: var(--accent2); }
+  .callout strong { color: #fff; }
+
+  /* ── CERT TAGS ── */
+  .cert-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 36px 0; justify-content: flex-start; }
+  .cert-tag {
+    border: 1px solid rgba(200,169,110,0.4); padding: 8px 20px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--accent);
+    transition: all 0.2s;
+  }
+  .cert-tag:hover { background: rgba(200,169,110,0.08); }
+
+  /* ── TEAM ── */
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
+  .team-card {
+    background: var(--panel); border: 1px solid var(--border-light);
+    padding: 32px; transition: border-color 0.2s;
+  }
+  .team-card:hover { border-color: rgba(93,230,200,0.3); }
+  .team-role { font-family: var(--mono); font-size: 8px; letter-spacing: 0.25em; color: var(--accent2); margin-bottom: 10px; }
+  .team-name { font-family: var(--display); font-size: 20px; color: #fff; margin-bottom: 10px; letter-spacing: 0.04em; }
+  .team-resp { font-size: 12px; color: var(--dim); line-height: 1.6; }
+  .team-deliverables { margin-top: 14px; font-size: 11px; color: var(--dim2); font-style: italic; }
+
+  /* ── CONTACT FORM ── */
+  .contact-section {
+    background: var(--panel); border: 1px solid var(--border);
+    padding: 64px; margin: 64px 0; text-align: center;
+  }
+  .contact-title { font-family: var(--display); font-size: 36px; color: #fff; margin-bottom: 16px; letter-spacing: 0.04em; }
+  .contact-sub { font-size: 14px; color: var(--dim); max-width: 540px; margin: 0 auto 36px; line-height: 1.6; }
+  .form-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .form-row input, .form-row select {
+    background: rgba(0,0,0,0.5); border: 1px solid var(--border);
+    padding: 13px 18px; font-family: var(--body); font-size: 13px; color: #fff;
+    min-width: 200px; outline: none; transition: border-color 0.2s;
+  }
+  .form-row input:focus, .form-row select:focus { border-color: var(--accent); }
+  .form-row select option { background: #111; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 80px; border-top: 1px solid var(--border);
+    padding: 60px 6vw 40px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  }
+  .footer-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.3em; color: var(--accent); margin-bottom: 20px; }
+  .footer-text { font-size: 11px; color: var(--dim); line-height: 1.7; }
+  .footer-text a { color: var(--accent2); text-decoration: none; }
+  .footer-bottom {
+    border-top: 1px solid var(--border); padding: 20px 6vw;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-family: var(--mono); font-size: 8px; color: rgba(255,255,255,0.18);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .grid-2, .grid-3, .grid-4, .team-grid { grid-template-columns: 1fr; }
+    .metrics-strip { grid-template-columns: repeat(3, 1fr); }
+    nav .nav-links { display: none; }
+    .tl-item { grid-template-columns: 1fr; gap: 8px; }
+    .contact-section { padding: 40px 24px; }
+    footer { grid-template-columns: 1fr; }
+    .score-row { flex-wrap: wrap; }
+    .score-comment { min-width: unset; }
+  }
+  @media (max-width: 600px) {
+    .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+    .hero-stats { gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6LKZS7Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ══ BANNER IMAGE ══ -->
+<div class="banner-image">
+  <img src="banner.png" alt="Project 19859D — Autonomous Urban District — Executive Brief" onerror="this.style.display='none'">
+  <div class="banner-image-placeholder">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="46" height="46" stroke="rgba(200,169,110,0.3)" stroke-width="1"/>
+      <line x1="1" y1="1" x2="47" y2="47" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+      <line x1="47" y1="1" x2="1" y2="47" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+    </svg>
+    <span>BANNER.PNG — ADD YOUR IMAGE HERE</span>
+    <span>RECOMMENDED: 1920 × 320 PX</span>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-logo">PROJECT 19859D // EXECUTIVE BRIEF</div>
+  <ul class="nav-links">
+    <li><a href="#overview">OVERVIEW</a></li>
+    <li><a href="#performance">PERFORMANCE</a></li>
+    <li><a href="#technical">SYSTEMS</a></li>
+    <li><a href="#financial">FINANCIALS</a></li>
+    <li><a href="#timeline">TIMELINE</a></li>
+    <li><a href="#governance">GOVERNANCE</a></li>
+    <li><a href="#team">TEAM</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">REQUEST ACCESS</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero" id="overview">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge">◆ CONFIDENTIAL — INVESTOR & INSTITUTIONAL PARTNER BRIEF — VERSION 5.0 ◆</div>
+  <h1 class="hero-title">PROJECT<br><span>19859D</span></h1>
+  <div class="hero-sub">
+    <p class="hero-tagline">
+      A deployable, autonomous urban district — net-negative carbon, closed-loop resource systems,
+      and a bankable long-term financial model. Complete technical, environmental, financial
+      and governance specifications for qualified investors, municipalities and development partners.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">12,000</div><div class="stat-label">Phase I residents</div></div>
+      <div class="stat"><div class="stat-number">680 ha</div><div class="stat-label">Urban footprint</div></div>
+      <div class="stat"><div class="stat-number">96%</div><div class="stat-label">Renewable energy</div></div>
+      <div class="stat"><div class="stat-number">€2.4B</div><div class="stat-label">Phase I CAPEX</div></div>
+      <div class="stat"><div class="stat-number">12–15%</div><div class="stat-label">Projected IRR</div></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">REQUEST FULL DOSSIER →</a>
+      <a href="index.html" class="btn-outline">RESIDENT OVERVIEW</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 01 — EXECUTIVE SUMMARY ══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">01 — EXECUTIVE SUMMARY</span>
+      <h2 class="section-title">A New Class of Urban Asset</h2>
+      <p class="section-intro">Project 19859D is not a building. It is a fully integrated, deployable urban district model designed for net-zero operation, mixed-use density, long-term asset value and replication across metropolitan contexts.</p>
+    </div>
+
+    <div class="callout">
+      <strong>19859D responds to three structural urban crises simultaneously:</strong> the housing affordability gap, energy dependency, and climate vulnerability. It does so through integrated closed-loop systems — not through isolated building-scale optimizations — producing verifiable, certification-backed performance at district scale.
+    </div>
+
+    <div class="grid-3" style="margin-top: 40px;">
+      <div class="card">
+        <div class="card-label">District model</div>
+        <div class="card-title">15-Minute City</div>
+        <div class="card-body">All daily needs — work, education, health, retail, leisure, mobility — reachable within 15 minutes on foot or by shared autonomous pod. Zero car dependency.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Asset class</div>
+        <div class="card-title">Investment-Grade ESG</div>
+        <div class="card-body">Structured as a bankable urban product. Diversified revenue streams, 6.5–7.5% stabilized yield, BREEAM / LEED Platinum target. EU Taxonomy aligned.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Scalability</div>
+        <div class="card-title">Replicable Model</div>
+        <div class="card-body">Modular framework adaptable to arid, temperate and tropical climates. Scalable from 5,000 to 50,000 residents. Phase II target: 28,000 residents by 2038.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 02 — ENVIRONMENTAL PERFORMANCE ══ -->
+<section id="performance">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">02 — ENVIRONMENTAL PERFORMANCE</span>
+      <h2 class="section-title">Verified Metrics Against International Standards</h2>
+      <p class="section-intro">Every performance indicator is designed for third-party certification. Targets are set against SNBC, RE2020, LEED ND, HQE and EU Taxonomy benchmarks.</p>
+    </div>
+
+    <div class="metrics-strip">
+      <div class="metric"><div class="metric-val">−1.4</div><div class="metric-unit">tCO₂e</div><div class="metric-label">Operational / resident / yr</div></div>
+      <div class="metric"><div class="metric-val">180</div><div class="metric-unit">kgCO₂e/m²</div><div class="metric-label">Embodied carbon</div></div>
+      <div class="metric"><div class="metric-val">96%</div><div class="metric-unit"></div><div class="metric-label">Renewable energy fraction</div></div>
+      <div class="metric"><div class="metric-val">94%</div><div class="metric-unit"></div><div class="metric-label">Water recycling rate</div></div>
+      <div class="metric"><div class="metric-val">+12%</div><div class="metric-unit"></div><div class="metric-label">Biodiversity net gain</div></div>
+      <div class="metric"><div class="metric-val">34%</div><div class="metric-unit"></div><div class="metric-label">Green cover</div></div>
+    </div>
+
+    <table class="data-table" aria-label="Environmental KPIs">
+      <thead>
+        <tr>
+          <th>Indicator</th>
+          <th>Value</th>
+          <th>Reference standard</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Operational carbon balance</td><td class="val">−1.4 tCO₂e / resident / yr</td><td class="ref">SNBC 2050 target: &lt;2 tCO₂e</td><td><span class="badge badge-ok">NET NEGATIVE</span></td></tr>
+        <tr><td>Embodied carbon (structure)</td><td class="val">180 kgCO₂e / m²</td><td class="ref">RE2020 threshold: &lt;300 kgCO₂e/m²</td><td><span class="badge badge-warn">AMBITIOUS</span></td></tr>
+        <tr><td>Renewable energy share</td><td class="val">96%</td><td class="ref">PPE 2030 national target: 40%</td><td><span class="badge badge-ok">EXCEEDS TARGET</span></td></tr>
+        <tr><td>Water recycling (internal loop)</td><td class="val">94%</td><td class="ref">Zero liquid discharge target: 2033</td><td><span class="badge badge-ok">VALIDATED</span></td></tr>
+        <tr><td>Construction waste to landfill</td><td class="val">&lt;3%</td><td class="ref">Circular economy benchmark</td><td><span class="badge badge-ok">TARGET</span></td></tr>
+        <tr><td>Food waste valorization</td><td class="val">98%</td><td class="ref">Composting + anaerobic digestion</td><td><span class="badge badge-ok">TARGET</span></td></tr>
+        <tr><td>Biodiversity net gain</td><td class="val">+12%</td><td class="ref">ZAN / ERC regulatory framework</td><td><span class="badge badge-warn">TO DOCUMENT</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="cert-strip" role="list" aria-label="Target certifications">
+      <div class="cert-tag" role="listitem">BREEAM Communities — Excellent</div>
+      <div class="cert-tag" role="listitem">LEED ND — Platinum</div>
+      <div class="cert-tag" role="listitem">E+C− (Energy Positive)</div>
+      <div class="cert-tag" role="listitem">HQE Aménagement</div>
+      <div class="cert-tag" role="listitem">ISO 37101</div>
+      <div class="cert-tag" role="listitem">WELL Community Standard</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 03 — TECHNICAL SYSTEMS ══ -->
+<section id="technical">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">03 — INTEGRATED TECHNICAL SYSTEMS</span>
+      <h2 class="section-title">Infrastructure & Closed-Loop Systems</h2>
+      <p class="section-intro">Every technical choice is driven by measurable performance, long-term cost efficiency, and contribution to closed material and energy loops.</p>
+    </div>
+
+    <!-- Energy -->
+    <h3 style="font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--accent2);margin-bottom:24px;">ENERGY SYSTEM</h3>
+    <div class="grid-2" style="margin-bottom: 40px;">
+      <div class="card">
+        <div class="card-label">Primary generation</div>
+        <div class="card-title">Bifacial PV + CSP</div>
+        <div class="card-body">847 MWp bifacial monocrystalline (28.4% efficiency) + 140 MWe concentrated solar power with 14h molten salt storage at 560°C. Round-trip efficiency: 93%.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Storage & dispatch</div>
+        <div class="card-title">LFP BESS + AI</div>
+        <div class="card-body">2.4 GWh cobalt-free LFP battery system. 4,000-cycle lifespan. AI-managed dispatch with 24h solar forecast (±3% accuracy). 18-hour full autonomy.</div>
+      </div>
+    </div>
+
+    <!-- Water -->
+    <h3 style="font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--accent2);margin:48px 0 24px;">WATER SYSTEM</h3>
+    <div class="grid-3" style="margin-bottom: 40px;">
+      <div class="card">
+        <div class="card-label">Source 1 — Aquifer</div>
+        <div class="card-title">Deep drilling</div>
+        <div class="card-body">12,000 m³/day from 480m deep aquifer via reverse osmosis. 12 wells. Energy cost: 3.2 kWh/m³. <em style="color:var(--red);font-size:11px;">Hydrogeological study required (BRGM).</em></div>
+      </div>
+      <div class="card">
+        <div class="card-label">Source 2 — AWG</div>
+        <div class="card-title">Atmospheric water</div>
+        <div class="card-body">1,400 MOF-801 based atmospheric water generation units. 140,000 L/day. Powered by district's renewable surplus.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Recycling loop</div>
+        <div class="card-title">94% reuse</div>
+        <div class="card-body">Greywater recycling for irrigation, cooling, sanitation. Zero liquid discharge achieved by year 3 of operation. 85 L/person/day potable consumption.</div>
+      </div>
+    </div>
+
+    <!-- Food -->
+    <h3 style="font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--accent2);margin:48px 0 24px;">FOOD SYSTEM</h3>
+    <div class="grid-2" style="margin-bottom: 40px;">
+      <div class="card">
+        <div class="card-label">Vertical farming</div>
+        <div class="card-title">36 towers — 64,800 m²</div>
+        <div class="card-body">Aeroponic systems. 94% less water than field agriculture. 420 tonnes/year of fresh produce. Crops: leafy greens, herbs, tomatoes, peppers, strawberries.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Closed-loop protein</div>
+        <div class="card-title">Aquaponics + BSF</div>
+        <div class="card-body">38 tonnes/year tilapia (aquaponics). Black Soldier Fly larvae facility: 12 tonnes/month protein + 8 tonnes/month organic fertilizer. 65% caloric self-sufficiency by 2035.</div>
+      </div>
+    </div>
+
+    <!-- Mobility -->
+    <h3 style="font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--accent2);margin:48px 0 24px;">MOBILITY — 3-TIER SYSTEM</h3>
+    <div class="grid-3" style="margin-bottom: 40px;">
+      <div class="card">
+        <div class="card-label">Tier 1 — Transit</div>
+        <div class="card-title">Autonomous BRT</div>
+        <div class="card-body">6 lines, 48 vehicles, 90s peak headways. Average wait: 2.8 minutes. 80 passengers/vehicle.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Tier 2 — Local</div>
+        <div class="card-title">Micro-mobility pods</div>
+        <div class="card-body">2,400 autonomous 2-person pods. Demand-responsive. Average deployment: 4.2 min. 840 integrated charging nodes.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Tier 3 — Freight</div>
+        <div class="card-title">Underground logistics</div>
+        <div class="card-body">22 km of 3.4m tunnels at −8m. Zero surface freight traffic. 3 perimeter interface nodes. Fully automated.</div>
+      </div>
+    </div>
+
+    <!-- NEXUS -->
+    <h3 style="font-family:var(--mono);font-size:10px;letter-spacing:0.3em;color:var(--accent2);margin:48px 0 24px;">NEXUS AI PLATFORM</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-label">Data infrastructure</div>
+        <div class="card-title">4.2B data points/day</div>
+        <div class="card-body">380,000 IoT nodes across 14 subsystems. Full digital twin for all critical assets. Predictive maintenance: 96h advance warning for 94% of failures. 38% labor reduction vs conventional systems.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Privacy architecture</div>
+        <div class="card-title">Edge AI — No surveillance</div>
+        <div class="card-body">All personal data processed locally on resident devices. NEXUS receives only anonymized aggregated data. No facial recognition. No individual tracking. Independent Resident Data Council.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 04 — FINANCIAL MODEL ══ -->
+<section id="financial">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">04 — INVESTMENT & FINANCIAL MODEL</span>
+      <h2 class="section-title">A Bankable, Diversified Revenue Model</h2>
+      <p class="section-intro">Designed for institutional investors and long-term asset managers. Operational viability does not depend on permanent public subsidies.</p>
+    </div>
+
+    <div class="grid-2" style="margin-bottom: 2px;">
+      <div class="card">
+        <div class="card-label">CAPEX — Phase I</div>
+        <div class="card-title">€2.4 Billion</div>
+        <div class="card-body">€200k per resident. Breakdown: construction €1.4B · energy infrastructure €520M · water & food systems €210M · mobility & logistics €180M · NEXUS AI €90M.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Returns</div>
+        <div class="card-title">12–15% Projected IRR</div>
+        <div class="card-body">Payback period: 9–11 years. Stabilized yield: 6.5–7.5%. Expected value premium: +15–20% vs conventional district. Annual OPEX saving: ~€45M.</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-label">Revenue structure</div>
+        <div class="card-title">Diversified streams</div>
+        <div class="card-body">Residential sales/leases 55% · Commercial leasing 20% · R&D zone 15% · Energy surplus sales 5% · Municipal services 5%.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">OPEX efficiency</div>
+        <div class="card-title">30–40% below conventional</div>
+        <div class="card-body">Energy self-generation eliminates utility costs. Predictive maintenance reduces labor by 38%. Water recycling cuts supply costs by 85%. Total annual OPEX saving vs comparable district: ≈€45M.</div>
+      </div>
+    </div>
+
+    <div class="callout callout-teal" style="margin-top:40px;">
+      <strong>Scenario analysis available on request:</strong> Low / Central / High scenarios covering CAPEX overrun risk, R&D zone pre-commercialization, revenue ramp-up timeline and climate sensitivity. Detailed Excel financial model with full assumptions available under NDA.
+    </div>
+
+    <table class="data-table" style="margin-top:40px;" aria-label="Financial scenarios">
+      <thead>
+        <tr><th>Indicator</th><th>Low scenario</th><th>Central scenario</th><th>High scenario</th><th>Unit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CAPEX realized</td><td class="val">2,700</td><td class="val">2,400</td><td class="val">2,200</td><td>M EUR</td></tr>
+        <tr><td>Annual revenues (stabilized)</td><td class="val">90</td><td class="val">120</td><td class="val">150</td><td>M EUR/yr</td></tr>
+        <tr><td>Annual OPEX</td><td class="val">60</td><td class="val">55</td><td class="val">45</td><td>M EUR/yr</td></tr>
+        <tr><td>IRR</td><td class="val">8–10%</td><td class="val">12–15%</td><td class="val">16–18%</td><td>%</td></tr>
+        <tr><td>Payback period</td><td class="val">13–15 yrs</td><td class="val">9–11 yrs</td><td class="val">7–9 yrs</td><td>years</td></tr>
+        <tr><td>Stabilized yield</td><td class="val">4.5–5%</td><td class="val">6.5–7.5%</td><td class="val">8–9%</td><td>%</td></tr>
+        <tr><td>Value premium vs conventional</td><td class="val">5–10%</td><td class="val">15–20%</td><td class="val">20–25%</td><td>%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ SECTION 05 — TIMELINE ══ -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">05 — DEPLOYMENT TIMELINE</span>
+      <h2 class="section-title">Phased Delivery 2026–2038</h2>
+      <p class="section-intro">Four-phase deployment from site preparation to full operational autonomy, with a structured path to Phase II replication.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2026–27</div>
+        <div>
+          <div class="tl-phase">PHASE 0 — SITE & INFRASTRUCTURE</div>
+          <div class="tl-desc">Geological surveys, platform stabilization, underground logistics tunnel (8 km), deep aquifer drilling (12 wells), PV foundation installation. 4,200 direct construction jobs. CAPEX engaged: ~€300M.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">BUILDING PERMIT CRITICAL</span>
+            <span class="tl-tag">BRGM STUDY REQUIRED</span>
+            <span class="tl-tag">RTE GRID CONNECTION</span>
+            <span class="tl-tag">LAND TITLE REQUIRED</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2027–29</div>
+        <div>
+          <div class="tl-phase">PHASE 1 — ENERGY & WATER SYSTEMS</div>
+          <div class="tl-desc">PV array Phase 1 (420 MWp) online, BESS commissioning, CSP tower erection, reverse osmosis plant operational, AWG array deployed. NEXUS alpha testing begins. 2,800 jobs. CAPEX: ~€600M.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">GRID INJECTION AUTHORIZATION</span>
+            <span class="tl-tag">WATER CHEMISTRY VALIDATION</span>
+            <span class="tl-tag">AWG PERFORMANCE TEST</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2029–31</div>
+        <div>
+          <div class="tl-phase">PHASE 2 — URBAN CONSTRUCTION</div>
+          <div class="tl-desc">Residential clusters R1–R3 (3,800 units), civic nucleus, transit system, vertical farming towers. First 4,000 residents for operational testing. 6,500 jobs. CAPEX: ~€1,200M.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">HQE / LEED FIRST AUDIT</span>
+            <span class="tl-tag">FIRST OCCUPANCY</span>
+            <span class="tl-tag">COMMERCIAL PRE-LEASING</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2031</div>
+        <div>
+          <div class="tl-phase">PHASE 3 — FULL OCCUPATION</div>
+          <div class="tl-desc">12,000 residents, full autonomous operation, closed-loop systems online. External certification audit. Phase II design review launched (target: 28,000 residents by 2038). 3,000 permanent operational jobs.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">BREEAM / LEED CERTIFICATION</span>
+            <span class="tl-tag">YEAR 1 CARBON AUDIT</span>
+            <span class="tl-tag">IRR VALIDATION</span>
+            <span class="tl-tag">PHASE II LAUNCH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 06 — GOVERNANCE ══ -->
+<section id="governance">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06 — GOVERNANCE & SOCIAL MODEL</span>
+      <h2 class="section-title">Operational Framework</h2>
+      <p class="section-intro">A progressive governance model designed for long-term stability, active participation, and resident alignment — without a permanent administrative class.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-label">Governance structure</div>
+        <div class="card-title">Liquid Democracy</div>
+        <div class="card-body">Elected Sector Councils (12 members per zone, 2-year terms). Strategic decisions require 67% supermajority via digital referendum. All senior roles term-limited to 4 years, non-renewable.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Resident endowment</div>
+        <div class="card-title">Universal City Endowment</div>
+        <div class="card-body">Housing (80–120 m² by household size), basic food allocation, healthcare, education, and transit — included in residency. Funded by R&D zone productivity revenue.</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 2px;">
+      <div class="card">
+        <div class="card-label">Population profile</div>
+        <div class="card-title">12,000 residents — 62 nationalities</div>
+        <div class="card-body">28% research/science · 24% technical operations · 18% services · 14% arts/culture · 10% entrepreneurship · 6% governance. 40% under 35 — structural objective.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Data sovereignty</div>
+        <div class="card-title">NEXUS Privacy Architecture</div>
+        <div class="card-body">All personal data processed locally on resident devices (edge AI). NEXUS receives only anonymized, aggregated data. No facial recognition. Independent Resident Data Council. GDPR compliant by design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 07 — PROJECT SCORING ══ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">07 — INDEPENDENT ASSESSMENT</span>
+      <h2 class="section-title">Critical Evaluation — Current Status</h2>
+      <p class="section-intro">An honest, third-party-aligned assessment of the project's current credibility across six dimensions, and the actions required to move from concept to investment-grade.</p>
+    </div>
+
+    <div style="margin: 40px 0;">
+      <div class="score-row">
+        <div class="score-label">Vision & systemic coherence</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:90%;background:var(--green);"></div></div>
+        <div class="score-num">9/10</div>
+        <div class="score-comment">Coherent, mature, well-documented framework</div>
+      </div>
+      <div class="score-row">
+        <div class="score-label">Technical performance (on paper)</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:60%;background:var(--accent2);"></div></div>
+        <div class="score-num">6/10</div>
+        <div class="score-comment">Plausible — requires third-party audit (CSTB / Bureau Veritas)</div>
+      </div>
+      <div class="score-row">
+        <div class="score-label">Financial model</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:40%;background:var(--amber);"></div></div>
+        <div class="score-num">4/10</div>
+        <div class="score-comment">IRR optimistic, CAPEX high — detailed model with scenarios required</div>
+      </div>
+      <div class="score-row">
+        <div class="score-label">Governance model</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:50%;background:var(--amber);"></div></div>
+        <div class="score-num">5/10</div>
+        <div class="score-comment">Interesting framework — transition plan for 12,000 residents needed</div>
+      </div>
+      <div class="score-row">
+        <div class="score-label">Schedule feasibility</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:30%;background:var(--red);"></div></div>
+        <div class="score-num">3/10</div>
+        <div class="score-comment">Phase 0 aggressive — land title and permits absent</div>
+      </div>
+      <div class="score-row" style="border:none;">
+        <div class="score-label" style="font-weight:600;color:#fff;">Overall investment credibility</div>
+        <div class="score-bar-wrap"><div class="score-bar" style="width:50%;background:var(--accent);"></div></div>
+        <div class="score-num" style="color:var(--accent);">5/10</div>
+        <div class="score-comment">Brilliant but not yet investment-grade — 12–18 months preparation required</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Path to 8/10:</strong> Hydrogeological study (BRGM) · Consortium engagement letters (ARUP, MVRDV) · Detailed financial model with three scenarios · Environmental pre-diagnostic · Third-party technical audit · Grid connection study (RTE/Enedis) · Pilot phase design (1,000 residents demonstrator).
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 08 — TEAM ══ -->
+<section id="team">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">08 — PROJECT TEAM & ROLES</span>
+      <h2 class="section-title">Organizational Structure</h2>
+      <p class="section-intro">Six functional leadership roles structuring the project. Consortium partnerships with ARUP International, Buro Happold and MVRDV Consortium.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-role">PROJECT LEAD</div>
+        <div class="team-name">Cyrille Ragonet</div>
+        <div class="team-resp">Vision, institutional representation, partner relations. Aix-en-Provence based.</div>
+        <div class="team-deliverables">Executive brief · Partner dossiers · Strategic positioning</div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">CHIEF URBAN STRATEGIST</div>
+        <div class="team-name">Urban Model Lead</div>
+        <div class="team-resp">15-minute city design, PLU/ZAN/SCoT alignment, stakeholder coordination, public body representation.</div>
+        <div class="team-deliverables">District Model Book · Territorial roadmap · Regulatory dossier</div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">CHIEF SUSTAINABILITY OFFICER</div>
+        <div class="team-name">Environmental Lead</div>
+        <div class="team-resp">Carbon strategy, HQE/LEED certification pathway, energy and water system validation, material LCA.</div>
+        <div class="team-deliverables">Certification dossier · Environmental KPIs · Audit reports</div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">CHIEF INVESTMENT OFFICER</div>
+        <div class="team-name">Financial Lead</div>
+        <div class="team-resp">Financial modeling, PPP structuring, fundraising, investor relations, ESG reporting framework.</div>
+        <div class="team-deliverables">Investor pitch book · Financing plan · Scenario models</div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">STRUCTURAL PARTNER</div>
+        <div class="team-name">ARUP International</div>
+        <div class="team-resp">Structural engineering, systems integration, technical feasibility validation.</div>
+        <div class="team-deliverables">Technical validation · Engineering reports</div>
+      </div>
+      <div class="team-card">
+        <div class="team-role">URBAN PLANNING PARTNER</div>
+        <div class="team-name">MVRDV Consortium</div>
+        <div class="team-resp">Masterplan design, urban typology, density and mixity frameworks.</div>
+        <div class="team-deliverables">Masterplan · Typology studies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT FORM ══ -->
+<div id="contact" class="container">
+  <div class="contact-section">
+    <div class="contact-title">Request Full Executive Access</div>
+    <p class="contact-sub">Qualified investors, municipalities, developers and institutions may request the complete confidential brief, financial model, and site-specific adaptation study.</p>
+    <div class="form-row">
+      <input type="text" placeholder="Full name" aria-label="Full name">
+      <input type="email" placeholder="Professional email" aria-label="Email">
+      <input type="text" placeholder="Organization" aria-label="Organization">
+      <select aria-label="Profile">
+        <option value="">I am a...</option>
+        <option>Municipality / Public authority</option>
+        <option>Institutional investor</option>
+        <option>Infrastructure fund (ESG)</option>
+        <option>Developer / Urban operator</option>
+        <option>Architecture / Engineering firm</option>
+        <option>Development bank / Public finance</option>
+      </select>
+      <button class="btn-primary" onclick="window.location.href='mailto:cyrille.ragonet@gmail.com?subject=Project 19859D — Executive Access Request'">SUBMIT REQUEST →</button>
+    </div>
+    <p style="color:var(--dim2);font-family:var(--mono);font-size:9px;margin-top:24px;letter-spacing:0.1em;">ALL REQUESTS REVIEWED MANUALLY — RESPONSE WITHIN 48H — ENCRYPTED CHANNEL AVAILABLE</p>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-label">PROJECT 19859D</div>
+    <div class="footer-text">Executive Technical Brief — Version 5.0<br>April 2026 — Confidential<br>Not for public distribution without prior authorization.</div>
+  </div>
+  <div>
+    <div class="footer-label">CONSORTIUM MEMBERS</div>
+    <div class="footer-text">
+      Lead: Studio 19859 / Cyrille Ragonet<br>
+      Structural: ARUP International<br>
+      Systems: Buro Happold<br>
+      Urban Planning: MVRDV Consortium<br>
+      AI Systems: Autonomous City Lab<br>
+      Social Policy: Urban Futures Institute
+    </div>
+  </div>
+  <div>
+    <div class="footer-label">CONTACT</div>
+    <div class="footer-text">
+      Cyrille Ragonet — Project Director<br>
+      Aix-en-Provence, France<br>
+      <a href="mailto:cyrille.ragonet@gmail.com">cyrille.ragonet@gmail.com</a><br>
+      +33 6 95 36 83 83<br><br>
+      <a href="index.html">← Resident overview</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 PROJECT 19859D CONSORTIUM — ALL RIGHTS RESERVED</span>
+  <span>VERSION 5.0 — INVESTMENT GRADE · ESG · DEPLOYABLE URBAN MODEL</span>
+</div>
+
+<script>
+  // Animate score bars on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.score-bar').forEach(bar => {
+          const w = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => { bar.style.width = w; }, 100);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.score-row').forEach(row => observer.observe(row.closest('section') || row));
+
+  // Animate metrics on scroll
+  const metObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.metric').forEach((m, i) => {
+          m.style.opacity = '0';
+          m.style.transform = 'translateY(16px)';
+          setTimeout(() => {
+            m.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            m.style.opacity = '1';
+            m.style.transform = 'translateY(0)';
+          }, i * 80);
+        });
+        metObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.metrics-strip').forEach(s => metObs.observe(s));
+</script>
+
+</body>
+</html>
