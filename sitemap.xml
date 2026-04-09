@@ -1,144 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- ========================================== -->
-  <!-- PAGES PRINCIPALES DU SITE                  -->
-  <!-- ========================================== -->
-
-  <!-- ACCUEIL (racine) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cashadom.github.io/project19859d/</loc>
-    <lastmod>2026-04-08</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- PAGE INDEX (HTML) -->
   <url>
     <loc>https://cashadom.github.io/project19859d/Index.html</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- PAGE EXECUTIVE BRIEF -->
   <url>
     <loc>https://cashadom.github.io/project19859d/executive.html</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- NOUVELLE PAGE : RÉSIDENCES / OWNERSHIP -->
   <url>
     <loc>https://cashadom.github.io/project19859d/residences_page.html</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- ========================================== -->
-  <!-- ANCRES INTERNES (sections Index.html)      -->
-  <!-- ========================================== -->
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#district</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#performance</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#living</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#architecture</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#urban</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#register</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/Index.html#owner</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ========================================== -->
-  <!-- RESSOURCES IMAGES                          -->
-  <!-- ========================================== -->
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/photo1.png</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://cashadom.github.io/project19859d/photo1.png</image:loc>
-      <image:title>Masterplan perspective - Project 19859D</image:title>
-      <image:caption>Masterplan perspective — autonomous urban district 680 ha</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/photo2.png</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://cashadom.github.io/project19859d/photo2.png</image:loc>
-      <image:title>Residential balcony view - Project 19859D</image:title>
-      <image:caption>Upper-level residential view — terrace and urban landscape</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/photo3.png</loc>
-    <lastmod>2026-04-05</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.3</priority>
-    <image:image>
-      <image:loc>https://cashadom.github.io/project19859d/photo3.png</image:loc>
-      <image:title>Apartment interior - Project 19859D</image:title>
-      <image:caption>Interior living space — warm materiality and generous light</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://cashadom.github.io/project19859d/banner.png</loc>
-    <lastmod>2026-04-08</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.2</priority>
-  </url>
-
 </urlset>
