@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT 19859D — Residences | Ownership Opportunities — Phase I</title>
+<meta name="description" content="Discover the residences of Project 19859D — urban studios, family residences, and signature homes designed for a structuralist, ecological, modern-futurist district.">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#050507;--panel:#0d1018;--panel2:#101521;--border:rgba(255,255,255,.08);--borderLight:rgba(255,255,255,.04);--accent:#c8a96e;--accent2:#5de6c8;--text:rgba(255,255,255,.86);--dim:rgba(255,255,255,.46);--mono:'Share Tech Mono',monospace;--display:'Bebas Neue',sans-serif;--body:'DM Sans',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--body);font-weight:300;line-height:1.55;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,7,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:72px}
+.nav-logo{font-family:var(--mono);font-size:12px;letter-spacing:.25em;color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none}.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--dim);text-transform:uppercase}.nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;gap:12px}
+.btn-outline,.btn-primary,.btn-owner{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;transition:all .2s}
+.btn-outline{border:1px solid var(--accent);padding:9px 20px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:var(--black)}
+.btn-primary{background:var(--accent);border:1px solid var(--accent);padding:13px 28px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--black)}
+.btn-primary:hover{background:var(--accent2);border-color:var(--accent2)}
+.btn-owner{border:1px solid var(--accent2);padding:9px 22px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--accent2)}
+.btn-owner:hover{background:var(--accent2);color:var(--black)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:0 6vw 10vh;border-bottom:1px solid var(--border);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 45% at 70% 25%, rgba(200,169,110,.12) 0%, transparent 62%),radial-gradient(ellipse 50% 35% at 25% 70%, rgba(93,230,200,.06) 0%, transparent 70%),linear-gradient(135deg,#050507 0%,#0a0d15 45%,#050507 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,169,110,.04) 1px, transparent 1px),linear-gradient(90deg, rgba(200,169,110,.04) 1px, transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 50% 35%, black 0%, transparent 88%)}
+.hero-structure{position:absolute;inset:0;background:linear-gradient(125deg, transparent 0 62%, rgba(255,255,255,.018) 62% 63%, transparent 63% 100%),linear-gradient(160deg, transparent 0 70%, rgba(93,230,200,.04) 70% 71%, transparent 71% 100%)}
+.hero-content{position:relative;max-width:1180px;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
+.hero-kicker,.section-number,.eyebrow,.gallery-badge{font-family:var(--mono);text-transform:uppercase;letter-spacing:.25em}
+.hero-kicker{font-size:10px;color:var(--accent2);margin-bottom:22px}
+.hero-title{font-family:var(--display);font-size:clamp(64px,13vw,148px);line-height:.85;letter-spacing:.02em;color:#fff}.hero-title span{color:var(--accent)}
+.hero-sub{margin-top:28px;max-width:640px;font-size:17px;line-height:1.65;color:var(--dim)}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hero-panel{background:linear-gradient(180deg, rgba(13,16,24,.95), rgba(13,16,24,.78));border:1px solid var(--border);padding:28px;backdrop-filter:blur(12px)}
+.hero-panel .eyebrow{font-size:9px;color:var(--accent);margin-bottom:18px}
+.hero-panel h3{font-family:var(--display);font-size:26px;letter-spacing:.05em;color:#fff;margin-bottom:14px}.hero-panel p{font-size:14px;color:var(--dim);line-height:1.7;margin-bottom:22px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hero-stat{border-top:1px solid var(--border);padding-top:14px}.hero-stat strong{display:block;font-family:var(--mono);color:var(--accent2);font-size:18px;margin-bottom:6px}.hero-stat span{font-size:9px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
+main{max-width:1380px;margin:0 auto;padding:0 6vw}section{padding:96px 0 68px;border-bottom:1px solid var(--border)}
+.section-header{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start;margin-bottom:48px}.section-number{font-size:11px;color:var(--accent2);padding-top:8px}.section-title{font-family:var(--display);font-size:clamp(34px,6vw,72px);line-height:.98;letter-spacing:.03em;color:#fff;margin-bottom:18px}.section-intro{max-width:760px;font-size:16px;line-height:1.7;color:var(--dim)}
+.intro-band{display:grid;grid-template-columns:1.2fr .8fr;gap:2px;margin-top:40px}.panel{background:var(--panel);border:1px solid var(--borderLight);padding:36px}.panel-title{font-family:var(--display);font-size:26px;letter-spacing:.05em;color:#fff;margin-bottom:14px}.panel-text{font-size:14px;line-height:1.75;color:var(--dim)}
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.tag{border:1px solid var(--border);padding:7px 11px;font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.01)}.tag-accent{color:var(--accent);border-color:rgba(200,169,110,.28)}.tag-teal{color:var(--accent2);border-color:rgba(93,230,200,.28)}
+.residence{padding:104px 0 78px;border-bottom:1px solid var(--border)}.residence-top{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;margin-bottom:36px;align-items:start}.residence-left .eyebrow{font-size:10px;color:var(--accent2);margin-bottom:14px}.residence-title{font-family:var(--display);font-size:clamp(36px,5.5vw,70px);line-height:.95;letter-spacing:.03em;color:#fff;margin-bottom:16px}.residence-title span{color:var(--accent)}.residence-summary{max-width:720px;font-size:16px;line-height:1.72;color:var(--dim)}
+.residence-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:28px}.meta-item{background:var(--panel);border:1px solid var(--borderLight);padding:20px 18px}.meta-item strong{display:block;font-family:var(--mono);color:var(--accent);font-size:18px;margin-bottom:7px}.meta-item span{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--dim)}
+.residence-card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--border);padding:34px}.residence-card h3{font-family:var(--display);font-size:28px;letter-spacing:.05em;color:#fff;margin-bottom:12px}.residence-card p{font-size:14px;line-height:1.7;color:var(--dim);margin-bottom:20px}
+.feature-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin-bottom:26px}.feature-list li{padding-left:16px;position:relative;font-size:13px;color:var(--text);line-height:1.55}.feature-list li:before{content:'◆';position:absolute;left:0;top:0;font-size:9px;color:var(--accent2)}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}.gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}.gallery-item{background:var(--panel);border:1px solid var(--border);min-height:280px;position:relative;overflow:hidden}.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.1) contrast(1.03)}
+.gallery-item.placeholder{background:linear-gradient(135deg, rgba(200,169,110,.04), rgba(93,230,200,.02)),linear-gradient(180deg,#0d1018 0%,#0a0d14 100%)}.gallery-item.placeholder:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,169,110,.05) 1px, transparent 1px),linear-gradient(90deg, rgba(200,169,110,.05) 1px, transparent 1px);background-size:26px 26px;mask-image:linear-gradient(to bottom, black 0%, transparent 100%)}
+.gallery-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:linear-gradient(to top, rgba(5,5,7,.92), rgba(5,5,7,.15))}.gallery-badge{font-size:8px;color:var(--accent2);margin-bottom:10px}.gallery-text strong{display:block;color:#fff;font-size:12px;line-height:1.45;margin-bottom:6px}.gallery-text span{font-size:9px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase}
+.caption-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:12px;color:var(--dim);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-family:var(--mono)}
+.availability{text-align:center;padding:96px 0}.availability-box{border:1px solid var(--border);background:linear-gradient(180deg,var(--panel),rgba(13,16,24,.75));padding:54px 30px}.availability-box h2{font-family:var(--display);font-size:clamp(36px,6vw,72px);letter-spacing:.04em;color:#fff;margin-bottom:16px;line-height:.95}.availability-box p{max-width:760px;margin:0 auto 28px;font-size:16px;line-height:1.7;color:var(--dim)}
+.form-group{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}.form-group input,.form-group select{min-width:200px;background:rgba(0,0,0,.45);color:#fff;border:1px solid var(--border);padding:14px 18px;font-family:var(--body);font-size:14px}
+footer{margin-top:26px;border-top:1px solid var(--border);padding:60px 6vw 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}.footer-label{font-family:var(--mono);font-size:9px;letter-spacing:.3em;color:var(--accent);margin-bottom:18px}.footer-text{font-size:11px;line-height:1.7;color:var(--dim)}.footer-bottom{border-top:1px solid var(--border);padding:24px 6vw;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:8px;color:rgba(255,255,255,.22);letter-spacing:.14em;text-transform:uppercase}
+@media (max-width:1180px){.hero-content,.intro-band,.residence-top{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.residence-meta{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){nav{height:auto;padding-top:16px;padding-bottom:16px;flex-wrap:wrap;gap:12px 18px}.nav-links{display:none}.hero{min-height:auto;padding-top:120px}.feature-list{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.gallery-item{min-height:340px}footer{grid-template-columns:1fr}}
+@media (max-width:640px){.residence-meta{grid-template-columns:1fr}.form-group{flex-direction:column;align-items:stretch}.form-group input,.form-group select,.form-group a{width:100%}.hero-actions,.cta-row,.nav-right{width:100%}.hero-actions a,.cta-row a,.nav-right a{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">PROJECT 19859D</a>
+  <ul class="nav-links">
+    <li><a href="#overview">OVERVIEW</a></li>
+    <li><a href="#studio">URBAN STUDIO</a></li>
+    <li><a href="#family">FAMILY</a></li>
+    <li><a href="#signature">SIGNATURE</a></li>
+    <li><a href="#availability">AVAILABILITY</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="executive.html" class="btn-outline">EXECUTIVE BRIEF</a>
+    <a href="#availability" class="btn-owner">REGISTER INTEREST</a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-structure"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-kicker">◆ Ownership Opportunities — Phase I ◆</div>
+      <h1 class="hero-title">RESI<span>DENCES</span></h1>
+      <p class="hero-sub">Three residential typologies designed for different ways of living inside Project 19859D: compact urban ownership, generous family life, and larger signature residences. Structuralist in clarity, ecological in performance, modern-futurist in expression, and accessible in everyday use.</p>
+      <div class="hero-actions"><a href="#studio" class="btn-primary">EXPLORE RESIDENCES →</a><a href="#availability" class="btn-outline">REQUEST AVAILABILITY</a></div>
+    </div>
+    <aside class="hero-panel">
+      <div class="eyebrow">Residential principles</div>
+      <h3>Long-term living value</h3>
+      <p>The residences extend the district model into domestic life: durable materials, terraces, controlled sunlight, walkable daily services, and layouts designed for ordinary comfort rather than spectacle.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>45–140 m²</strong><span>Residential range</span></div>
+        <div class="hero-stat"><strong>3</strong><span>Typologies shown</span></div>
+        <div class="hero-stat"><strong>7 floors</strong><span>Mid-rise fabric</span></div>
+        <div class="hero-stat"><strong>15 min</strong><span>Daily radius</span></div>
+      </div>
+    </aside>
+  </div>
+</header>
+<main>
+  <section id="overview">
+    <div class="section-header"><div class="section-number">01</div><div><h2 class="section-title">A residential offer designed as part of the district</h2><p class="section-intro">These homes are not isolated real-estate units. They are part of a coherent neighborhood system where architecture, mobility, services, energy performance, and public space reinforce one another. The result is a calmer form of urban ownership: lower daily friction, more usable space, and stronger long-term desirability.</p></div></div>
+    <div class="intro-band">
+      <div class="panel"><div class="panel-title">Structuralist, ecological, modern-futurist</div><div class="panel-text">The residential language remains disciplined and legible: clear geometry, strong horizontals, honest materials, generous glazing, planted terraces, and durable mid-rise proportions. Environmental logic is embedded in the architecture itself through orientation, passive cooling, shaded circulation, and efficient envelopes.</div><div class="tag-row"><span class="tag tag-accent">Low-carbon materiality</span><span class="tag tag-teal">Passive comfort</span><span class="tag">Terraces & light</span><span class="tag">Walkable district life</span></div></div>
+      <div class="panel"><div class="panel-title">Three ownership typologies</div><div class="panel-text">The page is structured around a simple product hierarchy: an urban studio for compact ownership, a family residence for long-term daily life, and a larger signature residence for households seeking more volume, outdoor space, and premium positioning.</div><div class="tag-row"><span class="tag">Urban Studio</span><span class="tag">Family Residence</span><span class="tag tag-accent">Signature Residence</span></div></div>
+    </div>
+  </section>
+  <section class="residence" id="studio">
+    <div class="residence-top">
+      <div class="residence-left"><div class="eyebrow">02 — Compact ownership typology</div><h2 class="residence-title">URBAN <span>STUDIO</span></h2><p class="residence-summary">A compact residence designed for first-time owners, young professionals, couples, or a highly efficient pied-à-terre. The ambition is not minimum space but maximum usefulness: clean structural grids, integrated storage, deep balconies, generous light, and immediate access to work, retail, wellness, and public space.</p><div class="residence-meta"><div class="meta-item"><strong>45–55 m²</strong><span>Indicative internal area</span></div><div class="meta-item"><strong>1–2</strong><span>Residents</span></div><div class="meta-item"><strong>Balcony</strong><span>Private outdoor extension</span></div><div class="meta-item"><strong>Efficient</strong><span>Compact urban ownership</span></div></div></div>
+      <div class="residence-card"><h3>Designed for calm density</h3><p>The Urban Studio brings premium essentials into a smaller footprint: strong ceiling lines, warm industrial finishes, controlled sunlight, durable kitchens, and a layout that avoids wasted circulation.</p><ul class="feature-list"><li>Open living / kitchen zone with clear sightlines</li><li>Integrated storage and utility wall</li><li>Balcony or recessed terrace extension</li><li>Large-format glazing with solar control</li><li>Suitable for first ownership or long-stay urban use</li><li>Direct access to district services within minutes</li></ul><div class="cta-row"><a href="#availability" class="btn-primary">REQUEST FLOOR PLAN →</a><a href="#availability" class="btn-outline">REGISTER INTEREST</a></div></div>
+    </div>
+    <div class="gallery-grid"><div class="gallery-item"><img src="photo4.png" alt="Urban Studio gallery image 1"></div><div class="gallery-item"><img src="photo5.png" alt="Urban Studio gallery image 2"></div><div class="gallery-item"><img src="photo6.png" alt="Urban Studio gallery image 3"></div><div class="gallery-item"><img src="photo7.png" alt="Urban Studio gallery image 4"></div><div class="gallery-item"><img src="photo8.png" alt="Urban Studio gallery image 5"></div></div>
+    <div class="caption-bar"><span>Urban Studio gallery — structural clarity / compact premium living</span><span>Replace images as needed</span></div>
+  </section>
+  <section class="residence" id="family">
+    <div class="residence-top">
+      <div class="residence-left"><div class="eyebrow">03 — Long-term family typology</div><h2 class="residence-title">FAMILY <span>RESIDENCE</span></h2><p class="residence-summary">The central residential product of the district: a flexible home for households seeking long-term livability, generous shared space, and practical proximity to schools, health services, green areas, and daily retail. The family residence balances warmth and discipline — more terrace, more storage, more adaptability.</p><div class="residence-meta"><div class="meta-item"><strong>85–110 m²</strong><span>Indicative internal area</span></div><div class="meta-item"><strong>2–3 beds</strong><span>Household-ready layout</span></div><div class="meta-item"><strong>Large terrace</strong><span>Outdoor family extension</span></div><div class="meta-item"><strong>Flexible</strong><span>Long-term liveability</span></div></div></div>
+      <div class="residence-card"><h3>The everyday family product</h3><p>This typology is shaped around ordinary usefulness: larger dining space, comfortable bedroom separation, adaptable secondary rooms, protected outdoor areas, and durable interiors that age well with family life.</p><ul class="feature-list"><li>Generous living / dining area with terrace continuity</li><li>Two or three-bedroom configurations</li><li>Family kitchen with strong functional zoning</li><li>Deep balconies or terraces for outdoor use</li><li>Storage, utility, and circulation designed for real life</li><li>Ideal for resident-owners planning long stays</li></ul><div class="cta-row"><a href="#availability" class="btn-primary">REQUEST FLOOR PLAN →</a><a href="#availability" class="btn-outline">ASK ABOUT PHASE I</a></div></div>
+    </div>
+    <div class="gallery-grid"><div class="gallery-item"><img src="photo9.png" alt="Family Residence gallery image 1"></div><div class="gallery-item"><img src="photo10.png" alt="Family Residence gallery image 2"></div><div class="gallery-item"><img src="photo11.png" alt="Family Residence gallery image 3"></div><div class="gallery-item"><img src="photo12.png" alt="Family Residence gallery image 4"></div><div class="gallery-item"><img src="photo13.png" alt="Family Residence gallery image 5"></div></div>
+    <div class="caption-bar"><span>Family Residence gallery — terraces / shared space / long-term domestic comfort</span><span>Replace images as needed</span></div>
+  </section>
+  <section class="residence" id="signature">
+    <div class="residence-top">
+      <div class="residence-left"><div class="eyebrow">04 — Larger premium typology</div><h2 class="residence-title">SIGNATURE <span>RESIDENCE</span></h2><p class="residence-summary">The most expansive residential format shown on this page. Positioned for households seeking more volume, more privacy, stronger views, and a more elevated ownership experience within the same low-carbon district logic. Premium here means more space and more calm — not excess for its own sake.</p><div class="residence-meta"><div class="meta-item"><strong>120–140 m²</strong><span>Indicative internal area</span></div><div class="meta-item"><strong>3–4 beds</strong><span>Larger family capacity</span></div><div class="meta-item"><strong>Corner / dual aspect</strong><span>Light & orientation</span></div><div class="meta-item"><strong>Premium</strong><span>Expanded outdoor living</span></div></div></div>
+      <div class="residence-card"><h3>More volume, same district coherence</h3><p>Signature residences extend the architectural language into larger domestic space: wider terraces, stronger daylight quality, more generous master suites, and layouts suited to family, hosting, and long-duration occupation.</p><ul class="feature-list"><li>Expanded living areas with stronger indoor-outdoor flow</li><li>Multiple-bedroom family configuration</li><li>Corner or dual-aspect daylight strategy</li><li>Premium terrace positioning and broader views</li><li>Higher privacy with stable long-term value</li><li>Flagship Phase I ownership product</li></ul><div class="cta-row"><a href="#availability" class="btn-primary">REQUEST PRIVATE BRIEF →</a><a href="#availability" class="btn-outline">REGISTER INTEREST</a></div></div>
+    </div>
+    <div class="gallery-grid"><div class="gallery-item placeholder"><div class="gallery-text"><div class="gallery-badge">Photo 14 placeholder</div><strong>Signature Residence — Exterior or terrace view</strong><span>Add photo14.png</span></div></div><div class="gallery-item placeholder"><div class="gallery-text"><div class="gallery-badge">Photo 15 placeholder</div><strong>Signature Residence — Living space or structural detail</strong><span>Add photo15.png</span></div></div><div class="gallery-item placeholder"><div class="gallery-text"><div class="gallery-badge">Photo 16 placeholder</div><strong>Signature Residence — Master suite / family zone</strong><span>Add photo16.png</span></div></div><div class="gallery-item placeholder"><div class="gallery-text"><div class="gallery-badge">Photo 17 placeholder</div><strong>Signature Residence — Kitchen / dining / terrace continuity</strong><span>Add photo17.png</span></div></div><div class="gallery-item placeholder"><div class="gallery-text"><div class="gallery-badge">Photo 18 placeholder</div><strong>Signature Residence — Premium atmosphere / light quality</strong><span>Add photo18.png</span></div></div></div>
+    <div class="caption-bar"><span>Signature Residence gallery — premium placeholders ready for replacement</span><span>Use photo14.png to photo18.png</span></div>
+  </section>
+  <section class="availability" id="availability"><div class="availability-box"><h2>REQUEST AVAILABILITY<br>AND OWNERSHIP BRIEF</h2><p>Register your interest to receive indicative availability, typology information, ownership positioning, and Phase I updates for Project 19859D residences.</p><div class="form-group"><input type="text" placeholder="Full name"><input type="email" placeholder="Email"><select><option>Typology of interest</option><option>Urban Studio</option><option>Family Residence</option><option>Signature Residence</option><option>Multiple typologies</option></select><select><option>Budget range</option><option>€300k – €500k</option><option>€500k – €800k</option><option>€800k – €1.2M</option><option>€1.2M+</option></select><a href="#" class="btn-primary">REQUEST INFORMATION →</a></div></div></section>
+</main>
+<footer>
+  <div><div class="footer-label">RESIDENCES</div><div class="footer-text">Three residential typologies for Project 19859D, designed for urban ownership, family life, and long-term low-carbon value within a deployable district model.</div></div>
+  <div><div class="footer-label">ARCHITECTURAL LANGUAGE</div><div class="footer-text">Structuralist in geometry, ecological in performance, modern-futurist in expression, and accessible in everyday use. Durable mid-rise living with terraces, daylight, and calm mobility.</div></div>
+  <div><div class="footer-label">CONTACT</div><div class="footer-text">inquiry@project19859d.consortium<br>Encrypted channel for qualified partners<br>+33 6 95 36 83 83</div></div>
+</footer>
+<div class="footer-bottom"><span>© 2026 Project 19859D Consortium</span><span>Residences — Ownership Opportunities — Phase I</span></div>
+</body>
+</html>
