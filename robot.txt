@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cashadom.github.io/project19859d/sitemap.xml
+
+# Disallow admin pages if any
+# Disallow: /private/
